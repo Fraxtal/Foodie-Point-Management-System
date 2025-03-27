@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using Foodie_Point_Management_System.Employee_Login;
 
 namespace Foodie_Point_Management_System.Customer
 {
@@ -94,6 +95,13 @@ namespace Foodie_Point_Management_System.Customer
         private void cbSPassword_CheckedChanged(object sender, EventArgs e)
         {
             txtPassword.PasswordChar = cbSPassword.Checked ? '\0' : '*';
+        }
+
+        private void btnEmployee_Click(object sender, EventArgs e)
+        {
+            EmployeeLogin employeeLogin = new EmployeeLogin();
+            employeeLogin.Show();
+            this.Hide();
         }
     }
 }

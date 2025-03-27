@@ -35,10 +35,11 @@
             this.lblPass = new System.Windows.Forms.Label();
             this.lblInputs = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbSPassword = new System.Windows.Forms.CheckBox();
             this.rbUsername = new System.Windows.Forms.RadioButton();
             this.rbEmail = new System.Windows.Forms.RadioButton();
             this.btnRegister = new System.Windows.Forms.Button();
-            this.cbSPassword = new System.Windows.Forms.CheckBox();
+            this.btnEmployee = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -114,6 +115,17 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Login";
             // 
+            // cbSPassword
+            // 
+            this.cbSPassword.AutoSize = true;
+            this.cbSPassword.Location = new System.Drawing.Point(136, 148);
+            this.cbSPassword.Name = "cbSPassword";
+            this.cbSPassword.Size = new System.Drawing.Size(102, 17);
+            this.cbSPassword.TabIndex = 17;
+            this.cbSPassword.Text = "Show Password";
+            this.cbSPassword.UseVisualStyleBackColor = true;
+            this.cbSPassword.CheckedChanged += new System.EventHandler(this.cbSPassword_CheckedChanged);
+            // 
             // rbUsername
             // 
             this.rbUsername.AutoSize = true;
@@ -146,22 +158,22 @@
             this.btnRegister.UseVisualStyleBackColor = true;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
-            // cbSPassword
+            // btnEmployee
             // 
-            this.cbSPassword.AutoSize = true;
-            this.cbSPassword.Location = new System.Drawing.Point(136, 148);
-            this.cbSPassword.Name = "cbSPassword";
-            this.cbSPassword.Size = new System.Drawing.Size(102, 17);
-            this.cbSPassword.TabIndex = 17;
-            this.cbSPassword.Text = "Show Password";
-            this.cbSPassword.UseVisualStyleBackColor = true;
-            this.cbSPassword.CheckedChanged += new System.EventHandler(this.cbSPassword_CheckedChanged);
+            this.btnEmployee.Location = new System.Drawing.Point(684, 12);
+            this.btnEmployee.Name = "btnEmployee";
+            this.btnEmployee.Size = new System.Drawing.Size(91, 60);
+            this.btnEmployee.TabIndex = 17;
+            this.btnEmployee.Text = "Employee Login";
+            this.btnEmployee.UseVisualStyleBackColor = true;
+            this.btnEmployee.Click += new System.EventHandler(this.btnEmployee_Click);
             // 
             // CustomerLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnEmployee);
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
@@ -187,5 +199,6 @@
         private System.Windows.Forms.RadioButton rbEmail;
         private System.Windows.Forms.Button btnRegister;
         private System.Windows.Forms.CheckBox cbSPassword;
+        private System.Windows.Forms.Button btnEmployee;
     }
 }
