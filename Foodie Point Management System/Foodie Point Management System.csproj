@@ -175,6 +175,12 @@
     <Compile Include="Employee Login\EmployeeProfileSettings.Designer.cs">
       <DependentUpon>EmployeeProfileSettings.cs</DependentUpon>
     </Compile>
+    <Compile Include="Manager\ManagerSalesReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manager\ManagerSalesReport.Designer.cs">
+      <DependentUpon>ManagerSalesReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="Manager\Manager.cs" />
     <Compile Include="Manager\ManagerDashboard.cs">
       <SubType>Form</SubType>
@@ -292,6 +298,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Employee Login\EmployeeProfileSettings.resx">
       <DependentUpon>EmployeeProfileSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager\ManagerSalesReport.resx">
+      <DependentUpon>ManagerSalesReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Manager\ManagerDashboard.resx">
       <DependentUpon>ManagerDashboard.cs</DependentUpon>

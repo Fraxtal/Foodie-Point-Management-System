@@ -338,5 +338,80 @@ namespace Foodie_Point_Management_System.Manager
             return dt;
         }
 
+        public DataTable LoadSalesReport(string year, string category)
+        {
+            DataTable dt = new DataTable();
+            string query = "";
+
+            string yearFilter = "";
+            if (year != "All Years")
+                yearFilter = " WHERE YEAR(ot.DateOrdered) = @Year ";
+
+            if (category == "Month")
+            {
+                query = query = @"
+                SELECT 
+                YEAR(ot.DateOrdered) AS Year, 
+                DATENAME(MONTH, ot.DateOrdered) AS Month, 
+                SUM(i.Total) AS TotalSales
+                FROM Invoice i
+                LEFT JOIN OrderTable ot ON i.OrderID = ot.OrderID
+                " + yearFilter + @"
+                GROUP BY YEAR(ot.DateOrdered), MONTH(ot.DateOrdered), DATENAME(MONTH, ot.DateOrdered)
+                ORDER BY YEAR(ot.DateOrdered) ASC, MONTH(ot.DateOrdered) ASC;
+";
+            }
+            else if (category == "Employee")
+            {
+                query = @"
+                    SELECT 
+                        e.FullName as 'Employee', 
+                        SUM(i.Total) as 'TotalSales'
+                    FROM Invoice i
+                    LEFT JOIN OrderTable ot ON i.OrderID = ot.OrderID
+                    LEFT JOIN Employee e ON ot.EmployeeID = e.EmployeeID
+                    " + yearFilter + @"
+                    GROUP BY e.FullName
+                    ORDER BY e.FullName ASC;";
+            }
+
+
+            else if (category == "PaymentMethod")
+            {
+                query = @"
+                    SELECT 
+                        i.PaymentMethod as 'Payment Method', 
+                        SUM(i.Total) as 'TotalSales'
+                    FROM Invoice i
+                    LEFT JOIN OrderTable ot ON i.OrderID = ot.OrderID
+                    " + yearFilter + @"
+                    GROUP BY i.PaymentMethod
+                    ORDER BY i.PaymentMethod ASC;";
+            }
+
+            using (SqlCommand command = new SqlCommand(query, connect))
+            {
+                if (year != "All Years")
+                    command.Parameters.AddWithValue("@Year", Convert.ToInt32(year));
+
+                try
+                {
+                    connect.Open();
+                    using (SqlDataAdapter da = new SqlDataAdapter(command))
+                    {
+                        da.Fill(dt);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error fetching sales report: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    connect.Close();
+                }
+            }
+            return dt;
+        }
     }
 }
