@@ -226,12 +226,6 @@
     <Compile Include="ReservationCoordinator\RCManageReservations.Designer.cs">
       <DependentUpon>RCManageReservations.cs</DependentUpon>
     </Compile>
-    <Compile Include="ReservationCoordinator\RCSearchReservations.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ReservationCoordinator\RCSearchReservations.Designer.cs">
-      <DependentUpon>RCSearchReservations.cs</DependentUpon>
-    </Compile>
     <Compile Include="ReservationCoordinator\ReservationCoordinator.cs" />
     <Compile Include="ReservationCoordinator\ReservationCoordinatorDashboard.cs">
       <SubType>Form</SubType>
@@ -331,9 +325,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ReservationCoordinator\RCManageReservations.resx">
       <DependentUpon>RCManageReservations.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ReservationCoordinator\RCSearchReservations.resx">
-      <DependentUpon>RCSearchReservations.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReservationCoordinator\ReservationCoordinatorDashboard.resx">
       <DependentUpon>ReservationCoordinatorDashboard.cs</DependentUpon>

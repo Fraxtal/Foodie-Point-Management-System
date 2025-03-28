@@ -30,7 +30,6 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.lnkmanage = new System.Windows.Forms.LinkLabel();
-            this.lnksearch = new System.Windows.Forms.LinkLabel();
             this.lnkcustomer = new System.Windows.Forms.LinkLabel();
             this.lnksettings = new System.Windows.Forms.LinkLabel();
             this.monthlyreservation = new System.Windows.Forms.MonthCalendar();
@@ -67,23 +66,11 @@
             this.lnkmanage.Text = "Manage Reservations";
             this.lnkmanage.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkmanage_LinkClicked);
             // 
-            // lnksearch
-            // 
-            this.lnksearch.AutoSize = true;
-            this.lnksearch.LinkColor = System.Drawing.Color.Black;
-            this.lnksearch.Location = new System.Drawing.Point(15, 161);
-            this.lnksearch.Name = "lnksearch";
-            this.lnksearch.Size = new System.Drawing.Size(172, 22);
-            this.lnksearch.TabIndex = 2;
-            this.lnksearch.TabStop = true;
-            this.lnksearch.Text = "Search Reservations";
-            this.lnksearch.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnksearch_LinkClicked);
-            // 
             // lnkcustomer
             // 
             this.lnkcustomer.AutoSize = true;
             this.lnkcustomer.LinkColor = System.Drawing.Color.Black;
-            this.lnkcustomer.Location = new System.Drawing.Point(15, 223);
+            this.lnkcustomer.Location = new System.Drawing.Point(15, 140);
             this.lnkcustomer.Name = "lnkcustomer";
             this.lnkcustomer.Size = new System.Drawing.Size(159, 22);
             this.lnkcustomer.TabIndex = 3;
@@ -95,7 +82,7 @@
             // 
             this.lnksettings.AutoSize = true;
             this.lnksettings.LinkColor = System.Drawing.Color.Black;
-            this.lnksettings.Location = new System.Drawing.Point(15, 284);
+            this.lnksettings.Location = new System.Drawing.Point(15, 186);
             this.lnksettings.Name = "lnksettings";
             this.lnksettings.Size = new System.Drawing.Size(74, 22);
             this.lnksettings.TabIndex = 4;
@@ -209,7 +196,6 @@
             this.Controls.Add(this.monthlyreservation);
             this.Controls.Add(this.lnksettings);
             this.Controls.Add(this.lnkcustomer);
-            this.Controls.Add(this.lnksearch);
             this.Controls.Add(this.lnkmanage);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -227,7 +213,6 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.LinkLabel lnkmanage;
-        private System.Windows.Forms.LinkLabel lnksearch;
         private System.Windows.Forms.LinkLabel lnkcustomer;
         private System.Windows.Forms.LinkLabel lnksettings;
         private System.Windows.Forms.MonthCalendar monthlyreservation;

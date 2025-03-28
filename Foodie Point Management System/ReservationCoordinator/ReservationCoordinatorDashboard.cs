@@ -39,12 +39,6 @@ namespace Foodie_Point_Management_System.ReservationCoordinator
             manageReservation.Show();
         }
 
-        private void lnksearch_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            SearchReservations searchReservations = new SearchReservations();
-            searchReservations.Show();
-        }
-
         private void lnkcustomer_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             CustomerRequest customerRequest = new CustomerRequest();
