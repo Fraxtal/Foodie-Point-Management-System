@@ -32,12 +32,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridViewReservations = new System.Windows.Forms.DataGridView();
             this.gbSortBy = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbYear = new System.Windows.Forms.ComboBox();
             this.printReport = new System.Drawing.Printing.PrintDocument();
             this.btnReturn = new System.Windows.Forms.Button();
             this.btnPreview = new System.Windows.Forms.Button();
             this.btnPrint = new System.Windows.Forms.Button();
             this.printPreview = new System.Windows.Forms.PrintPreviewDialog();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnReset = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cbPType = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewReservations)).BeginInit();
             this.gbSortBy.SuspendLayout();
             this.SuspendLayout();
@@ -77,7 +81,11 @@
             // 
             // gbSortBy
             // 
-            this.gbSortBy.Controls.Add(this.comboBox1);
+            this.gbSortBy.Controls.Add(this.cbPType);
+            this.gbSortBy.Controls.Add(this.label3);
+            this.gbSortBy.Controls.Add(this.btnReset);
+            this.gbSortBy.Controls.Add(this.label2);
+            this.gbSortBy.Controls.Add(this.cbYear);
             this.gbSortBy.Location = new System.Drawing.Point(24, 64);
             this.gbSortBy.Margin = new System.Windows.Forms.Padding(2);
             this.gbSortBy.Name = "gbSortBy";
@@ -87,13 +95,13 @@
             this.gbSortBy.TabStop = false;
             this.gbSortBy.Text = "Sort By :";
             // 
-            // comboBox1
+            // cbYear
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(18, 78);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(109, 21);
-            this.comboBox1.TabIndex = 0;
+            this.cbYear.FormattingEnabled = true;
+            this.cbYear.Location = new System.Drawing.Point(18, 44);
+            this.cbYear.Name = "cbYear";
+            this.cbYear.Size = new System.Drawing.Size(109, 21);
+            this.cbYear.TabIndex = 0;
             // 
             // printReport
             // 
@@ -139,6 +147,41 @@
             this.printPreview.Name = "printPreview";
             this.printPreview.Visible = false;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(15, 28);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(32, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Year:";
+            // 
+            // btnReset
+            // 
+            this.btnReset.Location = new System.Drawing.Point(30, 142);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(75, 23);
+            this.btnReset.TabIndex = 2;
+            this.btnReset.Text = "Reset Filter";
+            this.btnReset.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(15, 81);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(61, 13);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Party Type:";
+            // 
+            // cbPType
+            // 
+            this.cbPType.FormattingEnabled = true;
+            this.cbPType.Location = new System.Drawing.Point(18, 97);
+            this.cbPType.Name = "cbPType";
+            this.cbPType.Size = new System.Drawing.Size(109, 21);
+            this.cbPType.TabIndex = 4;
+            // 
             // ManagerReservationsReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -156,6 +199,7 @@
             this.Load += new System.EventHandler(this.ManagerReservationsReport_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewReservations)).EndInit();
             this.gbSortBy.ResumeLayout(false);
+            this.gbSortBy.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -167,10 +211,14 @@
         private System.Windows.Forms.DataGridView dataGridViewReservations;
         private System.Windows.Forms.GroupBox gbSortBy;
         private System.Drawing.Printing.PrintDocument printReport;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbYear;
         private System.Windows.Forms.Button btnReturn;
         private System.Windows.Forms.Button btnPreview;
         private System.Windows.Forms.Button btnPrint;
         private System.Windows.Forms.PrintPreviewDialog printPreview;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.ComboBox cbPType;
+        private System.Windows.Forms.Label label3;
     }
 }

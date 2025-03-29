@@ -16,24 +16,7 @@ namespace Foodie_Point_Management_System.Manager
     {
         EmManager session = new EmManager();
 
-        string query = @"
-                       SELECT 
-                            YEAR(r.DateTime) AS Year,
-                            MONTH(r.DateTime) AS Month,
-                            h.PartyType,
-                            COUNT(r.ReservationID) AS ReservationCount,
-                            SUM(r.Pax) AS TotalPax
-                       FROM 
-                            Reservations r
-                       JOIN 
-                            Hall h ON r.HallID = h.HallID
-                       GROUP BY 
-                            YEAR(r.DateTime),
-                            MONTH(r.DateTime),
-                            h.PartyType
-                       ORDER BY 
-                            Year, Month, h.PartyType;
-                       ";
+        string query = "SELECT YEAR(r.DateTime) AS Year, MONTH(r.DateTime) AS Month, h.PartyType, COUNT(r.ReservationID) AS ReservationCount, SUM(r.Pax) AS TotalPax FROM Reservations r JOIN Hall h ON r.HallID = h.HallID GROUP BY YEAR(r.DateTime), MONTH(r.DateTime), h.PartyType ORDER BY Year, Month, h.PartyType;";
 
         public ManagerReservationsReport()
         {
@@ -50,15 +33,18 @@ namespace Foodie_Point_Management_System.Manager
             Graphics g = e.Graphics;
             Font headerFont = new Font("Times New Roman", 20, FontStyle.Bold);
             Font subHeaderFont = new Font("Times New Roman", 17, FontStyle.Bold);
-            Font font = new Font("Times New Roman", 10);
+            Font font = new Font("Times New Roman", 13);
             Brush brush = Brushes.Black;
 
             float pageWidth = e.PageBounds.Width;
 
+            int totalR = 0;
+            int totalP = 0;
+
             float x = 70;
             float y = 50;
             float lineHeight = font.GetHeight(g) + 4;
-            float columnWidth = 140;
+            float columnWidth = 150;
 
             g.DrawString("Foodie Point Management System", headerFont, brush, (pageWidth - g.MeasureString("Foodie Point Management System", headerFont).Width) / 2, y);
             y += headerFont.GetHeight(g) + 20;
@@ -66,9 +52,12 @@ namespace Foodie_Point_Management_System.Manager
             g.DrawString("Reservation Report", headerFont, brush, x, y);
             y += subHeaderFont.GetHeight(g) + 20;
 
+            g.DrawString("----------------------------------------------------------------------------------------", subHeaderFont, brush, x, y);
+            y += subHeaderFont.GetHeight(g) + 20;
+
             // Print column headers
-            g.DrawString("Reservation Year", font, brush, x, y);
-            g.DrawString("Reservation Month", font, brush, x + columnWidth, y);
+            g.DrawString("Year", font, brush, x, y);
+            g.DrawString("Month", font, brush, x + columnWidth, y);
             g.DrawString("Party Type", font, brush, x + 2 * columnWidth, y);
             g.DrawString("Reservation Count", font, brush, x + 3 * columnWidth, y);
             g.DrawString("Total Pax", font, brush, x + 4 * columnWidth, y);
@@ -76,23 +65,43 @@ namespace Foodie_Point_Management_System.Manager
             y += lineHeight;
 
             // Print rows from DataTable
-            foreach (DataRow row in dataGridViewReservations.Rows)
+            foreach (DataGridViewRow dgvRow in dataGridViewReservations.Rows)
             {
-                g.DrawString(row["ReservationYear"].ToString(), font, brush, x, y);
-                g.DrawString(row["ReservationMonth"].ToString(), font, brush, x + columnWidth, y);
-                g.DrawString(row["PartyType"].ToString(), font, brush, x + 2 * columnWidth, y);
-                g.DrawString(row["ReservationCount"].ToString(), font, brush, x + 3 * columnWidth, y);
-                g.DrawString(row["TotalPax"].ToString(), font, brush, x + 4 * columnWidth, y);
+                // Skip the new row if AllowUserToAddRows is true
+                if (dgvRow.IsNewRow) continue;
+
+                // Access values through the Cells collection
+                g.DrawString(dgvRow.Cells["Year"].Value?.ToString(), font, brush, x, y);
+                g.DrawString(dgvRow.Cells["Month"].Value?.ToString(), font, brush, x + columnWidth, y);
+                g.DrawString(dgvRow.Cells["PartyType"].Value?.ToString(), font, brush, x + 2 * columnWidth, y);
+                g.DrawString(dgvRow.Cells["ReservationCount"].Value?.ToString(), font, brush, x + 3 * columnWidth, y);
+                g.DrawString(dgvRow.Cells["TotalPax"].Value?.ToString(), font, brush, x + 4 * columnWidth, y);
+
+                if (int.TryParse(dgvRow.Cells["ReservationCount"].Value?.ToString(), out int reservationCount))
+                {
+                    totalR += reservationCount;
+                }
+                if (int.TryParse(dgvRow.Cells["TotalPax"].Value?.ToString(), out int paxCount))
+                {
+                    totalP += paxCount;
+                }
+
 
                 y += lineHeight;
 
-                // Check if the content exceeds the page length
                 if (y > e.MarginBounds.Bottom)
                 {
                     e.HasMorePages = true;
                     return;
                 }
             }
+            g.DrawString("----------------------------------------------------------------------------------------", subHeaderFont, brush, x, y);
+            y += subHeaderFont.GetHeight(g) + 20;
+            g.DrawString($"Total Pax: {totalP}", font, brush, x + 4 * columnWidth, y);
+            y += lineHeight;
+            g.DrawString($"Total Reservations: {totalR}", font, brush, x + 4 * columnWidth, y);
+            y += lineHeight;
+
 
             e.HasMorePages = false;
         }
