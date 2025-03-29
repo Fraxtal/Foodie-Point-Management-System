@@ -122,7 +122,7 @@ namespace Foodie_Point_Management_System.Manager
         {
             try
             {
-                dgvMenu.DataSource = manager.HallTable("SELECT * FROM FoodMenu");
+                dgvMenu.DataSource = manager.LoadTable("SELECT * FROM FoodMenu");
                 dgvMenu.Refresh();
             }
             catch (Exception ex)

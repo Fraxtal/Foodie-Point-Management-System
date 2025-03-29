@@ -61,7 +61,7 @@ namespace Foodie_Point_Management_System.Manager
 
             manager.HallEdit(hallId, pax, cmbPartyType.Text);
 
-            dataGridViewHalls.DataSource = manager.HallTable("SELECT * FROM Hall");
+            dataGridViewHalls.DataSource = manager.LoadTable("SELECT * FROM Hall");
             ClearFields();
         }
 
@@ -121,7 +121,7 @@ namespace Foodie_Point_Management_System.Manager
         {
             try
             {
-                dataGridViewHalls.DataSource = manager.HallTable("SELECT HallID, Pax, PartyType FROM Hall");
+                dataGridViewHalls.DataSource = manager.LoadTable("SELECT HallID, Pax, PartyType FROM Hall");
                 dataGridViewHalls.Refresh();
                 dataGridViewHalls.ClearSelection();
                 ClearFields();

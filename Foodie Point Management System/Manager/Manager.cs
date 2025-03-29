@@ -15,7 +15,7 @@ namespace Foodie_Point_Management_System.Manager
     {
         static SqlConnection connect = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString());
 
-        public object HallTable(string query)
+        public DataTable LoadTable(string query)
         {
             SqlDataAdapter adapter = new SqlDataAdapter(query, connect);
             DataTable table = new DataTable();
@@ -274,69 +274,7 @@ namespace Foodie_Point_Management_System.Manager
             }
             return result;
         }
-
-        public DataTable LoadReservationReport()
-        {
-
-            DataTable dt = new DataTable();
-            try
-            {
-                connect.Open();
-                string query = @"
-                    SELECT 
-                        r.ReservationID,
-                        r.DateTime AS ReservationDateTime,
-                        r.Pax,
-                        r.ReservationStatus,
-                        c.CustomerID,
-                        c.FullName AS CustomerName,
-                        c.Email AS CustomerEmail,
-                        h.HallID,
-                        h.PartyType,
-                        h.Pax AS HallCapacity,
-                        rm.CustomerMsg AS CustomerMessage,
-                        rm.RCReply AS CoordinatorReply,
-                        o.OrderID,
-                        o.TotalAmount AS OrderTotal,
-                        o.OrderStatus,
-                        i.InvoiceID,
-                        i.Total AS InvoiceTotal,
-                        i.PaymentMethod,
-                        e.EmployeeID AS AssignedEmployeeID,
-                        e.FullName AS AssignedEmployeeName,
-                        e.Role AS EmployeeRole
-                    FROM 
-                        Reservations r
-                    JOIN 
-                        Customer c ON r.CustomerID = c.CustomerID
-                    JOIN 
-                        Hall h ON r.HallID = h.HallID
-                    LEFT JOIN 
-                        ReservationMessage rm ON r.ReservationID = rm.ReservationID
-                    LEFT JOIN 
-                        OrderTable o ON r.CustomerID = o.CustomerID 
-                        AND CAST(o.DateOrdered AS DATE) = CAST(r.DateTime AS DATE)
-                    LEFT JOIN 
-                        Invoice i ON o.OrderID = i.OrderID
-                    LEFT JOIN 
-                        Employee e ON o.EmployeeID = e.EmployeeID
-                    ORDER BY 
-                        r.DateTime DESC";
-
-                SqlDataAdapter adapter = new SqlDataAdapter(query, connect);
-                DataTable dataTable = new DataTable();
-                adapter.Fill(dt);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error loading reservation report: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                connect.Close( );
-            }
-            return dt;
-        }
+        
 
         public DataTable LoadSalesReport(string year, string category)
         {

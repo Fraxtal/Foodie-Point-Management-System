@@ -52,6 +52,7 @@ namespace Foodie_Point_Management_System.Customer
             rbChi.Checked = false;
             rbMalay.Checked = false;
             rbIn.Checked = false;
+            rbBeverage.Checked = false;
             OrderMenuGrid.DataSource = session.LoadDatatable("SELECT FoodID, Name as \"Name\", CuisineType as \"Cuisine Type\", Price as \"Price (RM)\" FROM FoodMenu");
         }
 
@@ -87,6 +88,13 @@ namespace Foodie_Point_Management_System.Customer
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             OrderMenuGrid.DataSource = session.LoadDatatable($"Select FoodID, Name as \"Name\", CuisineType as \"Cuisine Type\", Price as \"Price (RM)\" from FoodMenu where name like '%{txtSearch.Text.Trim()}%'");
+        }
+
+        private void rbBeverage_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbBeverage.Checked)
+                OrderMenuGrid.DataSource = session.LoadDatatable("Select FoodID, Name as \"Name\", CuisineType as \"Cuisine Type\", price as \"Price (RM)\" from FoodMenu where CuisineType = 'Beverages'");
+
         }
     }
 }

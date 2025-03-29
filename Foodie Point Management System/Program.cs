@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Foodie_Point_Management_System.Customer;
+using Foodie_Point_Management_System.Manager;
 
 namespace Foodie_Point_Management_System
 {
@@ -17,7 +18,7 @@ namespace Foodie_Point_Management_System
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CustomerLogin());
+            Application.Run(new ManagerReservationsReport());
         }
     }
 }

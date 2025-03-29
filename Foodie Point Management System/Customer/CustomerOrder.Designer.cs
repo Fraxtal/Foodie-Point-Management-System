@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.btnOrderList = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnReset = new System.Windows.Forms.Button();
@@ -40,6 +39,7 @@
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.txtQuant = new System.Windows.Forms.Label();
+            this.rbBeverage = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.OrderMenuGrid)).BeginInit();
             this.SuspendLayout();
@@ -56,6 +56,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.rbBeverage);
             this.groupBox1.Controls.Add(this.btnReset);
             this.groupBox1.Controls.Add(this.rbIn);
             this.groupBox1.Controls.Add(this.rbMalay);
@@ -69,7 +70,7 @@
             // 
             // btnReset
             // 
-            this.btnReset.Location = new System.Drawing.Point(36, 155);
+            this.btnReset.Location = new System.Drawing.Point(36, 167);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(75, 23);
             this.btnReset.TabIndex = 3;
@@ -80,7 +81,7 @@
             // rbIn
             // 
             this.rbIn.AutoSize = true;
-            this.rbIn.Location = new System.Drawing.Point(21, 100);
+            this.rbIn.Location = new System.Drawing.Point(20, 100);
             this.rbIn.Name = "rbIn";
             this.rbIn.Size = new System.Drawing.Size(91, 17);
             this.rbIn.TabIndex = 2;
@@ -167,6 +168,18 @@
             this.txtQuant.TabIndex = 7;
             this.txtQuant.Text = "Quantity: ";
             // 
+            // rbBeverage
+            // 
+            this.rbBeverage.AutoSize = true;
+            this.rbBeverage.Location = new System.Drawing.Point(20, 132);
+            this.rbBeverage.Name = "rbBeverage";
+            this.rbBeverage.Size = new System.Drawing.Size(76, 17);
+            this.rbBeverage.TabIndex = 8;
+            this.rbBeverage.TabStop = true;
+            this.rbBeverage.Text = "Beverages";
+            this.rbBeverage.UseVisualStyleBackColor = true;
+            this.rbBeverage.CheckedChanged += new System.EventHandler(this.rbBeverage_CheckedChanged);
+            // 
             // CustomerOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -203,5 +216,6 @@
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label txtQuant;
+        private System.Windows.Forms.RadioButton rbBeverage;
     }
 }
