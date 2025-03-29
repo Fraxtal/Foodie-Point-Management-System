@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -26,6 +27,25 @@ namespace Foodie_Point_Management_System.Manager
         private void ManagerReservationsReport_Load(object sender, EventArgs e)
         {
             dataGridViewReservations.DataSource = session.LoadTable(query);
+
+            // Fill ComboBoxes based on data in database
+
+            string partyTypeQuery = "SELECT DISTINCT PartyType FROM Hall";
+            DataTable partyTypeData = session.LoadTable(partyTypeQuery);
+            cbPType.Items.Clear();
+            foreach (DataRow row in partyTypeData.Rows)
+            {
+                cbPType.Items.Add(row["PartyType"].ToString());
+            }
+
+            string yearQuery = "SELECT DISTINCT YEAR(DateTime) AS ReservationYear FROM Reservations ORDER BY ReservationYear";
+            DataTable yearData = session.LoadTable(yearQuery);
+            cbYear.Items.Clear();
+            foreach (DataRow row in yearData.Rows)
+            {
+                cbYear.Items.Add(row["ReservationYear"].ToString());
+            }
+
         }
 
         private void printReport_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
@@ -128,6 +148,25 @@ namespace Foodie_Point_Management_System.Manager
             ManagerDashboard managerDashboard = new ManagerDashboard();
             managerDashboard.Show();
             this.Hide();
+        }
+
+        private void cbYear_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            dataGridViewReservations.DataSource = session.ReservationFilterBox(cbPType,cbYear);
+        }
+
+        private void cbPType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            dataGridViewReservations.DataSource = session.ReservationFilterBox(cbPType, cbYear);
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            cbPType.SelectedIndex = -1;
+            cbYear.SelectedIndex = -1;
+            this.query = "SELECT YEAR(r.DateTime) AS Year, MONTH(r.DateTime) AS Month, h.PartyType, COUNT(r.ReservationID) AS ReservationCount, SUM(r.Pax) AS TotalPax FROM Reservations r JOIN Hall h ON r.HallID = h.HallID GROUP BY YEAR(r.DateTime), MONTH(r.DateTime), h.PartyType ORDER BY Year, Month, h.PartyType;";
+            dataGridViewReservations.DataSource = session.LoadTable(query);
+
         }
     }
 }

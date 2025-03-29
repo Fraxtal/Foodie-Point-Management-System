@@ -8,6 +8,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Collections.Specialized.BitVector32;
 
 namespace Foodie_Point_Management_System.Manager
 {
@@ -274,7 +275,7 @@ namespace Foodie_Point_Management_System.Manager
             }
             return result;
         }
-        
+
 
         public DataTable LoadSalesReport(string year, string category)
         {
@@ -350,6 +351,58 @@ namespace Foodie_Point_Management_System.Manager
                 }
             }
             return dt;
+        }
+
+        public DataTable ReservationFilterBox(ComboBox p, ComboBox y)
+        {
+            string selectedPartyType = p.SelectedItem?.ToString();
+            string selectedYear = y.SelectedItem?.ToString();
+
+            // Start the base query
+            string query = @"
+                            SELECT 
+                                YEAR(r.DateTime) AS Year, 
+                                MONTH(r.DateTime) AS Month, 
+                                h.PartyType, 
+                                COUNT(r.ReservationID) AS ReservationCount, 
+                                SUM(r.Pax) AS TotalPax
+                            FROM Reservations r
+                            JOIN Hall h ON r.HallID = h.HallID
+                            WHERE 1=1"; // Base condition (used for appending AND conditions)
+
+            // Add filter for PartyType if selected
+            if (!string.IsNullOrEmpty(selectedPartyType))
+            {
+                query += $" AND h.PartyType = '{selectedPartyType}'";
+            }
+
+            // Add filter for Year if selected
+            if (!string.IsNullOrEmpty(selectedYear))
+            {
+                if (int.TryParse(selectedYear, out int year))
+                {
+                    query += $" AND YEAR(r.DateTime) = {year}";  // Append the YEAR condition
+                }
+                else
+                {
+                    // Handle invalid year input (e.g., if it's not a valid integer)
+                    throw new ArgumentException("The year entered is not valid.");
+                }
+            }
+
+            // Add GROUP BY and ORDER BY clauses
+            query += @"
+                        GROUP BY YEAR(r.DateTime), MONTH(r.DateTime), h.PartyType
+                        ORDER BY Year, Month, h.PartyType";
+
+
+            // Set up the parameters for the query
+            using (SqlCommand command = new SqlCommand(query))
+            {
+
+                // Get the filtered data
+                return LoadTable(command.CommandText);
+            }
         }
     }
 }

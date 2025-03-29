@@ -102,6 +102,7 @@
             this.cbYear.Name = "cbYear";
             this.cbYear.Size = new System.Drawing.Size(109, 21);
             this.cbYear.TabIndex = 0;
+            this.cbYear.SelectedIndexChanged += new System.EventHandler(this.cbYear_SelectedIndexChanged);
             // 
             // printReport
             // 
@@ -164,6 +165,7 @@
             this.btnReset.TabIndex = 2;
             this.btnReset.Text = "Reset Filter";
             this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // label3
             // 
@@ -181,6 +183,7 @@
             this.cbPType.Name = "cbPType";
             this.cbPType.Size = new System.Drawing.Size(109, 21);
             this.cbPType.TabIndex = 4;
+            this.cbPType.SelectedIndexChanged += new System.EventHandler(this.cbPType_SelectedIndexChanged);
             // 
             // ManagerReservationsReport
             // 
