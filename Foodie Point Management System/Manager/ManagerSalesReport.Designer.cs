@@ -34,6 +34,7 @@
             this.gbSortBy = new System.Windows.Forms.GroupBox();
             this.cbYear = new System.Windows.Forms.ComboBox();
             this.srdw = new System.Windows.Forms.DataGridView();
+<<<<<<< HEAD
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnlNav = new System.Windows.Forms.Panel();
             this.btnReserD = new System.Windows.Forms.Button();
@@ -49,6 +50,13 @@
             this.label6 = new System.Windows.Forms.Label();
             this.lblExit = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+=======
+            this.btnPrint = new System.Windows.Forms.Button();
+            this.btnPreview = new System.Windows.Forms.Button();
+            this.btnReturn = new System.Windows.Forms.Button();
+            this.printReport = new System.Drawing.Printing.PrintDocument();
+            this.printPreview = new System.Windows.Forms.PrintDialog();
+>>>>>>> 66a1612653e6c948b04dcc409a25480793013a04
             this.gbSortBy.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.srdw)).BeginInit();
             this.panel1.SuspendLayout();
@@ -58,10 +66,17 @@
             // rbPaymentMethod
             // 
             this.rbPaymentMethod.AutoSize = true;
+<<<<<<< HEAD
             this.rbPaymentMethod.Location = new System.Drawing.Point(36, 155);
             this.rbPaymentMethod.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rbPaymentMethod.Name = "rbPaymentMethod";
             this.rbPaymentMethod.Size = new System.Drawing.Size(148, 24);
+=======
+            this.rbPaymentMethod.Location = new System.Drawing.Point(27, 128);
+            this.rbPaymentMethod.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rbPaymentMethod.Name = "rbPaymentMethod";
+            this.rbPaymentMethod.Size = new System.Drawing.Size(105, 17);
+>>>>>>> 66a1612653e6c948b04dcc409a25480793013a04
             this.rbPaymentMethod.TabIndex = 2;
             this.rbPaymentMethod.Text = "Payment Method";
             this.rbPaymentMethod.UseVisualStyleBackColor = true;
@@ -71,10 +86,15 @@
             // 
             this.rbMonthly.AutoSize = true;
             this.rbMonthly.Checked = true;
+<<<<<<< HEAD
             this.rbMonthly.Location = new System.Drawing.Point(36, 52);
             this.rbMonthly.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+=======
+            this.rbMonthly.Location = new System.Drawing.Point(41, 46);
+            this.rbMonthly.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+>>>>>>> 66a1612653e6c948b04dcc409a25480793013a04
             this.rbMonthly.Name = "rbMonthly";
-            this.rbMonthly.Size = new System.Drawing.Size(89, 24);
+            this.rbMonthly.Size = new System.Drawing.Size(62, 17);
             this.rbMonthly.TabIndex = 3;
             this.rbMonthly.TabStop = true;
             this.rbMonthly.Text = "Monthly";
@@ -84,10 +104,17 @@
             // rbEmployee
             // 
             this.rbEmployee.AutoSize = true;
+<<<<<<< HEAD
             this.rbEmployee.Location = new System.Drawing.Point(36, 101);
             this.rbEmployee.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rbEmployee.Name = "rbEmployee";
             this.rbEmployee.Size = new System.Drawing.Size(98, 24);
+=======
+            this.rbEmployee.Location = new System.Drawing.Point(41, 88);
+            this.rbEmployee.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rbEmployee.Name = "rbEmployee";
+            this.rbEmployee.Size = new System.Drawing.Size(71, 17);
+>>>>>>> 66a1612653e6c948b04dcc409a25480793013a04
             this.rbEmployee.TabIndex = 4;
             this.rbEmployee.Text = "Employee";
             this.rbEmployee.UseVisualStyleBackColor = true;
@@ -99,12 +126,20 @@
             this.gbSortBy.Controls.Add(this.rbMonthly);
             this.gbSortBy.Controls.Add(this.rbEmployee);
             this.gbSortBy.Controls.Add(this.rbPaymentMethod);
+<<<<<<< HEAD
             this.gbSortBy.Font = new System.Drawing.Font("Modern No. 20", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbSortBy.Location = new System.Drawing.Point(280, 92);
             this.gbSortBy.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gbSortBy.Name = "gbSortBy";
             this.gbSortBy.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gbSortBy.Size = new System.Drawing.Size(197, 264);
+=======
+            this.gbSortBy.Location = new System.Drawing.Point(21, 54);
+            this.gbSortBy.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbSortBy.Name = "gbSortBy";
+            this.gbSortBy.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbSortBy.Size = new System.Drawing.Size(144, 240);
+>>>>>>> 66a1612653e6c948b04dcc409a25480793013a04
             this.gbSortBy.TabIndex = 6;
             this.gbSortBy.TabStop = false;
             this.gbSortBy.Text = "Sort By :";
@@ -112,10 +147,17 @@
             // cbYear
             // 
             this.cbYear.FormattingEnabled = true;
+<<<<<<< HEAD
             this.cbYear.Location = new System.Drawing.Point(39, 211);
             this.cbYear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbYear.Name = "cbYear";
             this.cbYear.Size = new System.Drawing.Size(108, 28);
+=======
+            this.cbYear.Location = new System.Drawing.Point(29, 172);
+            this.cbYear.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbYear.Name = "cbYear";
+            this.cbYear.Size = new System.Drawing.Size(82, 21);
+>>>>>>> 66a1612653e6c948b04dcc409a25480793013a04
             this.cbYear.TabIndex = 8;
             this.cbYear.SelectedIndexChanged += new System.EventHandler(this.cbYear_SelectedIndexChanged);
             // 
@@ -124,6 +166,7 @@
             this.srdw.AllowUserToAddRows = false;
             this.srdw.AllowUserToDeleteRows = false;
             this.srdw.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+<<<<<<< HEAD
             this.srdw.Location = new System.Drawing.Point(508, 45);
             this.srdw.Margin = new System.Windows.Forms.Padding(4);
             this.srdw.Name = "srdw";
@@ -323,6 +366,66 @@
             this.Name = "ManagerSalesReport";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmAdminSalesReport";
+=======
+            this.srdw.Location = new System.Drawing.Point(193, 36);
+            this.srdw.Name = "srdw";
+            this.srdw.ReadOnly = true;
+            this.srdw.RowHeadersWidth = 62;
+            this.srdw.Size = new System.Drawing.Size(485, 258);
+            this.srdw.TabIndex = 7;
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.Location = new System.Drawing.Point(433, 319);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(93, 38);
+            this.btnPrint.TabIndex = 13;
+            this.btnPrint.Text = "Print Report";
+            this.btnPrint.UseVisualStyleBackColor = true;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            // 
+            // btnPreview
+            // 
+            this.btnPreview.Location = new System.Drawing.Point(302, 319);
+            this.btnPreview.Name = "btnPreview";
+            this.btnPreview.Size = new System.Drawing.Size(98, 38);
+            this.btnPreview.TabIndex = 12;
+            this.btnPreview.Text = "Print Preview";
+            this.btnPreview.UseVisualStyleBackColor = true;
+            this.btnPreview.Click += new System.EventHandler(this.btnPreview_Click);
+            // 
+            // btnReturn
+            // 
+            this.btnReturn.Location = new System.Drawing.Point(171, 319);
+            this.btnReturn.Name = "btnReturn";
+            this.btnReturn.Size = new System.Drawing.Size(93, 38);
+            this.btnReturn.TabIndex = 11;
+            this.btnReturn.Text = "Return";
+            this.btnReturn.UseVisualStyleBackColor = true;
+            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
+            // 
+            // printReport
+            // 
+            this.printReport.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printReport_PrintPage);
+            // 
+            // printPreview
+            // 
+            this.printPreview.UseEXDialog = true;
+            // 
+            // ManagerSalesReport
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(709, 383);
+            this.Controls.Add(this.btnPrint);
+            this.Controls.Add(this.btnPreview);
+            this.Controls.Add(this.btnReturn);
+            this.Controls.Add(this.srdw);
+            this.Controls.Add(this.gbSortBy);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Name = "ManagerSalesReport";
+            this.Text = "Manager Sales Report";
+>>>>>>> 66a1612653e6c948b04dcc409a25480793013a04
             this.Load += new System.EventHandler(this.frmAdminSalesReport_Load);
             this.gbSortBy.ResumeLayout(false);
             this.gbSortBy.PerformLayout();
@@ -342,6 +445,7 @@
         private System.Windows.Forms.GroupBox gbSortBy;
         private System.Windows.Forms.DataGridView srdw;
         private System.Windows.Forms.ComboBox cbYear;
+<<<<<<< HEAD
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnReserD;
         private System.Windows.Forms.Button btnSalesReportD;
@@ -357,5 +461,12 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lblExit;
         private System.Windows.Forms.Label label1;
+=======
+        private System.Windows.Forms.Button btnPrint;
+        private System.Windows.Forms.Button btnPreview;
+        private System.Windows.Forms.Button btnReturn;
+        private System.Drawing.Printing.PrintDocument printReport;
+        private System.Windows.Forms.PrintDialog printPreview;
+>>>>>>> 66a1612653e6c948b04dcc409a25480793013a04
     }
 }

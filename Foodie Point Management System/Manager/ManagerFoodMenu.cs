@@ -7,19 +7,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Collections.Specialized.BitVector32;
 
 namespace Foodie_Point_Management_System.Manager
 {
     public partial class ManagerFoodMenu : Form
     {
-        private EmManager manager = new EmManager();
-        public ManagerFoodMenu()
+        private EmManager manager;
+        public ManagerFoodMenu(EmManager s)
         {
             InitializeComponent();
+<<<<<<< HEAD
             pnlNav.Height = btnMenuD.Height;
             pnlNav.Top = btnMenuD.Top;
             pnlNav.Left = btnMenuD.Left;
 
+=======
+            this.manager = s;
+>>>>>>> 66a1612653e6c948b04dcc409a25480793013a04
         }
         private void ManagerMenu_Load(object sender, EventArgs e)
         {

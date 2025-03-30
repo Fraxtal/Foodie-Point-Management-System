@@ -14,13 +14,14 @@ namespace Foodie_Point_Management_System.Admin
 {
     public partial class frmAdminUserManagement : Form
     {
-        emAdmin session = new emAdmin();
+        emAdmin session;
 
         string table = "Customer";
 
-        public frmAdminUserManagement()
+        public frmAdminUserManagement(emAdmin s)
         {
             InitializeComponent();
+            this.session = s;
         }
 
         private void frmUserManagement_Load(object sender, EventArgs e)

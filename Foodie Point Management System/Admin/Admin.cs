@@ -11,15 +11,18 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Foodie_Point_Management_System.Employee_Login;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Foodie_Point_Management_System.Admin
 {
-    public class emAdmin
+    public class emAdmin : Employee
     {
 
         static SqlConnection connect = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString());
+
+        public emAdmin(int ei, string eu, string ef, string er) : base(ei, eu, ef, er) { }
 
         public DataTable LoadDatatable(string query)
         {

@@ -9,12 +9,15 @@ using System.Threading.Tasks;
 using System.Security.Cryptography;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using Foodie_Point_Management_System.Employee_Login;
 
 namespace Foodie_Point_Management_System.ReservationCoordinator
 {
-    internal class ReservationCoordinator
+    public class ReservationCoord : Employee
     {
         static SqlConnection connect = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString());
+
+        public ReservationCoord(int ei, string eu, string ef, string er) : base(ei, eu, ef, er) { }
 
         //display reservation list in table
         public object ReservationTable(string input)

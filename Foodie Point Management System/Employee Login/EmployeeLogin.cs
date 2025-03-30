@@ -10,6 +10,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Collections.Specialized.BitVector32;
 using Foodie_Point_Management_System.Chef;
+using Foodie_Point_Management_System.Admin;
+using Foodie_Point_Management_System.Manager;
+using Foodie_Point_Management_System.ReservationCoordinator;
 
 namespace Foodie_Point_Management_System.Employee_Login
 {
@@ -71,9 +74,10 @@ namespace Foodie_Point_Management_System.Employee_Login
                 {
                     case "Admin":
                         {
+                            emAdmin sessionChef = new emAdmin(sessionE.Id, sessionE.Username, sessionE.Fullname, sessionE.Role);
                             MessageBox.Show(msg, "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            //AdminDashboard aDash = new AdminDashboard(sessionE);
-                            //aDash.Show();
+                            AdminDashboard aDash = new AdminDashboard(sessionE);
+                            aDash.Show();
                             this.Hide();
                             break;
                         }
@@ -90,18 +94,20 @@ namespace Foodie_Point_Management_System.Employee_Login
 
                     case "Manager":
                         {
+                            EmManager sessionChef = new EmManager(sessionE.Id, sessionE.Username, sessionE.Fullname, sessionE.Role);
                             MessageBox.Show(msg, "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            //ManagerDashboard mDash = new ManagerDashboard(sessionE);
-                            //mDash.Show();
+                            ManagerDashboard mDash = new ManagerDashboard(sessionE);
+                            mDash.Show();
                             this.Hide();
                             break;
                         }
 
                     case "Reservation Coordinator":
                         {
+                            ReservationCoord session = new ReservationCoord(sessionE.Id, sessionE.Username, sessionE.Fullname, sessionE.Role);
                             MessageBox.Show(msg, "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            //ReservationCoordinatorDashboard rDash = new ReservationCoordinatorDashboard(sessionE);
-                            //rDash.Show();
+                            ReservationCoordinatorDashboard rDash = new ReservationCoordinatorDashboard(sessionE);
+                            rDash.Show();
                             this.Hide();
                             break;
                         }

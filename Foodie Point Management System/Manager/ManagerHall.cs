@@ -12,13 +12,17 @@ namespace Foodie_Point_Management_System.Manager
 {
     public partial class ManagerHall : Form
     {
-        private EmManager manager = new EmManager();
-        public ManagerHall()
+        EmManager manager;
+        public ManagerHall(EmManager s)
         {
             InitializeComponent();
+<<<<<<< HEAD
             pnlNav.Height = btnHallsD.Height;
             pnlNav.Top = btnHallsD.Top;
             pnlNav.Left = btnHallsD.Left;
+=======
+            this.manager = s;
+>>>>>>> 66a1612653e6c948b04dcc409a25480793013a04
         }
 
         private void btnAdd_Click(object sender, EventArgs e)

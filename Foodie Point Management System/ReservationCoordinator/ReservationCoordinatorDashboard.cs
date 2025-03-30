@@ -12,11 +12,12 @@ namespace Foodie_Point_Management_System.ReservationCoordinator
 {
     public partial class ReservationCoordinatorDashboard : Form
     {
-        ReservationCoordinator rc = new ReservationCoordinator();
+        ReservationCoord rc;
 
-        public ReservationCoordinatorDashboard()
+        public ReservationCoordinatorDashboard(ReservationCoord s)
         {
             InitializeComponent();
+            this.rc = s;
         }
 
         private void lblupcoming_Click(object sender, EventArgs e)
@@ -35,7 +36,7 @@ namespace Foodie_Point_Management_System.ReservationCoordinator
 
         private void lnkmanage_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            ManageReservations manageReservation = new ManageReservations();
+            ManageReservations manageReservation = new ManageReservations(rc);
             manageReservation.Show();
         }
 
@@ -47,7 +48,7 @@ namespace Foodie_Point_Management_System.ReservationCoordinator
 
         private void lnkcustomer_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            CustomerRequest customerRequest = new CustomerRequest();
+            CustomerRequest customerRequest = new CustomerRequest(rc);
             customerRequest.Show();
         }
 

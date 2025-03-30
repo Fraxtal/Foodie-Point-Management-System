@@ -14,10 +14,11 @@ namespace Foodie_Point_Management_System.ReservationCoordinator
 {
     public partial class CustomerRequest : Form
     {
-        ReservationCoordinator resManager = new ReservationCoordinator();
-        public CustomerRequest()
+        ReservationCoord rc;
+        public CustomerRequest(ReservationCoord s)
         {
             InitializeComponent();
+            this.rc = s;
         }
 
         
@@ -29,7 +30,7 @@ namespace Foodie_Point_Management_System.ReservationCoordinator
 
         private void CustomerRequest_Load(object sender, EventArgs e)
         {
-            DGVcusMSG.DataSource = resManager.ReservationTable("SELECT * FROM ReservationMessage");
+            DGVcusMSG.DataSource = rc.ReservationTable("SELECT * FROM ReservationMessage");
         }
 
         private void btnApprove_Click(object sender, EventArgs e)
@@ -57,7 +58,7 @@ namespace Foodie_Point_Management_System.ReservationCoordinator
 
             string msgID = DGVcusMSG.CurrentRow.Cells[0].Value.ToString();
 
-            string rcresponse = resManager.RCRequests(msgID, txtResponse.Text);
+            string rcresponse = rc.RCRequests(msgID, txtResponse.Text);
 
             if (rcresponse == "Reply submitted.")
             {
@@ -67,7 +68,7 @@ namespace Foodie_Point_Management_System.ReservationCoordinator
             {
                 MessageBox.Show(rcresponse, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            DGVcusMSG.DataSource = resManager.ReservationTable("SELECT * FROM ReservationMessage");
+            DGVcusMSG.DataSource = rc.ReservationTable("SELECT * FROM ReservationMessage");
         }
 
         private void label5_Click(object sender, EventArgs e)
