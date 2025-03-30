@@ -102,9 +102,6 @@ namespace Foodie_Point_Management_System.Manager
 
             float pageWidth = e.PageBounds.Width;
 
-            int totalR = 0;
-            int totalP = 0;
-
             float x = 70;
             float y = 50;
             float lineHeight = font.GetHeight(g) + 4;
