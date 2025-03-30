@@ -7,16 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Collections.Specialized.BitVector32;
 
 namespace Foodie_Point_Management_System.Manager
 {
     public partial class ManagerFoodMenu : Form
     {
-        private EmManager manager = new EmManager();
-        public ManagerFoodMenu()
+        private EmManager manager;
+        public ManagerFoodMenu(EmManager s)
         {
             InitializeComponent();
-            
+            this.manager = s;
         }
         private void ManagerMenu_Load(object sender, EventArgs e)
         {

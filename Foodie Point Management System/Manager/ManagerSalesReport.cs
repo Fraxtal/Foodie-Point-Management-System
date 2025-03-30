@@ -14,10 +14,11 @@ namespace Foodie_Point_Management_System.Manager
 {
     public partial class ManagerSalesReport : Form
     {
-        EmManager session = new EmManager();
-        public ManagerSalesReport()
+        EmManager session;
+        public ManagerSalesReport(EmManager s)
         {
             InitializeComponent();
+            this.session = s;
         }
 
         private void frmAdminSalesReport_Load(object sender, EventArgs e)
@@ -76,7 +77,7 @@ namespace Foodie_Point_Management_System.Manager
 
         private void btnReturn_Click(object sender, EventArgs e)
         {
-            ManagerDashboard managerDashboard = new ManagerDashboard();
+            ManagerDashboard managerDashboard = new ManagerDashboard(session);
             managerDashboard.Show();
             this.Hide();
         }

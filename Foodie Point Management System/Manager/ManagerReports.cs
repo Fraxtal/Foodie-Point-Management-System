@@ -12,9 +12,12 @@ namespace Foodie_Point_Management_System.Manager
 {
     public partial class ManagerReports : Form
     {
-        public ManagerReports()
+        EmManager manager;
+
+        public ManagerReports(EmManager s)
         {
             InitializeComponent();
+            this.manager = s;
         }
 
         private void btnsales_Click(object sender, EventArgs e)
@@ -23,14 +26,14 @@ namespace Foodie_Point_Management_System.Manager
 
         private void btnreservations_Click(object sender, EventArgs e)
         {
-            ManagerReservationsReport reservationsReport = new ManagerReservationsReport();
+            ManagerReservationsReport reservationsReport = new ManagerReservationsReport(manager);
             reservationsReport.Show();
             this.Hide();
         }
 
         private void btnReturn_Click(object sender, EventArgs e)
         {
-            ManagerDashboard dashboard = new ManagerDashboard();
+            ManagerDashboard dashboard = new ManagerDashboard(manager);
             dashboard.Show();
             this.Close();
         }

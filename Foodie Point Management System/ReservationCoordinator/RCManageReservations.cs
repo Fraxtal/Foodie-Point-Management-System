@@ -13,20 +13,21 @@ namespace Foodie_Point_Management_System.ReservationCoordinator
 {
     public partial class ManageReservations : Form
     {
-        ReservationCoordinator resManager = new ReservationCoordinator();
-        public ManageReservations()
+        ReservationCoord rc;
+        public ManageReservations(ReservationCoord s)
         {
             InitializeComponent();
+            this.rc = s;
         }
    
         private void ManageReservations_Load(object sender, EventArgs e)
         {
-            List<string> res = resManager.ReservationCount();
+            List<string> res = rc.ReservationCount();
             lblConfirmed.Text = res[1];
             lblPending.Text = res[0];
             lblCancelled.Text = res[2];
 
-            DGVReservations.DataSource = resManager.ReservationTable("SELECT * FROM Reservations");
+            DGVReservations.DataSource = rc.ReservationTable("SELECT * FROM Reservations");
 
             dtpDate.Value = DateTime.Today;
         }
@@ -49,17 +50,17 @@ namespace Foodie_Point_Management_System.ReservationCoordinator
             if (string.IsNullOrEmpty(txtName.Text) || string.IsNullOrEmpty(cmbStatus.Text) || string.IsNullOrEmpty(txtPax.Text))
             {
                 MessageBox.Show("Please fill in all blanks.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                DGVReservations.DataSource = resManager.ReservationTable("SELECT * FROM Reservations");
+                DGVReservations.DataSource = rc.ReservationTable("SELECT * FROM Reservations");
                 return;
             }
             if (DGVReservations.Rows.Count == 0)
             {
                 MessageBox.Show("No reservations found for the selected date and time.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                DGVReservations.DataSource = resManager.ReservationTable("SELECT * FROM Reservations");
+                DGVReservations.DataSource = rc.ReservationTable("SELECT * FROM Reservations");
                 return;
             }
 
-            var search = resManager.ReservationSearch(txtName.Text, cmbStatus.Text, dtpDate.Value, int.Parse(txtPax.Text));
+            var search = rc.ReservationSearch(txtName.Text, cmbStatus.Text, dtpDate.Value, int.Parse(txtPax.Text));
             
             DGVReservations.DataSource = search;
         }
@@ -82,15 +83,15 @@ namespace Foodie_Point_Management_System.ReservationCoordinator
                 return;
             }
            
-            int hallID = resManager.AssignHall(int.Parse(txtPax.Text), dtpDate.Value);
+            int hallID = rc.AssignHall(int.Parse(txtPax.Text), dtpDate.Value);
             if (hallID == -1)
             {
                 MessageBox.Show("No available hall for the selected date and party size.", "No Availability", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            MessageBox.Show(resManager.ReservationAdd(txtName.Text, cmbStatus.Text, hallID.ToString(), dtpDate.Value, int.Parse(txtPax.Text)));
-            DGVReservations.DataSource = resManager.ReservationTable("SELECT * FROM Reservations");
+            MessageBox.Show(rc.ReservationAdd(txtName.Text, cmbStatus.Text, hallID.ToString(), dtpDate.Value, int.Parse(txtPax.Text)));
+            DGVReservations.DataSource = rc.ReservationTable("SELECT * FROM Reservations");
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -109,7 +110,7 @@ namespace Foodie_Point_Management_System.ReservationCoordinator
 
             string delete = DGVReservations.CurrentRow.Cells[0].Value.ToString();
             {
-                MessageBox.Show(resManager.ReservationDelete(Convert.ToInt32(delete)));
+                MessageBox.Show(rc.ReservationDelete(Convert.ToInt32(delete)));
                 DGVReservations.Rows.RemoveAt(DGVReservations.CurrentRow.Index);
                 txtName.Clear();
                 txtresID.Clear();
@@ -120,7 +121,7 @@ namespace Foodie_Point_Management_System.ReservationCoordinator
                 DGVReservations.CurrentCell = null;
             }
 
-            DGVReservations.DataSource = resManager.ReservationTable("SELECT * FROM Reservations");
+            DGVReservations.DataSource = rc.ReservationTable("SELECT * FROM Reservations");
         }
 
         private void lblConfirmed_Click(object sender, EventArgs e)
@@ -175,9 +176,9 @@ namespace Foodie_Point_Management_System.ReservationCoordinator
                 MessageBox.Show("Number of guests must be a postive number.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            MessageBox.Show(resManager.ReservationEdit(txtName.Text, cmbStatus.Text, txtHall.Text, dtpDate.Value, int.Parse(txtPax.Text), int.Parse(txtresID.Text)));
+            MessageBox.Show(rc.ReservationEdit(txtName.Text, cmbStatus.Text, txtHall.Text, dtpDate.Value, int.Parse(txtPax.Text), int.Parse(txtresID.Text)));
 
-            DGVReservations.DataSource = resManager.ReservationTable("SELECT * FROM Reservations");
+            DGVReservations.DataSource = rc.ReservationTable("SELECT * FROM Reservations");
         }
 
         private void btnReply_Click(object sender, EventArgs e)
@@ -215,7 +216,7 @@ namespace Foodie_Point_Management_System.ReservationCoordinator
             cmbStatus.SelectedIndex = -1;
             DGVReservations.CurrentCell = null;
 
-            DGVReservations.DataSource = resManager.ReservationTable("SELECT * FROM Reservations");
+            DGVReservations.DataSource = rc.ReservationTable("SELECT * FROM Reservations");
         }
     }
 }

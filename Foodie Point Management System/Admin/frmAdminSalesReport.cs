@@ -15,10 +15,11 @@ namespace Foodie_Point_Management_System.Admin
 {
     public partial class frmAdminSalesReport : Form
     {
-        emAdmin session = new emAdmin();
-        public frmAdminSalesReport()
+        emAdmin session;
+        public frmAdminSalesReport(emAdmin s)
         {
             InitializeComponent();
+            this.session = s;
         }
 
         private void frmAdminSalesReport_Load(object sender, EventArgs e)

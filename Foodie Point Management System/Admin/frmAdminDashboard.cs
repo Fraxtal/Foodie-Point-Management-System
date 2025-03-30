@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Foodie_Point_Management_System.ReservationCoordinator;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,28 +13,31 @@ namespace Foodie_Point_Management_System.Admin
 {
     public partial class frmAdminDashboard : Form
     {
-        public frmAdminDashboard()
+        emAdmin session;
+
+        public frmAdminDashboard(emAdmin s)
         {
             InitializeComponent();
+            this.session = s;
         }
 
         private void linklblUserManagement_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            frmAdminUserManagement UserManagement = new frmAdminUserManagement();
+            frmAdminUserManagement UserManagement = new frmAdminUserManagement(session);
             UserManagement.Show();
             this.Hide();
         }
 
         private void linklblSalesReport_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            frmAdminSalesReport SalesReport = new frmAdminSalesReport();
+            frmAdminSalesReport SalesReport = new frmAdminSalesReport(session);
             SalesReport.Show();
             this.Hide();
         }
 
         private void linklblViewFeeback_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            frmAdminFeedback Feedback = new frmAdminFeedback();
+            frmAdminFeedback Feedback = new frmAdminFeedback(session);
             Feedback.Show();
             this.Hide();
         }
@@ -45,21 +49,21 @@ namespace Foodie_Point_Management_System.Admin
 
         private void btnUserManagement_Click(object sender, EventArgs e)
         {
-            frmAdminUserManagement UserManagement = new frmAdminUserManagement();
+            frmAdminUserManagement UserManagement = new frmAdminUserManagement(session);
             UserManagement.Show();
             this.Hide();
         }
 
         private void btnFeedback_Click(object sender, EventArgs e)
         {
-            frmAdminFeedback Feedback = new frmAdminFeedback();
+            frmAdminFeedback Feedback = new frmAdminFeedback(session);
             Feedback.Show();
             this.Hide();
         }
 
         private void btnSalesReport_Click(object sender, EventArgs e)
         {
-            frmAdminSalesReport SalesReport = new frmAdminSalesReport();
+            frmAdminSalesReport SalesReport = new frmAdminSalesReport(session);
             SalesReport.Show();
             this.Hide();
         }

@@ -12,11 +12,12 @@ namespace Foodie_Point_Management_System.Admin
 {
     public partial class frmAdminFeedback : Form
     {
-        emAdmin session = new emAdmin();
+        emAdmin session;
 
-        public frmAdminFeedback()
+        public frmAdminFeedback(emAdmin s)
         {
             InitializeComponent();
+            this.session = s;
         }
 
         private void unreadfeedbacks_Load(object sender, EventArgs e)

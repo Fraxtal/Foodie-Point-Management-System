@@ -12,28 +12,30 @@ namespace Foodie_Point_Management_System.Manager
 {
     public partial class ManagerDashboard : Form
     {
-        public ManagerDashboard()
+        EmManager session;
+        public ManagerDashboard(EmManager s)
         {
             InitializeComponent();
+            this.session = s;
         }
 
         private void llblmenu_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            ManagerFoodMenu managerMenu = new ManagerFoodMenu();
+            ManagerFoodMenu managerMenu = new ManagerFoodMenu(session);
             managerMenu.Show();
             this.Hide();
         }
 
         private void llblhalls_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            ManagerHall listOfHalls = new ManagerHall();
+            ManagerHall listOfHalls = new ManagerHall(session);
             listOfHalls.Show();
             this.Hide();
         }
 
         private void llblreports_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            ManagerReports reports = new ManagerReports();
+            ManagerReports reports = new ManagerReports(session);
             reports.Show();
             this.Hide();
         }
@@ -49,14 +51,14 @@ namespace Foodie_Point_Management_System.Manager
 
         private void llblReservations_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            ManagerReservationsReport reservations = new ManagerReservationsReport();
+            ManagerReservationsReport reservations = new ManagerReservationsReport(session);
             reservations.Show();
             this.Hide();
         }
 
         private void btnMenu_Click(object sender, EventArgs e)
         {
-            ManagerFoodMenu menu = new ManagerFoodMenu();
+            ManagerFoodMenu menu = new ManagerFoodMenu(session);
             menu.Show();
             this.Hide();
         }
@@ -67,14 +69,14 @@ namespace Foodie_Point_Management_System.Manager
 
         private void btnHalls_Click(object sender, EventArgs e)
         {
-            ManagerHall halls = new ManagerHall();
+            ManagerHall halls = new ManagerHall(session);
             halls.Show();
             this.Hide();
         }
 
         private void btnReservations_Click(object sender, EventArgs e)
         {
-            ManagerReservationsReport reservations = new ManagerReservationsReport();
+            ManagerReservationsReport reservations = new ManagerReservationsReport(session);
             reservations.Show();
             this.Hide();
         }

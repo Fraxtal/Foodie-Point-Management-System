@@ -15,13 +15,14 @@ namespace Foodie_Point_Management_System.Manager
 {
     public partial class ManagerReservationsReport : Form
     {
-        EmManager session = new EmManager();
+        EmManager session;
 
         string query = "SELECT YEAR(r.DateTime) AS Year, MONTH(r.DateTime) AS Month, h.PartyType, COUNT(r.ReservationID) AS ReservationCount, SUM(r.Pax) AS TotalPax FROM Reservations r JOIN Hall h ON r.HallID = h.HallID GROUP BY YEAR(r.DateTime), MONTH(r.DateTime), h.PartyType ORDER BY Year, Month, h.PartyType;";
 
-        public ManagerReservationsReport()
+        public ManagerReservationsReport(EmManager s)
         {
             InitializeComponent();
+            this.session = s;
         }
 
         private void ManagerReservationsReport_Load(object sender, EventArgs e)

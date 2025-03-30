@@ -13,7 +13,7 @@ using Foodie_Point_Management_System.Employee_Login;
 
 namespace Foodie_Point_Management_System.ReservationCoordinator
 {
-    internal class ReservationCoord : Employee
+    public class ReservationCoord : Employee
     {
         static SqlConnection connect = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString());
 
