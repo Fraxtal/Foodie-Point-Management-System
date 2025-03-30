@@ -165,6 +165,7 @@ namespace Foodie_Point_Management_System.Manager
 
         private void lblHall_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
 
         }
 
@@ -245,6 +246,11 @@ namespace Foodie_Point_Management_System.Manager
         private void lbl_Click(object sender, EventArgs e)
         {
 
+=======
+            ManagerDashboard dashboard = new ManagerDashboard(manager);
+            dashboard.Show();
+            this.Close();
+>>>>>>> ab9a506878f63e35a0628d84f339fb54244c9948
         }
     }
 }

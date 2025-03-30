@@ -150,6 +150,16 @@ namespace Foodie_Point_Management_System.Manager
             }
         }
 
+<<<<<<< HEAD
+=======
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            ManagerDashboard managerDashboard = new ManagerDashboard(session);
+            managerDashboard.Show();
+            this.Hide();
+        }
+
+>>>>>>> ab9a506878f63e35a0628d84f339fb54244c9948
         private void cbYear_SelectedIndexChanged(object sender, EventArgs e)
         {
             dataGridViewReservations.DataSource = session.ReservationFilterBox(cbPType,cbYear);

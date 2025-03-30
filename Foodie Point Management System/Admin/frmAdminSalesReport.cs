@@ -72,8 +72,8 @@ namespace Foodie_Point_Management_System.Admin
 
         private void btnReturn_Click(object sender, EventArgs e)
         {
-            ManagerDashboard managerDashboard = new ManagerDashboard();
-            managerDashboard.Show();
+            frmAdminDashboard admindashboard = new frmAdminDashboard(session);
+            admindashboard.Show();
             this.Hide();
         }
 

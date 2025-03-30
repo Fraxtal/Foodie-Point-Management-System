@@ -166,6 +166,7 @@ namespace Foodie_Point_Management_System.Manager
 
         private void lblMenu_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
 
         }
 
@@ -246,6 +247,11 @@ namespace Foodie_Point_Management_System.Manager
             pnlNav.Height = btnSalesReportD.Height;
             pnlNav.Top = btnSalesReportD.Top;
             pnlNav.Left = btnSalesReportD.Left;
+=======
+            ManagerDashboard dashboard = new ManagerDashboard(manager);
+            dashboard.Show();
+            this.Close();
+>>>>>>> ab9a506878f63e35a0628d84f339fb54244c9948
         }
     }
 }
