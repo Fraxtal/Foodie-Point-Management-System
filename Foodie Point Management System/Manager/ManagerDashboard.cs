@@ -14,7 +14,6 @@ namespace Foodie_Point_Management_System.Manager
 {
     public partial class ManagerDashboard : Form
     {
-<<<<<<< HEAD
         [DllImport("gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn(
     int nLeftRect,
@@ -23,20 +22,21 @@ namespace Foodie_Point_Management_System.Manager
     int nBottomRect,
     int nWidthEllipse,
     int nHeightEllipse
-);
-        public ManagerDashboard()
-        {
-            InitializeComponent();
-            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
-            pnlNav.Height = btnDash.Height;
-            pnlNav.Top = btnDash.Top;
-            pnlNav.Left = btnDash.Left;
-=======
+            );
+
         EmManager session;
         public ManagerDashboard(EmManager s)
         {
             InitializeComponent();
             this.session = s;
+
+            // Apply rounded corners (from HEAD)
+            Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
+
+            // Initialize UI navigation (from HEAD)
+            pnlNav.Height = btnDash.Height;
+            pnlNav.Top = btnDash.Top;
+            pnlNav.Left = btnDash.Left;
         }
 
         private void llblmenu_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -53,22 +53,11 @@ namespace Foodie_Point_Management_System.Manager
             this.Hide();
         }
 
-        private void llblreports_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            ManagerReports reports = new ManagerReports(session);
-            reports.Show();
-            this.Hide();
-        }
-
         private void llblsettings_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-                    }
-
-        private void lblsalesamount_Click(object sender, EventArgs e)
-        {
-            
->>>>>>> 66a1612653e6c948b04dcc409a25480793013a04
+        
         }
+
 
         private void llblReservations_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -86,7 +75,7 @@ namespace Foodie_Point_Management_System.Manager
 
         private void btnSales_Click(object sender, EventArgs e)
         {
-            ManagerSalesReport sales = new ManagerSalesReport();
+            ManagerSalesReport sales = new ManagerSalesReport(session);
             sales.Show();
             this.Hide();
         }
@@ -125,7 +114,7 @@ namespace Foodie_Point_Management_System.Manager
 
         private void btnMenuD_Click(object sender, EventArgs e)
         {
-            ManagerFoodMenu managerMenu = new ManagerFoodMenu();
+            ManagerFoodMenu managerMenu = new ManagerFoodMenu(session);
             managerMenu.Show();
             this.Hide();
             pnlNav.Height = btnMenuD.Height;
@@ -135,7 +124,7 @@ namespace Foodie_Point_Management_System.Manager
 
         private void btnHallsD_Click(object sender, EventArgs e)
         {
-            ManagerHall listOfHalls = new ManagerHall();
+            ManagerHall listOfHalls = new ManagerHall(session);
             listOfHalls.Show();
             this.Hide();
             pnlNav.Height = btnHallsD.Height;
@@ -163,21 +152,21 @@ namespace Foodie_Point_Management_System.Manager
 
         private void btnDash_Click(object sender, EventArgs e)
         {
-            ManagerDashboard dash = new ManagerDashboard();
+            ManagerDashboard dash = new ManagerDashboard(session);
             dash.Show();
             this.Hide();
         }
 
         private void btnReserD_Click(object sender, EventArgs e)
         {
-            ManagerReservationsReport reservation = new ManagerReservationsReport();
+            ManagerReservationsReport reservation = new ManagerReservationsReport(session);
             reservation.Show();
             this.Hide();
         }
 
         private void btnSalesReportD_Click(object sender, EventArgs e)
         {
-            ManagerSalesReport sales = new ManagerSalesReport();
+            ManagerSalesReport sales = new ManagerSalesReport(session);
             sales.Show();
             this.Hide();
             pnlNav.Height = btnSalesReportD.Height;
