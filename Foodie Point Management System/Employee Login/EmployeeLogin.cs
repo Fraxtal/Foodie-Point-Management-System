@@ -112,5 +112,23 @@ namespace Foodie_Point_Management_System.Employee_Login
                 MessageBox.Show(msg, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void EmployeeLogin_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblExit_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show($"Close the application?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
+
+        private void lblInputs_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

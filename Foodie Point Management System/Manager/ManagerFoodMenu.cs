@@ -16,7 +16,10 @@ namespace Foodie_Point_Management_System.Manager
         public ManagerFoodMenu()
         {
             InitializeComponent();
-            
+            pnlNav.Height = btnMenuD.Height;
+            pnlNav.Top = btnMenuD.Top;
+            pnlNav.Left = btnMenuD.Left;
+
         }
         private void ManagerMenu_Load(object sender, EventArgs e)
         {
@@ -156,11 +159,88 @@ namespace Foodie_Point_Management_System.Manager
             }
         }
 
-        private void btnReturn_Click(object sender, EventArgs e)
+        private void lblMenu_Click(object sender, EventArgs e)
         {
-            ManagerDashboard dashboard = new ManagerDashboard();
-            dashboard.Show();
-            this.Close();
+
+        }
+
+        private void btnMenuD_Click(object sender, EventArgs e)
+        {
+            ManagerFoodMenu managerMenu = new ManagerFoodMenu();
+            managerMenu.Show();
+            this.Hide();
+            pnlNav.Height = btnMenuD.Height;
+            pnlNav.Top = btnMenuD.Top;
+            pnlNav.Left = btnMenuD.Left;
+        }
+
+        private void btnHallsD_Click(object sender, EventArgs e)
+        {
+            ManagerHall listOfHalls = new ManagerHall();
+            listOfHalls.Show();
+            this.Hide();
+            pnlNav.Height = btnHallsD.Height;
+            pnlNav.Top = btnHallsD.Top;
+            pnlNav.Left = btnHallsD.Left;
+        }
+
+
+        private void btnSettings_Click(object sender, EventArgs e)
+        {
+            //frmEmployeeProfileSettings settings = new frmEmployeeProfileSettings();
+            //settings.Show();
+            //this.Hide();
+            pnlNav.Height = btnSettings.Height;
+            pnlNav.Top = btnSettings.Top;
+            pnlNav.Left = btnSettings.Left;
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show($"Log out?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
+
+        private void btnDash_Click(object sender, EventArgs e)
+        {
+            ManagerDashboard dash = new ManagerDashboard();
+            dash.Show();
+            this.Hide();
+        }
+
+        private void lblExit_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show($"Close the application?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
+
+        private void lblPrice_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnReserD_Click(object sender, EventArgs e)
+        {
+            ManagerReservationsReport reservation = new ManagerReservationsReport();
+            reservation.Show();
+            this.Hide();
+            pnlNav.Height = btnReserD.Height;
+            pnlNav.Top = btnReserD.Top;
+            pnlNav.Left = btnReserD.Left;
+        }
+
+        private void btnSalesReportD_Click(object sender, EventArgs e)
+        {
+            ManagerSalesReport sales = new ManagerSalesReport();
+            sales.Show();
+            this.Hide();
+            pnlNav.Height = btnSalesReportD.Height;
+            pnlNav.Top = btnSalesReportD.Top;
+            pnlNav.Left = btnSalesReportD.Left;
         }
     }
 }

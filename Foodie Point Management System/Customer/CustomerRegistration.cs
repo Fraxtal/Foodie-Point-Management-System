@@ -69,5 +69,13 @@ namespace Foodie_Point_Management_System.Customer
             txtPassword.PasswordChar = cbSPassword.Checked ? '\0' : '*';
             txtCfmPassword.PasswordChar = cbSPassword.Checked ? '\0' : '*';
         }
+
+        private void lblExit_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show($"Close the application?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
     }
 }

@@ -200,12 +200,6 @@
     <Compile Include="Manager\ManagerHall.Designer.cs">
       <DependentUpon>ManagerHall.cs</DependentUpon>
     </Compile>
-    <Compile Include="Manager\ManagerReports.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Manager\ManagerReports.Designer.cs">
-      <DependentUpon>ManagerReports.cs</DependentUpon>
-    </Compile>
     <Compile Include="Manager\ManagerReservationsReport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -310,9 +304,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Manager\ManagerHall.resx">
       <DependentUpon>ManagerHall.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Manager\ManagerReports.resx">
-      <DependentUpon>ManagerReports.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Manager\ManagerReservationsReport.resx">
       <DependentUpon>ManagerReservationsReport.cs</DependentUpon>
