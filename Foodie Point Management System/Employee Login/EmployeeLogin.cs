@@ -74,9 +74,9 @@ namespace Foodie_Point_Management_System.Employee_Login
                 {
                     case "Admin":
                         {
-                            emAdmin sessionChef = new emAdmin(sessionE.Id, sessionE.Username, sessionE.Fullname, sessionE.Role);
+                            emAdmin s = new emAdmin(sessionE.Id, sessionE.Username, sessionE.Fullname, sessionE.Role);
                             MessageBox.Show(msg, "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            AdminDashboard aDash = new AdminDashboard(sessionE);
+                            frmAdminDashboard aDash = new frmAdminDashboard(s);
                             aDash.Show();
                             this.Hide();
                             break;
@@ -84,9 +84,9 @@ namespace Foodie_Point_Management_System.Employee_Login
 
                     case "Chef":
                         {
-                            EmChef sessionChef = new EmChef(sessionE.Id, sessionE.Username, sessionE.Fullname, sessionE.Role);
+                            EmChef s = new EmChef(sessionE.Id, sessionE.Username, sessionE.Fullname, sessionE.Role);
                             MessageBox.Show(msg, "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            frmChefDashboard cfDash = new frmChefDashboard(sessionChef);
+                            frmChefDashboard cfDash = new frmChefDashboard(s);
                             cfDash.Show();
                             this.Hide();
                             break;
@@ -94,9 +94,9 @@ namespace Foodie_Point_Management_System.Employee_Login
 
                     case "Manager":
                         {
-                            EmManager sessionChef = new EmManager(sessionE.Id, sessionE.Username, sessionE.Fullname, sessionE.Role);
+                            EmManager s = new EmManager(sessionE.Id, sessionE.Username, sessionE.Fullname, sessionE.Role);
                             MessageBox.Show(msg, "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            ManagerDashboard mDash = new ManagerDashboard(sessionE);
+                            ManagerDashboard mDash = new ManagerDashboard(s);
                             mDash.Show();
                             this.Hide();
                             break;
@@ -104,9 +104,9 @@ namespace Foodie_Point_Management_System.Employee_Login
 
                     case "Reservation Coordinator":
                         {
-                            ReservationCoord session = new ReservationCoord(sessionE.Id, sessionE.Username, sessionE.Fullname, sessionE.Role);
+                            ReservationCoord s = new ReservationCoord(sessionE.Id, sessionE.Username, sessionE.Fullname, sessionE.Role);
                             MessageBox.Show(msg, "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            ReservationCoordinatorDashboard rDash = new ReservationCoordinatorDashboard(sessionE);
+                            ReservationCoordinatorDashboard rDash = new ReservationCoordinatorDashboard(s);
                             rDash.Show();
                             this.Hide();
                             break;
