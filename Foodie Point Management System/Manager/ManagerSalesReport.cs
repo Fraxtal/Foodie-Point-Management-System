@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Runtime.Remoting.Contexts;
 using System.Text;
@@ -69,12 +70,6 @@ namespace Foodie_Point_Management_System.Manager
 
         }
 
-        private void btnPreview_Click(object sender, EventArgs e)
-        {
-            printPreview.Document = printReport;
-            printPreview.ShowDialog();
-        }
-
         private void btnReturn_Click(object sender, EventArgs e)
         {
             ManagerDashboard managerDashboard = new ManagerDashboard(session);
@@ -84,12 +79,18 @@ namespace Foodie_Point_Management_System.Manager
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
+            PrintDocument pd = new PrintDocument();
+
+            pd.PrintPage += printReport_PrintPage;
+
+            pd.DefaultPageSettings.Margins = new Margins(50, 50, 50, 50);
+
             PrintDialog printDialog = new PrintDialog();
-            printDialog.Document = printReport;
+            printDialog.Document = pd;
 
             if (printDialog.ShowDialog() == DialogResult.OK)
             {
-                printReport.Print();
+                pd.Print();
             }
         }
 
@@ -118,14 +119,12 @@ namespace Foodie_Point_Management_System.Manager
             g.DrawString("----------------------------------------------------------------------------------------", subHeaderFont, brush, x, y);
             y += subHeaderFont.GetHeight(g) + 20;
 
-            // Determine which columns to print based on the report category
-            string category = ""; // You'll need to set this based on your report type
+            string category = "";
 
             if (rbMonthly.Checked) category = "Month";
             else if (rbEmployee.Checked) category = "Employee";
             else if (rbPaymentMethod.Checked) category = "PaymentMethod";
 
-            // Print column headers based on category
             switch (category)
             {
                 case "Month":
@@ -145,7 +144,6 @@ namespace Foodie_Point_Management_System.Manager
                     break;
 
                 default:
-                    // Fallback for unknown categories
                     foreach (DataGridViewColumn column in srdw.Columns)
                     {
                         if (!column.Visible || column.IsDataBound) continue;
@@ -158,7 +156,6 @@ namespace Foodie_Point_Management_System.Manager
 
             decimal totalSales = 0;
 
-            // Print rows from DataTable
             foreach (DataGridViewRow dgvRow in srdw.Rows)
             {
                 if (dgvRow.IsNewRow) continue;
@@ -182,7 +179,6 @@ namespace Foodie_Point_Management_System.Manager
                         break;
 
                     default:
-                        // Fallback for unknown categories
                         foreach (DataGridViewCell cell in dgvRow.Cells)
                         {
                             if (!cell.OwningColumn.Visible) continue;
@@ -197,7 +193,6 @@ namespace Foodie_Point_Management_System.Manager
 
                 y += lineHeight;
 
-                // Check for page overflow
                 if (y > e.MarginBounds.Bottom)
                 {
                     e.HasMorePages = true;

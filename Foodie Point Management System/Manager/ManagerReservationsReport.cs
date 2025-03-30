@@ -49,6 +49,49 @@ namespace Foodie_Point_Management_System.Manager
 
         }
 
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            PrintDocument pd = new PrintDocument();
+
+            pd.PrintPage += printReport_PrintPage;
+
+            pd.DefaultPageSettings.Margins = new Margins(50, 50, 50, 50);
+
+            PrintDialog printDialog = new PrintDialog();
+            printDialog.Document = pd;
+
+            if (printDialog.ShowDialog() == DialogResult.OK)
+            {
+                pd.Print();
+            }
+        }
+
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            ManagerDashboard managerDashboard = new ManagerDashboard(session);
+            managerDashboard.Show();
+            this.Hide();
+        }
+
+        private void cbYear_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            dataGridViewReservations.DataSource = session.ReservationFilterBox(cbPType,cbYear);
+        }
+
+        private void cbPType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            dataGridViewReservations.DataSource = session.ReservationFilterBox(cbPType, cbYear);
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            cbPType.SelectedIndex = -1;
+            cbYear.SelectedIndex = -1;
+            this.query = "SELECT YEAR(r.DateTime) AS Year, MONTH(r.DateTime) AS Month, h.PartyType, COUNT(r.ReservationID) AS ReservationCount, SUM(r.Pax) AS TotalPax FROM Reservations r JOIN Hall h ON r.HallID = h.HallID GROUP BY YEAR(r.DateTime), MONTH(r.DateTime), h.PartyType ORDER BY Year, Month, h.PartyType;";
+            dataGridViewReservations.DataSource = session.LoadTable(query);
+
+        }
+
         private void printReport_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
             Graphics g = e.Graphics;
@@ -127,47 +170,5 @@ namespace Foodie_Point_Management_System.Manager
             e.HasMorePages = false;
         }
 
-        private void btnPreview_Click(object sender, EventArgs e)
-        {
-            printPreview.Document = printReport;
-            printPreview.ShowDialog();
-        }
-
-        private void btnPrint_Click(object sender, EventArgs e)
-        {
-            PrintDialog printDialog = new PrintDialog();
-            printDialog.Document = printReport;
-
-            if (printDialog.ShowDialog() == DialogResult.OK)
-            {
-                printReport.Print();
-            }
-        }
-
-        private void btnReturn_Click(object sender, EventArgs e)
-        {
-            ManagerDashboard managerDashboard = new ManagerDashboard(session);
-            managerDashboard.Show();
-            this.Hide();
-        }
-
-        private void cbYear_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            dataGridViewReservations.DataSource = session.ReservationFilterBox(cbPType,cbYear);
-        }
-
-        private void cbPType_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            dataGridViewReservations.DataSource = session.ReservationFilterBox(cbPType, cbYear);
-        }
-
-        private void btnReset_Click(object sender, EventArgs e)
-        {
-            cbPType.SelectedIndex = -1;
-            cbYear.SelectedIndex = -1;
-            this.query = "SELECT YEAR(r.DateTime) AS Year, MONTH(r.DateTime) AS Month, h.PartyType, COUNT(r.ReservationID) AS ReservationCount, SUM(r.Pax) AS TotalPax FROM Reservations r JOIN Hall h ON r.HallID = h.HallID GROUP BY YEAR(r.DateTime), MONTH(r.DateTime), h.PartyType ORDER BY Year, Month, h.PartyType;";
-            dataGridViewReservations.DataSource = session.LoadTable(query);
-
-        }
     }
 }
