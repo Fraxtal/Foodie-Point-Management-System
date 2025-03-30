@@ -8,13 +8,16 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Foodie_Point_Management_System.Employee_Login;
 using static System.Collections.Specialized.BitVector32;
 
 namespace Foodie_Point_Management_System.Manager
 {
-    public class EmManager
+    public class EmManager : Employee
     {
         static SqlConnection connect = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString());
+
+        public EmManager(int ei, string eu, string ef, string er) : base(ei, eu, ef, er) { }
 
         public DataTable LoadTable(string query)
         {
