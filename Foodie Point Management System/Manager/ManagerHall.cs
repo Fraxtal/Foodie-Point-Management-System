@@ -159,7 +159,7 @@ namespace Foodie_Point_Management_System.Manager
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ManagerDashboard dashboard = new ManagerDashboard();
+            ManagerDashboard dashboard = new ManagerDashboard(manager);
             dashboard.Show();
             this.Close();
         }
