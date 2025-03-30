@@ -35,9 +35,9 @@
             this.cbYear = new System.Windows.Forms.ComboBox();
             this.srdw = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlNav = new System.Windows.Forms.Panel();
             this.btnReserD = new System.Windows.Forms.Button();
             this.btnSalesReportD = new System.Windows.Forms.Button();
-            this.pnlNav = new System.Windows.Forms.Panel();
             this.btnDash = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnSettings = new System.Windows.Forms.Button();
@@ -125,7 +125,7 @@
             this.srdw.AllowUserToDeleteRows = false;
             this.srdw.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.srdw.Location = new System.Drawing.Point(508, 45);
-            this.srdw.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.srdw.Margin = new System.Windows.Forms.Padding(4);
             this.srdw.Name = "srdw";
             this.srdw.ReadOnly = true;
             this.srdw.RowHeadersWidth = 62;
@@ -135,9 +135,9 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(177)))), ((int)(((byte)(151)))));
+            this.panel1.Controls.Add(this.pnlNav);
             this.panel1.Controls.Add(this.btnReserD);
             this.panel1.Controls.Add(this.btnSalesReportD);
-            this.panel1.Controls.Add(this.pnlNav);
             this.panel1.Controls.Add(this.btnDash);
             this.panel1.Controls.Add(this.btnExit);
             this.panel1.Controls.Add(this.btnSettings);
@@ -149,6 +149,14 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(255, 600);
             this.panel1.TabIndex = 71;
+            // 
+            // pnlNav
+            // 
+            this.pnlNav.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(235)))), ((int)(((byte)(226)))));
+            this.pnlNav.Location = new System.Drawing.Point(1, 174);
+            this.pnlNav.Name = "pnlNav";
+            this.pnlNav.Size = new System.Drawing.Size(5, 100);
+            this.pnlNav.TabIndex = 33;
             // 
             // btnReserD
             // 
@@ -173,14 +181,6 @@
             this.btnSalesReportD.Text = "Sales Report";
             this.btnSalesReportD.UseVisualStyleBackColor = true;
             this.btnSalesReportD.Click += new System.EventHandler(this.btnSalesReportD_Click);
-            // 
-            // pnlNav
-            // 
-            this.pnlNav.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(235)))), ((int)(((byte)(226)))));
-            this.pnlNav.Location = new System.Drawing.Point(1, 174);
-            this.pnlNav.Name = "pnlNav";
-            this.pnlNav.Size = new System.Drawing.Size(5, 100);
-            this.pnlNav.TabIndex = 33;
             // 
             // btnDash
             // 
@@ -321,6 +321,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ManagerSalesReport";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmAdminSalesReport";
             this.Load += new System.EventHandler(this.frmAdminSalesReport_Load);
             this.gbSortBy.ResumeLayout(false);

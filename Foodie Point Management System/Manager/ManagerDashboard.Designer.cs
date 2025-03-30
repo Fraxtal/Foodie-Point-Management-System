@@ -34,6 +34,7 @@
             this.btnReservations = new System.Windows.Forms.Button();
             this.lblExit = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnReserD = new System.Windows.Forms.Button();
             this.pnlNav = new System.Windows.Forms.Panel();
             this.btnDash = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
@@ -45,7 +46,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnReserD = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -130,6 +130,18 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(255, 600);
             this.panel1.TabIndex = 27;
+            // 
+            // btnReserD
+            // 
+            this.btnReserD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReserD.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReserD.Location = new System.Drawing.Point(0, 388);
+            this.btnReserD.Name = "btnReserD";
+            this.btnReserD.Size = new System.Drawing.Size(255, 54);
+            this.btnReserD.TabIndex = 34;
+            this.btnReserD.Text = "Reservation Report";
+            this.btnReserD.UseVisualStyleBackColor = true;
+            this.btnReserD.Click += new System.EventHandler(this.btnReserD_Click);
             // 
             // pnlNav
             // 
@@ -258,18 +270,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "🍵";
             // 
-            // btnReserD
-            // 
-            this.btnReserD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReserD.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReserD.Location = new System.Drawing.Point(0, 388);
-            this.btnReserD.Name = "btnReserD";
-            this.btnReserD.Size = new System.Drawing.Size(255, 54);
-            this.btnReserD.TabIndex = 34;
-            this.btnReserD.Text = "Reservation Report";
-            this.btnReserD.UseVisualStyleBackColor = true;
-            this.btnReserD.Click += new System.EventHandler(this.btnReserD_Click);
-            // 
             // ManagerDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -284,6 +284,7 @@
             this.Controls.Add(this.btnMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ManagerDashboard";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ManagerDashboard";
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

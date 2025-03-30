@@ -44,6 +44,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cmbCuisineType = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnReserD = new System.Windows.Forms.Button();
+            this.btnSalesReportD = new System.Windows.Forms.Button();
             this.pnlNav = new System.Windows.Forms.Panel();
             this.btnDash = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
@@ -55,8 +57,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.lblExit = new System.Windows.Forms.Label();
-            this.btnReserD = new System.Windows.Forms.Button();
-            this.btnSalesReportD = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMenu)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -238,6 +238,30 @@
             this.panel1.Size = new System.Drawing.Size(255, 600);
             this.panel1.TabIndex = 69;
             // 
+            // btnReserD
+            // 
+            this.btnReserD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReserD.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReserD.Location = new System.Drawing.Point(0, 388);
+            this.btnReserD.Name = "btnReserD";
+            this.btnReserD.Size = new System.Drawing.Size(255, 54);
+            this.btnReserD.TabIndex = 36;
+            this.btnReserD.Text = "Reservation Report";
+            this.btnReserD.UseVisualStyleBackColor = true;
+            this.btnReserD.Click += new System.EventHandler(this.btnReserD_Click);
+            // 
+            // btnSalesReportD
+            // 
+            this.btnSalesReportD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalesReportD.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalesReportD.Location = new System.Drawing.Point(0, 334);
+            this.btnSalesReportD.Name = "btnSalesReportD";
+            this.btnSalesReportD.Size = new System.Drawing.Size(255, 54);
+            this.btnSalesReportD.TabIndex = 35;
+            this.btnSalesReportD.Text = "Sales Report";
+            this.btnSalesReportD.UseVisualStyleBackColor = true;
+            this.btnSalesReportD.Click += new System.EventHandler(this.btnSalesReportD_Click);
+            // 
             // pnlNav
             // 
             this.pnlNav.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(235)))), ((int)(((byte)(226)))));
@@ -362,30 +386,6 @@
             this.lblExit.Text = "X";
             this.lblExit.Click += new System.EventHandler(this.lblExit_Click);
             // 
-            // btnReserD
-            // 
-            this.btnReserD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReserD.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReserD.Location = new System.Drawing.Point(0, 388);
-            this.btnReserD.Name = "btnReserD";
-            this.btnReserD.Size = new System.Drawing.Size(255, 54);
-            this.btnReserD.TabIndex = 36;
-            this.btnReserD.Text = "Reservation Report";
-            this.btnReserD.UseVisualStyleBackColor = true;
-            this.btnReserD.Click += new System.EventHandler(this.btnReserD_Click);
-            // 
-            // btnSalesReportD
-            // 
-            this.btnSalesReportD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalesReportD.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalesReportD.Location = new System.Drawing.Point(0, 334);
-            this.btnSalesReportD.Name = "btnSalesReportD";
-            this.btnSalesReportD.Size = new System.Drawing.Size(255, 54);
-            this.btnSalesReportD.TabIndex = 35;
-            this.btnSalesReportD.Text = "Sales Report";
-            this.btnSalesReportD.UseVisualStyleBackColor = true;
-            this.btnSalesReportD.Click += new System.EventHandler(this.btnSalesReportD_Click);
-            // 
             // ManagerFoodMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -411,6 +411,7 @@
             this.Controls.Add(this.lblMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ManagerFoodMenu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ManagerMenu";
             this.Load += new System.EventHandler(this.ManagerMenu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMenu)).EndInit();

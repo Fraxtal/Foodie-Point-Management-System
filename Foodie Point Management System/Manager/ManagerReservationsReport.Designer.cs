@@ -115,7 +115,7 @@
             // 
             this.cbPType.FormattingEnabled = true;
             this.cbPType.Location = new System.Drawing.Point(24, 119);
-            this.cbPType.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbPType.Margin = new System.Windows.Forms.Padding(4);
             this.cbPType.Name = "cbPType";
             this.cbPType.Size = new System.Drawing.Size(144, 28);
             this.cbPType.TabIndex = 4;
@@ -134,7 +134,7 @@
             // btnReset
             // 
             this.btnReset.Location = new System.Drawing.Point(40, 175);
-            this.btnReset.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnReset.Margin = new System.Windows.Forms.Padding(4);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(100, 28);
             this.btnReset.TabIndex = 2;
@@ -156,7 +156,7 @@
             // 
             this.cbYear.FormattingEnabled = true;
             this.cbYear.Location = new System.Drawing.Point(24, 54);
-            this.cbYear.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbYear.Margin = new System.Windows.Forms.Padding(4);
             this.cbYear.Name = "cbYear";
             this.cbYear.Size = new System.Drawing.Size(144, 28);
             this.cbYear.TabIndex = 0;
@@ -171,7 +171,7 @@
             this.btnPreview.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPreview.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPreview.Location = new System.Drawing.Point(277, 388);
-            this.btnPreview.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPreview.Margin = new System.Windows.Forms.Padding(4);
             this.btnPreview.Name = "btnPreview";
             this.btnPreview.Size = new System.Drawing.Size(195, 60);
             this.btnPreview.TabIndex = 9;
@@ -184,7 +184,7 @@
             this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrint.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrint.Location = new System.Drawing.Point(277, 468);
-            this.btnPrint.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPrint.Margin = new System.Windows.Forms.Padding(4);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(195, 60);
             this.btnPrint.TabIndex = 10;
@@ -205,9 +205,9 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(177)))), ((int)(((byte)(151)))));
+            this.panel1.Controls.Add(this.pnlNav);
             this.panel1.Controls.Add(this.btnReserD);
             this.panel1.Controls.Add(this.btnSalesReportD);
-            this.panel1.Controls.Add(this.pnlNav);
             this.panel1.Controls.Add(this.btnDash);
             this.panel1.Controls.Add(this.btnExit);
             this.panel1.Controls.Add(this.btnSettings);
@@ -384,6 +384,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ManagerReservationsReport";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ManagerReservationsReport";
             this.Load += new System.EventHandler(this.ManagerReservationsReport_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewReservations)).EndInit();

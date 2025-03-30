@@ -399,6 +399,7 @@
             this.Controls.Add(this.lblHall);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ManagerHall";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ManagerHall";
             this.Load += new System.EventHandler(this.ManagerHall_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHalls)).EndInit();
