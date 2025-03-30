@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Runtime.Remoting.Contexts;
 using System.Text;
@@ -18,13 +19,7 @@ namespace Foodie_Point_Management_System.Manager
         public ManagerSalesReport(EmManager s)
         {
             InitializeComponent();
-<<<<<<< HEAD
-            pnlNav.Height = btnSalesReportD.Height;
-            pnlNav.Top = btnSalesReportD.Top;
-            pnlNav.Left = btnSalesReportD.Left;
-=======
             this.session = s;
->>>>>>> 66a1612653e6c948b04dcc409a25480793013a04
         }
 
         private void frmAdminSalesReport_Load(object sender, EventArgs e)
@@ -75,85 +70,6 @@ namespace Foodie_Point_Management_System.Manager
 
         }
 
-<<<<<<< HEAD
-        private void btnMenuD_Click(object sender, EventArgs e)
-        {
-            ManagerFoodMenu managerMenu = new ManagerFoodMenu();
-            managerMenu.Show();
-            this.Hide();
-            pnlNav.Height = btnMenuD.Height;
-            pnlNav.Top = btnMenuD.Top;
-            pnlNav.Left = btnMenuD.Left;
-        }
-
-        private void btnHallsD_Click(object sender, EventArgs e)
-        {
-            ManagerHall listOfHalls = new ManagerHall();
-            listOfHalls.Show();
-            this.Hide();
-            pnlNav.Height = btnHallsD.Height;
-            pnlNav.Top = btnHallsD.Top;
-            pnlNav.Left = btnHallsD.Left;
-        }
-
-        private void btnSettings_Click(object sender, EventArgs e)
-        {
-            //frmEmployeeProfileSettings settings = new frmEmployeeProfileSettings();
-            //settings.Show();
-            //this.Hide();
-            pnlNav.Height = btnSettings.Height;
-            pnlNav.Top = btnSettings.Top;
-            pnlNav.Left = btnSettings.Left;
-        }
-
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show($"Log out?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                Application.Exit();
-            }
-        }
-
-        private void btnDash_Click(object sender, EventArgs e)
-        {
-            ManagerDashboard dash = new ManagerDashboard();
-            dash.Show();
-            this.Hide();
-        }
-
-        private void btnReserD_Click(object sender, EventArgs e)
-        {
-            ManagerReservationsReport reservation = new ManagerReservationsReport();
-            reservation.Show();
-            this.Hide();
-            pnlNav.Height = btnReserD.Height;
-            pnlNav.Top = btnReserD.Top;
-            pnlNav.Left = btnReserD.Left;
-        }
-
-        private void btnSalesReportD_Click(object sender, EventArgs e)
-        {
-            ManagerSalesReport sales = new ManagerSalesReport();
-            sales.Show();
-            this.Hide();
-            pnlNav.Height = btnSalesReportD.Height;
-            pnlNav.Top = btnSalesReportD.Top;
-            pnlNav.Left = btnSalesReportD.Left;
-        }
-
-        private void lblExit_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show($"Close the application?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                Application.Exit();
-            }
-=======
-        private void btnPreview_Click(object sender, EventArgs e)
-        {
-            printPreview.Document = printReport;
-            printPreview.ShowDialog();
-        }
-
         private void btnReturn_Click(object sender, EventArgs e)
         {
             ManagerDashboard managerDashboard = new ManagerDashboard(session);
@@ -163,12 +79,18 @@ namespace Foodie_Point_Management_System.Manager
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
+            PrintDocument pd = new PrintDocument();
+
+            pd.PrintPage += printReport_PrintPage;
+
+            pd.DefaultPageSettings.Margins = new Margins(50, 50, 50, 50);
+
             PrintDialog printDialog = new PrintDialog();
-            printDialog.Document = printReport;
+            printDialog.Document = pd;
 
             if (printDialog.ShowDialog() == DialogResult.OK)
             {
-                printReport.Print();
+                pd.Print();
             }
         }
 
@@ -197,14 +119,12 @@ namespace Foodie_Point_Management_System.Manager
             g.DrawString("----------------------------------------------------------------------------------------", subHeaderFont, brush, x, y);
             y += subHeaderFont.GetHeight(g) + 20;
 
-            // Determine which columns to print based on the report category
-            string category = ""; // You'll need to set this based on your report type
+            string category = "";
 
             if (rbMonthly.Checked) category = "Month";
             else if (rbEmployee.Checked) category = "Employee";
             else if (rbPaymentMethod.Checked) category = "PaymentMethod";
 
-            // Print column headers based on category
             switch (category)
             {
                 case "Month":
@@ -224,7 +144,6 @@ namespace Foodie_Point_Management_System.Manager
                     break;
 
                 default:
-                    // Fallback for unknown categories
                     foreach (DataGridViewColumn column in srdw.Columns)
                     {
                         if (!column.Visible || column.IsDataBound) continue;
@@ -237,7 +156,6 @@ namespace Foodie_Point_Management_System.Manager
 
             decimal totalSales = 0;
 
-            // Print rows from DataTable
             foreach (DataGridViewRow dgvRow in srdw.Rows)
             {
                 if (dgvRow.IsNewRow) continue;
@@ -261,7 +179,6 @@ namespace Foodie_Point_Management_System.Manager
                         break;
 
                     default:
-                        // Fallback for unknown categories
                         foreach (DataGridViewCell cell in dgvRow.Cells)
                         {
                             if (!cell.OwningColumn.Visible) continue;
@@ -276,7 +193,6 @@ namespace Foodie_Point_Management_System.Manager
 
                 y += lineHeight;
 
-                // Check for page overflow
                 if (y > e.MarginBounds.Bottom)
                 {
                     e.HasMorePages = true;
@@ -294,7 +210,6 @@ namespace Foodie_Point_Management_System.Manager
 
 
             e.HasMorePages = false;
->>>>>>> 66a1612653e6c948b04dcc409a25480793013a04
         }
     }
 }
