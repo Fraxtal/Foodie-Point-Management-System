@@ -150,6 +150,7 @@
             this.pnlNav.Name = "pnlNav";
             this.pnlNav.Size = new System.Drawing.Size(5, 100);
             this.pnlNav.TabIndex = 33;
+            this.pnlNav.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlNav_Paint);
             // 
             // btnDash
             // 

@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,11 +14,20 @@ namespace Foodie_Point_Management_System.Customer
     public partial class CustomerReservationStatus: Form
     {
         Customer session;
+        [DllImport("gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn(
+        int nLeftRect,
+        int nTopRect,
+        int nRightRect,
+        int nBottomRect,
+        int nWidthEllipse,
+        int nHeightEllipse
+            );
         public CustomerReservationStatus(Customer s)
         {
             InitializeComponent();
-            this.session = s; 
-
+            this.session = s;
+            Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -48,6 +58,16 @@ namespace Foodie_Point_Management_System.Customer
                 // Show information message box if the result is normal or informational
                 MessageBox.Show(result, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -8,17 +8,28 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Foodie_Point_Management_System.Chef;
+using System.Runtime.InteropServices;
 
 namespace Foodie_Point_Management_System.Employee_Login
 {
     public partial class frmEmployeeProfileSettings : Form
     {
         EmChef sessionPV;
+        [DllImport("gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn(
+        int nLeftRect,
+        int nTopRect,
+        int nRightRect,
+        int nBottomRect,
+        int nWidthEllipse,
+        int nHeightEllipse
+            );
 
         public frmEmployeeProfileSettings(EmChef sc)
         {
             InitializeComponent();
             this.sessionPV = sc;
+            Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
         }
 
         private void frmChefProfileSettings_Load(object sender, EventArgs e)

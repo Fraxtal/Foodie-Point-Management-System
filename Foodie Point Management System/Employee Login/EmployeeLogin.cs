@@ -13,15 +13,26 @@ using Foodie_Point_Management_System.Chef;
 using Foodie_Point_Management_System.Admin;
 using Foodie_Point_Management_System.Manager;
 using Foodie_Point_Management_System.ReservationCoordinator;
+using System.Runtime.InteropServices;
 
 namespace Foodie_Point_Management_System.Employee_Login
 {
     public partial class EmployeeLogin : Form
     {
         Employee sessionE = new Employee(0, "", "", "");
+        [DllImport("gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn(
+        int nLeftRect,
+        int nTopRect,
+        int nRightRect,
+        int nBottomRect,
+        int nWidthEllipse,
+        int nHeightEllipse
+            );
         public EmployeeLogin()
         {
             InitializeComponent();
+            Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
         }
 
         private void rbUsername_CheckedChanged(object sender, EventArgs e)

@@ -4,21 +4,32 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Foodie_Point_Management_System.Manager;
 
 namespace Foodie_Point_Management_System.Customer
 {
     public partial class CustomerPayment : Form
     {
         Customer session;
+        [DllImport("gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn(
+        int nLeftRect,
+        int nTopRect,
+        int nRightRect,
+        int nBottomRect,
+        int nWidthEllipse,
+        int nHeightEllipse
+            );
         public CustomerPayment(Customer s)
         {
             InitializeComponent();
             this.session= s;
-
+            Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
         }
 
         private void btnCash_Click(object sender, EventArgs e)
@@ -56,6 +67,16 @@ namespace Foodie_Point_Management_System.Customer
         private void CustomerPayment_Load(object sender, EventArgs e)
         {
             txtTotal.Text = session.PaymentTotal().ToString();
+        }
+
+        private void lblExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

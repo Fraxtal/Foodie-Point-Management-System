@@ -16,12 +16,12 @@ namespace Foodie_Point_Management_System.Manager
     {
         [DllImport("gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn(
-    int nLeftRect,
-    int nTopRect,
-    int nRightRect,
-    int nBottomRect,
-    int nWidthEllipse,
-    int nHeightEllipse
+        int nLeftRect,
+        int nTopRect,
+        int nRightRect,
+        int nBottomRect,
+        int nWidthEllipse,
+        int nHeightEllipse
             );
 
         EmManager session;
@@ -160,6 +160,11 @@ namespace Foodie_Point_Management_System.Manager
             ManagerSalesReport sales = new ManagerSalesReport(session);
             sales.Show();
             this.Hide();
+        }
+
+        private void pnlNav_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
