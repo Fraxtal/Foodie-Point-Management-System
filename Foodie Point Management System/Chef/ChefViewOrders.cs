@@ -9,6 +9,8 @@ using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Foodie_Point_Management_System.Employee_Login;
+using System.Runtime.InteropServices;
 
 namespace Foodie_Point_Management_System.Chef
 {
@@ -26,11 +28,24 @@ namespace Foodie_Point_Management_System.Chef
         string progress = "WHERE OrderTable.OrderStatus = 'In Progress' ";
         string queue = "WHERE OrderTable.OrderStatus = 'In Queue' ";
         string completed = "WHERE OrderTable.OrderStatus = 'Completed' ";
+        [DllImport("gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn(
+        int nLeftRect,
+        int nTopRect,
+        int nRightRect,
+        int nBottomRect,
+        int nWidthEllipse,
+        int nHeightEllipse
+                );
 
         public frmChefViewOrders(EmChef sc)
         {
             InitializeComponent();
             this.sessionCV = sc;
+            pnlNav.Height = btnViewOrder.Height;
+            pnlNav.Top = btnViewOrder.Top;
+            pnlNav.Left = btnViewOrder.Left;
+            Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
         }
 
         private void frmChefViewOrders_Load(object sender, EventArgs e)
@@ -72,13 +87,6 @@ namespace Foodie_Point_Management_System.Chef
 
             MessageBox.Show(sessionCV.ViewOrderUpdate(txtbxOrderID.Text, cmbboxStatus.Text));
             dgvOrderList.DataSource = sessionCV.ViewOrdersDisplay(currentsort);
-        }
-
-        private void btnReturn_Click(object sender, EventArgs e)
-        {
-            frmChefDashboard pageD = new frmChefDashboard(sessionCV);
-            pageD.Show();
-            this.Close();
         }
 
         private void rbtnAll_CheckedChanged(object sender, EventArgs e)
@@ -195,6 +203,57 @@ namespace Foodie_Point_Management_System.Chef
             }
 
             dgvOrderList.DataSource = sessionCV.ViewOrdersDisplay(currentsort);
+        }
+        private void btnDash_Click(object sender, EventArgs e)
+        {
+            frmChefDashboard dashboard = new frmChefDashboard(sessionCV);
+            dashboard.Show();
+            this.Hide();
+        }
+
+        private void btnViewOrder_Click(object sender, EventArgs e)
+        {
+            frmChefViewOrders pageVO = new frmChefViewOrders(sessionCV);
+            pageVO.Show();
+            this.Hide();
+        }
+
+        private void btnInventory_Click(object sender, EventArgs e)
+        {
+            frmChefInventory pageI = new frmChefInventory(sessionCV);
+            pageI.Show();
+            this.Hide();
+        }
+
+        private void btnProfile_Click(object sender, EventArgs e)
+        {
+            frmEmployeeProfileSettings pagePS = new frmEmployeeProfileSettings(sessionCV);
+            pagePS.Show();
+            this.Hide();
+        }
+
+        private void lblExit_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show($"Close the application?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show($"Logout and return to login page?", "Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                sessionCV = null;
+                EmployeeLogin pageL = new EmployeeLogin();
+                pageL.Show();
+                this.Hide();
+            }
+        }
+
+        private void txtbxOrderID_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

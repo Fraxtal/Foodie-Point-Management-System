@@ -10,17 +10,32 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Collections;
 using System.Xml.Linq;
+using Foodie_Point_Management_System.Employee_Login;
+using System.Runtime.InteropServices;
 
 namespace Foodie_Point_Management_System.Chef
 {
     public partial class frmChefInventory : Form
     {
         EmChef sessionCI;
+        [DllImport("gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn(
+        int nLeftRect,
+        int nTopRect,
+        int nRightRect,
+        int nBottomRect,
+        int nWidthEllipse,
+        int nHeightEllipse
+                );
 
         public frmChefInventory(EmChef sc)
         {
             InitializeComponent();
             this.sessionCI = sc;
+            pnlNav.Height = btnInventory.Height;
+            pnlNav.Top = btnInventory.Top;
+            pnlNav.Left = btnInventory.Left;
+            Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
         }
 
         private void frmChefInventory_Load(object sender, EventArgs e)
@@ -201,12 +216,61 @@ namespace Foodie_Point_Management_System.Chef
             }
         }
 
-        private void btnReturn_Click(object sender, EventArgs e)
+        private void btnDash_Click(object sender, EventArgs e)
         {
-            frmChefDashboard pageD = new frmChefDashboard(sessionCI);
-            pageD.Show();
-            this.Close();
+            frmChefDashboard dashboard = new frmChefDashboard(sessionCI);
+            dashboard.Show();
+            this.Hide();
         }
 
+        private void btnViewOrder_Click(object sender, EventArgs e)
+        {
+            frmChefViewOrders pageVO = new frmChefViewOrders(sessionCI);
+            pageVO.Show();
+            this.Hide();
+        }
+
+        private void btnInventory_Click(object sender, EventArgs e)
+        {
+            frmChefInventory pageI = new frmChefInventory(sessionCI);
+            pageI.Show();
+            this.Hide();
+        }
+
+        private void btnProfile_Click(object sender, EventArgs e)
+        {
+            frmEmployeeProfileSettings pagePS = new frmEmployeeProfileSettings(sessionCI);
+            pagePS.Show();
+            this.Hide();
+        }
+
+        private void lblExit_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show($"Close the application?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show($"Logout and return to login page?", "Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                sessionCI = null;
+                EmployeeLogin pageL = new EmployeeLogin();
+                pageL.Show();
+                this.Hide();
+            }
+        }
+
+        private void lblInventory_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
