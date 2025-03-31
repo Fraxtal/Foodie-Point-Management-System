@@ -9,12 +9,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 
 namespace Foodie_Point_Management_System.Admin
 {
     public partial class frmAdminUserManagement : Form
     {
         emAdmin session;
+        [DllImport("gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn(
+        int nLeftRect,
+        int nTopRect,
+        int nRightRect,
+        int nBottomRect,
+        int nWidthEllipse,
+        int nHeightEllipse
+                );
 
         string table = "Customer";
 
@@ -22,6 +32,10 @@ namespace Foodie_Point_Management_System.Admin
         {
             InitializeComponent();
             this.session = s;
+            Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
+            pnlNav.Height = btnUser.Height;
+            pnlNav.Top = btnUser.Top;
+            pnlNav.Left = btnUser.Left;
         }
 
         private void frmUserManagement_Load(object sender, EventArgs e)
@@ -179,6 +193,72 @@ namespace Foodie_Point_Management_System.Admin
                 this.table = "Customer";
                 lblRole.Visible = false;
                 cbRole.Visible = false;
+            }
+        }
+        private void btnUserManagement_Click(object sender, EventArgs e)
+        {
+            frmAdminUserManagement UserManagement = new frmAdminUserManagement(session);
+            UserManagement.Show();
+            this.Hide();
+        }
+
+        private void btnFeedback_Click(object sender, EventArgs e)
+        {
+            frmAdminFeedback Feedback = new frmAdminFeedback(session);
+            Feedback.Show();
+            this.Hide();
+        }
+
+        private void btnSalesReport_Click(object sender, EventArgs e)
+        {
+            frmAdminSalesReport SalesReport = new frmAdminSalesReport(session);
+            SalesReport.Show();
+            this.Hide();
+            
+        }
+
+        private void btnDash_Click(object sender, EventArgs e)
+        {
+            frmAdminDashboard Dashboard = new frmAdminDashboard(session);
+            Dashboard.Show();
+            this.Hide();
+
+        }
+
+        private void btnUser_Click(object sender, EventArgs e)
+        {
+            frmAdminUserManagement UserManagement = new frmAdminUserManagement(session);
+            UserManagement.Show();
+            this.Hide();
+        }
+
+        private void btnSales_Click(object sender, EventArgs e)
+        {
+            frmAdminSalesReport SalesReport = new frmAdminSalesReport(session);
+            SalesReport.Show();
+            this.Hide();
+        }
+
+        private void btnFeedbackD_Click(object sender, EventArgs e)
+        {
+            frmAdminFeedback Feedback = new frmAdminFeedback(session);
+            Feedback.Show();
+            this.Hide();
+            
+        }
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show($"Log out?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
+
+        private void lblExit_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show($"Close the application?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Application.Exit();
             }
         }
     }

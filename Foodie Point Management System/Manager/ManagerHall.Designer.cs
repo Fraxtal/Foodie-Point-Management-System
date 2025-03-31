@@ -39,7 +39,7 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.lbl = new System.Windows.Forms.Label();
+            this.lblParty = new System.Windows.Forms.Label();
             this.dataGridViewHalls = new System.Windows.Forms.DataGridView();
             this.lblHall = new System.Windows.Forms.Label();
             this.lblExit = new System.Windows.Forms.Label();
@@ -173,16 +173,16 @@
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // lbl
+            // lblParty
             // 
-            this.lbl.AutoSize = true;
-            this.lbl.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl.Location = new System.Drawing.Point(298, 502);
-            this.lbl.Name = "lbl";
-            this.lbl.Size = new System.Drawing.Size(125, 25);
-            this.lbl.TabIndex = 71;
-            this.lbl.Text = "Party Type :";
-            this.lbl.Click += new System.EventHandler(this.lbl_Click);
+            this.lblParty.AutoSize = true;
+            this.lblParty.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblParty.Location = new System.Drawing.Point(298, 502);
+            this.lblParty.Name = "lblParty";
+            this.lblParty.Size = new System.Drawing.Size(125, 25);
+            this.lblParty.TabIndex = 71;
+            this.lblParty.Text = "Party Type :";
+            this.lblParty.Click += new System.EventHandler(this.lbl_Click);
             // 
             // dataGridViewHalls
             // 
@@ -394,7 +394,7 @@
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnSearch);
-            this.Controls.Add(this.lbl);
+            this.Controls.Add(this.lblParty);
             this.Controls.Add(this.dataGridViewHalls);
             this.Controls.Add(this.lblHall);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -424,7 +424,7 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.Label lbl;
+        private System.Windows.Forms.Label lblParty;
         private System.Windows.Forms.DataGridView dataGridViewHalls;
         private System.Windows.Forms.Label lblHall;
         private System.Windows.Forms.Label lblExit;

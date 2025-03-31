@@ -117,9 +117,6 @@ namespace Foodie_Point_Management_System.Manager
             ManagerFoodMenu managerMenu = new ManagerFoodMenu(session);
             managerMenu.Show();
             this.Hide();
-            pnlNav.Height = btnMenuD.Height;
-            pnlNav.Top = btnMenuD.Top;
-            pnlNav.Left = btnMenuD.Left;
         }
 
         private void btnHallsD_Click(object sender, EventArgs e)
@@ -127,9 +124,6 @@ namespace Foodie_Point_Management_System.Manager
             ManagerHall listOfHalls = new ManagerHall(session);
             listOfHalls.Show();
             this.Hide();
-            pnlNav.Height = btnHallsD.Height;
-            pnlNav.Top = btnHallsD.Top;
-            pnlNav.Left = btnHallsD.Left;
         }
 
         private void btnSettings_Click(object sender, EventArgs e)
@@ -137,9 +131,6 @@ namespace Foodie_Point_Management_System.Manager
             //frmEmployeeProfileSettings settings = new frmEmployeeProfileSettings();
             //settings.Show();
             //this.Hide();
-            pnlNav.Height = btnSettings.Height;
-            pnlNav.Top = btnSettings.Top;
-            pnlNav.Left = btnSettings.Left;
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -169,9 +160,6 @@ namespace Foodie_Point_Management_System.Manager
             ManagerSalesReport sales = new ManagerSalesReport(session);
             sales.Show();
             this.Hide();
-            pnlNav.Height = btnSalesReportD.Height;
-            pnlNav.Top = btnSalesReportD.Top;
-            pnlNav.Left = btnSalesReportD.Left;
         }
     }
 }

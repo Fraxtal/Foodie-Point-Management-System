@@ -8,20 +8,32 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Collections.Specialized.BitVector32;
+using System.Runtime.InteropServices;
 
 namespace Foodie_Point_Management_System.Manager
 {
     public partial class ManagerFoodMenu : Form
     {
-        private EmManager manager;
+
+        [DllImport("gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn(
+        int nLeftRect,
+        int nTopRect,
+        int nRightRect,
+        int nBottomRect,
+        int nWidthEllipse,
+        int nHeightEllipse
+                );
+        EmManager session;
         public ManagerFoodMenu(EmManager s)
         {
             InitializeComponent();
             pnlNav.Height = btnMenuD.Height;
             pnlNav.Top = btnMenuD.Top;
             pnlNav.Left = btnMenuD.Left;
+            Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
 
-            this.manager = s;
+            this.session = s;
         }
         private void ManagerMenu_Load(object sender, EventArgs e)
         {
@@ -58,7 +70,7 @@ namespace Foodie_Point_Management_System.Manager
                 return;
             }
 
-            manager.FoodAdd(txtName.Text, cmbCuisineType.Text, price);
+            session.FoodAdd(txtName.Text, cmbCuisineType.Text, price);
             RefreshDataGrid();
             ClearFields();
         }
@@ -83,7 +95,7 @@ namespace Foodie_Point_Management_System.Manager
                 return;
             }
 
-            manager.FoodEdit(foodId, txtName.Text, cmbCuisineType.Text, price);
+            session.FoodEdit(foodId, txtName.Text, cmbCuisineType.Text, price);
             RefreshDataGrid();
             ClearFields();
         }
@@ -106,7 +118,7 @@ namespace Foodie_Point_Management_System.Manager
             if (MessageBox.Show("Delete this menu item?", "Confirm",
                 MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                manager.FoodDelete(foodId);
+                session.FoodDelete(foodId);
                 RefreshDataGrid();
                 ClearFields();
             }
@@ -127,7 +139,7 @@ namespace Foodie_Point_Management_System.Manager
         {
             try
             {
-                dgvMenu.DataSource = manager.LoadTable("SELECT * FROM FoodMenu");
+                dgvMenu.DataSource = session.LoadTable("SELECT * FROM FoodMenu");
                 dgvMenu.Refresh();
             }
             catch (Exception ex)
@@ -153,7 +165,7 @@ namespace Foodie_Point_Management_System.Manager
         {
             if (!string.IsNullOrWhiteSpace(txtSearch.Text))
             {
-                dgvMenu.DataSource = manager.FoodSearch(txtSearch.Text);
+                dgvMenu.DataSource = session.FoodSearch(txtSearch.Text);
             }
             else
             {
@@ -167,7 +179,7 @@ namespace Foodie_Point_Management_System.Manager
 
         private void btnMenuD_Click(object sender, EventArgs e)
         {
-            ManagerFoodMenu managerMenu = new ManagerFoodMenu();
+            ManagerFoodMenu managerMenu = new ManagerFoodMenu(session);
             managerMenu.Show();
             this.Hide();
             pnlNav.Height = btnMenuD.Height;
@@ -177,12 +189,9 @@ namespace Foodie_Point_Management_System.Manager
 
         private void btnHallsD_Click(object sender, EventArgs e)
         {
-            ManagerHall listOfHalls = new ManagerHall();
+            ManagerHall listOfHalls = new ManagerHall(session);
             listOfHalls.Show();
             this.Hide();
-            pnlNav.Height = btnHallsD.Height;
-            pnlNav.Top = btnHallsD.Top;
-            pnlNav.Left = btnHallsD.Left;
         }
 
 
@@ -191,9 +200,6 @@ namespace Foodie_Point_Management_System.Manager
             //frmEmployeeProfileSettings settings = new frmEmployeeProfileSettings();
             //settings.Show();
             //this.Hide();
-            pnlNav.Height = btnSettings.Height;
-            pnlNav.Top = btnSettings.Top;
-            pnlNav.Left = btnSettings.Left;
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -206,7 +212,7 @@ namespace Foodie_Point_Management_System.Manager
 
         private void btnDash_Click(object sender, EventArgs e)
         {
-            ManagerDashboard dash = new ManagerDashboard();
+            ManagerDashboard dash = new ManagerDashboard(session);
             dash.Show();
             this.Hide();
         }
@@ -226,22 +232,16 @@ namespace Foodie_Point_Management_System.Manager
 
         private void btnReserD_Click(object sender, EventArgs e)
         {
-            ManagerReservationsReport reservation = new ManagerReservationsReport();
+            ManagerReservationsReport reservation = new ManagerReservationsReport(session);
             reservation.Show();
             this.Hide();
-            pnlNav.Height = btnReserD.Height;
-            pnlNav.Top = btnReserD.Top;
-            pnlNav.Left = btnReserD.Left;
         }
 
         private void btnSalesReportD_Click(object sender, EventArgs e)
         {
-            ManagerSalesReport sales = new ManagerSalesReport();
+            ManagerSalesReport sales = new ManagerSalesReport(session);
             sales.Show();
             this.Hide();
-            pnlNav.Height = btnSalesReportD.Height;
-            pnlNav.Top = btnSalesReportD.Top;
-            pnlNav.Left = btnSalesReportD.Left;
         }
     }
 }

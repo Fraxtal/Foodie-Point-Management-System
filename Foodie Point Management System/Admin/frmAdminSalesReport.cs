@@ -6,6 +6,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,10 +17,23 @@ namespace Foodie_Point_Management_System.Admin
     public partial class frmAdminSalesReport : Form
     {
         emAdmin session;
+        [DllImport("gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn(
+        int nLeftRect,
+        int nTopRect,
+        int nRightRect,
+        int nBottomRect,
+        int nWidthEllipse,
+        int nHeightEllipse
+                );
         public frmAdminSalesReport(emAdmin s)
         {
             InitializeComponent();
             this.session = s;
+            Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
+            pnlNav.Height = btnSales.Height;
+            pnlNav.Top = btnSales.Top;
+            pnlNav.Left = btnSales.Left;
         }
 
         private void frmAdminSalesReport_Load(object sender, EventArgs e)
@@ -68,13 +82,6 @@ namespace Foodie_Point_Management_System.Admin
 
             srdw.DataSource = session.LoadSalesReport(selectedYear, category);
 
-        }
-
-        private void btnReturn_Click(object sender, EventArgs e)
-        {
-            frmAdminDashboard admindashboard = new frmAdminDashboard(session);
-            admindashboard.Show();
-            this.Hide();
         }
 
         private void btnPreview_Click(object sender, EventArgs e)
@@ -216,6 +223,76 @@ namespace Foodie_Point_Management_System.Admin
 
 
             e.HasMorePages = false;
+        }
+        private void btnUserManagement_Click(object sender, EventArgs e)
+        {
+            frmAdminUserManagement UserManagement = new frmAdminUserManagement(session);
+            UserManagement.Show();
+            this.Hide();
+        }
+
+        private void btnFeedback_Click(object sender, EventArgs e)
+        {
+            frmAdminFeedback Feedback = new frmAdminFeedback(session);
+            Feedback.Show();
+            this.Hide();
+        }
+
+        private void btnSalesReport_Click(object sender, EventArgs e)
+        {
+            frmAdminSalesReport SalesReport = new frmAdminSalesReport(session);
+            SalesReport.Show();
+            this.Hide();
+        }
+
+        private void btnDash_Click(object sender, EventArgs e)
+        {
+            frmAdminDashboard Dashboard = new frmAdminDashboard(session);
+            Dashboard.Show();
+            this.Hide();
+
+        }
+
+        private void btnUser_Click(object sender, EventArgs e)
+        {
+            frmAdminUserManagement UserManagement = new frmAdminUserManagement(session);
+            UserManagement.Show();
+            this.Hide();
+        }
+
+        private void btnSales_Click(object sender, EventArgs e)
+        {
+            frmAdminSalesReport SalesReport = new frmAdminSalesReport(session);
+            SalesReport.Show();
+            this.Hide();
+            pnlNav.Height = btnSales.Height;
+            pnlNav.Top = btnSales.Top;
+            pnlNav.Left = btnSales.Left;
+        }
+
+        private void btnFeedbackD_Click(object sender, EventArgs e)
+        {
+            frmAdminFeedback Feedback = new frmAdminFeedback(session);
+            Feedback.Show();
+            this.Hide();
+            pnlNav.Height = btnFeedbackD.Height;
+            pnlNav.Top = btnFeedbackD.Top;
+            pnlNav.Left = btnFeedbackD.Left;
+        }
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show($"Log out?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
+
+        private void lblExit_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show($"Close the application?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
     }
 }

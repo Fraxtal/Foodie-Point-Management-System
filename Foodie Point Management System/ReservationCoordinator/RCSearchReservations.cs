@@ -13,7 +13,7 @@ namespace Foodie_Point_Management_System.ReservationCoordinator
 {
     public partial class SearchReservations : Form
     {
-        ReservationCoordinator resManager = new ReservationCoordinator();
+        //ReservationCoordinator resManager = new ReservationCoordinator();
         public SearchReservations()
         {
             InitializeComponent();

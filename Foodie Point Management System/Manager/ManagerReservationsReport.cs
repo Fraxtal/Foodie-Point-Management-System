@@ -10,11 +10,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 
 namespace Foodie_Point_Management_System.Manager
 {
     public partial class ManagerReservationsReport : Form
     {
+        [DllImport("gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn(
+        int nLeftRect,
+        int nTopRect,
+        int nRightRect,
+        int nBottomRect,
+        int nWidthEllipse,
+        int nHeightEllipse
+                );
         EmManager session;
 
         string query = "SELECT YEAR(r.DateTime) AS Year, MONTH(r.DateTime) AS Month, h.PartyType, COUNT(r.ReservationID) AS ReservationCount, SUM(r.Pax) AS TotalPax FROM Reservations r JOIN Hall h ON r.HallID = h.HallID GROUP BY YEAR(r.DateTime), MONTH(r.DateTime), h.PartyType ORDER BY Year, Month, h.PartyType;";
@@ -23,6 +33,10 @@ namespace Foodie_Point_Management_System.Manager
         {
             InitializeComponent();
             this.session = s;
+            pnlNav.Height = btnReserD.Height;
+            pnlNav.Top = btnReserD.Top;
+            pnlNav.Left = btnReserD.Left;
+            Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
         }
 
         private void ManagerReservationsReport_Load(object sender, EventArgs e)
@@ -65,14 +79,6 @@ namespace Foodie_Point_Management_System.Manager
                 pd.Print();
             }
         }
-
-        private void btnReturn_Click(object sender, EventArgs e)
-        {
-            ManagerDashboard managerDashboard = new ManagerDashboard(session);
-            managerDashboard.Show();
-            this.Hide();
-        }
-
         private void cbYear_SelectedIndexChanged(object sender, EventArgs e)
         {
             dataGridViewReservations.DataSource = session.ReservationFilterBox(cbPType,cbYear);
@@ -170,5 +176,79 @@ namespace Foodie_Point_Management_System.Manager
             e.HasMorePages = false;
         }
 
+
+        private void btnMenuD_Click(object sender, EventArgs e)
+        {
+            ManagerFoodMenu managerMenu = new ManagerFoodMenu(session);
+            managerMenu.Show();
+            this.Hide();
+        }
+
+        private void btnHallsD_Click(object sender, EventArgs e)
+        {
+            ManagerHall listOfHalls = new ManagerHall(session);
+            listOfHalls.Show();
+            this.Hide();
+        }
+
+
+        private void btnSettings_Click(object sender, EventArgs e)
+        {
+            //frmEmployeeProfileSettings settings = new frmEmployeeProfileSettings();
+            //settings.Show();
+            //this.Hide();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show($"Log out?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
+
+        private void btnDash_Click(object sender, EventArgs e)
+        {
+            ManagerDashboard dash = new ManagerDashboard(session);
+            dash.Show();
+            this.Hide();
+        }
+
+
+        private void btnReserD_Click(object sender, EventArgs e)
+        {
+            ManagerReservationsReport reservation = new ManagerReservationsReport(session);
+            reservation.Show();
+            this.Hide();
+            pnlNav.Height = btnReserD.Height;
+            pnlNav.Top = btnReserD.Top;
+            pnlNav.Left = btnReserD.Left;
+        }
+
+        private void btnSalesReportD_Click(object sender, EventArgs e)
+        {
+            ManagerSalesReport sales = new ManagerSalesReport(session);
+            sales.Show();
+            this.Hide();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblExit_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show($"Close the application?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
     }
 }

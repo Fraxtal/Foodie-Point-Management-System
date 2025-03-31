@@ -7,19 +7,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 
 namespace Foodie_Point_Management_System.Manager
 {
     public partial class ManagerHall : Form
     {
-        EmManager manager;
+        [DllImport("gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn(
+        int nLeftRect,
+        int nTopRect,
+        int nRightRect,
+        int nBottomRect,
+        int nWidthEllipse,
+        int nHeightEllipse
+                );
+        EmManager session;
         public ManagerHall(EmManager s)
         {
             InitializeComponent();
             pnlNav.Height = btnHallsD.Height;
             pnlNav.Top = btnHallsD.Top;
             pnlNav.Left = btnHallsD.Left;
-            this.manager = s;
+            this.session = s;
+            Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -36,7 +47,7 @@ namespace Foodie_Point_Management_System.Manager
                 return;
             }
 
-            manager.HallAdd(pax, cmbPartyType.Text);
+            session.HallAdd(pax, cmbPartyType.Text);
             RefreshDataGrid();
             ClearFields();
         }
@@ -63,9 +74,9 @@ namespace Foodie_Point_Management_System.Manager
                 return;
             }
 
-            manager.HallEdit(hallId, pax, cmbPartyType.Text);
+            session.HallEdit(hallId, pax, cmbPartyType.Text);
 
-            dataGridViewHalls.DataSource = manager.LoadTable("SELECT * FROM Hall");
+            dataGridViewHalls.DataSource = session.LoadTable("SELECT * FROM Hall");
             ClearFields();
         }
 
@@ -90,7 +101,7 @@ namespace Foodie_Point_Management_System.Manager
 
             if (result == DialogResult.Yes)
             {
-                manager.HallDelete(hallID);
+                session.HallDelete(hallID);
 
                 DataTable dt = (DataTable)dataGridViewHalls.DataSource;
                 dt.Rows.RemoveAt(dataGridViewHalls.CurrentRow.Index);
@@ -125,7 +136,7 @@ namespace Foodie_Point_Management_System.Manager
         {
             try
             {
-                dataGridViewHalls.DataSource = manager.LoadTable("SELECT HallID, Pax, PartyType FROM Hall");
+                dataGridViewHalls.DataSource = session.LoadTable("SELECT HallID, Pax, PartyType FROM Hall");
                 dataGridViewHalls.Refresh();
                 dataGridViewHalls.ClearSelection();
                 ClearFields();
@@ -140,7 +151,7 @@ namespace Foodie_Point_Management_System.Manager
         {
             if(!string.IsNullOrWhiteSpace(txtSearch.Text))
             {
-                dataGridViewHalls.DataSource = manager.HallSearch(txtSearch.Text);
+                dataGridViewHalls.DataSource = session.HallSearch(txtSearch.Text);
             }
             else
             {
@@ -167,17 +178,14 @@ namespace Foodie_Point_Management_System.Manager
 
         private void btnMenuD_Click(object sender, EventArgs e)
         {
-            ManagerFoodMenu managerMenu = new ManagerFoodMenu();
+            ManagerFoodMenu managerMenu = new ManagerFoodMenu(session);
             managerMenu.Show();
             this.Hide();
-            pnlNav.Height = btnMenuD.Height;
-            pnlNav.Top = btnMenuD.Top;
-            pnlNav.Left = btnMenuD.Left;
         }
 
         private void btnHallsD_Click(object sender, EventArgs e)
         {
-            ManagerHall listOfHalls = new ManagerHall();
+            ManagerHall listOfHalls = new ManagerHall(session);
             listOfHalls.Show();
             this.Hide();
             pnlNav.Height = btnHallsD.Height;
@@ -191,9 +199,6 @@ namespace Foodie_Point_Management_System.Manager
             //frmEmployeeProfileSettings settings = new frmEmployeeProfileSettings();
             //settings.Show();
             //this.Hide();
-            pnlNav.Height = btnSettings.Height;
-            pnlNav.Top = btnSettings.Top;
-            pnlNav.Left = btnSettings.Left;
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -206,7 +211,7 @@ namespace Foodie_Point_Management_System.Manager
 
         private void btnDash_Click(object sender, EventArgs e)
         {
-            ManagerDashboard dash = new ManagerDashboard();
+            ManagerDashboard dash = new ManagerDashboard(session);
             dash.Show();
             this.Hide();
         }
@@ -221,30 +226,21 @@ namespace Foodie_Point_Management_System.Manager
 
         private void btnReserD_Click(object sender, EventArgs e)
         {
-            ManagerReservationsReport reservation = new ManagerReservationsReport();
+            ManagerReservationsReport reservation = new ManagerReservationsReport(session);
             reservation.Show();
             this.Hide();
-            pnlNav.Height = btnReserD.Height;
-            pnlNav.Top = btnReserD.Top;
-            pnlNav.Left = btnReserD.Left;
         }
 
         private void btnSalesReportD_Click(object sender, EventArgs e)
         {
-            ManagerSalesReport sales = new ManagerSalesReport();
+            ManagerSalesReport sales = new ManagerSalesReport(session);
             sales.Show();
             this.Hide();
-            pnlNav.Height = btnSalesReportD.Height;
-            pnlNav.Top = btnSalesReportD.Top;
-            pnlNav.Left = btnSalesReportD.Left;
         }
 
         private void lbl_Click(object sender, EventArgs e)
         {
 
-            ManagerDashboard dashboard = new ManagerDashboard(manager);
-            dashboard.Show();
-            this.Close();
         }
     }
 }

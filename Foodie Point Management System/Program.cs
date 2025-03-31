@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Foodie_Point_Management_System.Admin;
 using Foodie_Point_Management_System.Customer;
 using Foodie_Point_Management_System.Manager;
+using static System.Collections.Specialized.BitVector32;
 
 namespace Foodie_Point_Management_System
 {
@@ -18,11 +20,7 @@ namespace Foodie_Point_Management_System
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-<<<<<<< HEAD
-            Application.Run(new ManagerDashboard());
-=======
-            Application.Run(new ManagerReservationsReport(new EmManager(1,"e","e","e")));
->>>>>>> ab9a506878f63e35a0628d84f339fb54244c9948
+            Application.Run(new frmAdminDashboard(new emAdmin(1, "e", "e", "e")));
         }
     }
 }
