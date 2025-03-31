@@ -16,13 +16,10 @@ namespace Foodie_Point_Management_System.Manager
         public ManagerHall(EmManager s)
         {
             InitializeComponent();
-<<<<<<< HEAD
             pnlNav.Height = btnHallsD.Height;
             pnlNav.Top = btnHallsD.Top;
             pnlNav.Left = btnHallsD.Left;
-=======
             this.manager = s;
->>>>>>> 66a1612653e6c948b04dcc409a25480793013a04
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -165,7 +162,6 @@ namespace Foodie_Point_Management_System.Manager
 
         private void lblHall_Click(object sender, EventArgs e)
         {
-<<<<<<< HEAD
 
         }
 
@@ -246,11 +242,9 @@ namespace Foodie_Point_Management_System.Manager
         private void lbl_Click(object sender, EventArgs e)
         {
 
-=======
             ManagerDashboard dashboard = new ManagerDashboard(manager);
             dashboard.Show();
             this.Close();
->>>>>>> ab9a506878f63e35a0628d84f339fb54244c9948
         }
     }
 }

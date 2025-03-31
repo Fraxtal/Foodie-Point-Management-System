@@ -17,14 +17,11 @@ namespace Foodie_Point_Management_System.Manager
         public ManagerFoodMenu(EmManager s)
         {
             InitializeComponent();
-<<<<<<< HEAD
             pnlNav.Height = btnMenuD.Height;
             pnlNav.Top = btnMenuD.Top;
             pnlNav.Left = btnMenuD.Left;
 
-=======
             this.manager = s;
->>>>>>> 66a1612653e6c948b04dcc409a25480793013a04
         }
         private void ManagerMenu_Load(object sender, EventArgs e)
         {
@@ -166,8 +163,6 @@ namespace Foodie_Point_Management_System.Manager
 
         private void lblMenu_Click(object sender, EventArgs e)
         {
-<<<<<<< HEAD
-
         }
 
         private void btnMenuD_Click(object sender, EventArgs e)
@@ -247,11 +242,6 @@ namespace Foodie_Point_Management_System.Manager
             pnlNav.Height = btnSalesReportD.Height;
             pnlNav.Top = btnSalesReportD.Top;
             pnlNav.Left = btnSalesReportD.Left;
-=======
-            ManagerDashboard dashboard = new ManagerDashboard(manager);
-            dashboard.Show();
-            this.Close();
->>>>>>> ab9a506878f63e35a0628d84f339fb54244c9948
         }
     }
 }
