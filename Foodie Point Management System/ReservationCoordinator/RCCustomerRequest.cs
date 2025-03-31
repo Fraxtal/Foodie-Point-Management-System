@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -15,10 +16,23 @@ namespace Foodie_Point_Management_System.ReservationCoordinator
     public partial class CustomerRequest : Form
     {
         ReservationCoord rc;
+        [DllImport("gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn(
+        int nLeftRect,
+        int nTopRect,
+        int nRightRect,
+        int nBottomRect,
+        int nWidthEllipse,
+        int nHeightEllipse
+                );
         public CustomerRequest(ReservationCoord s)
         {
             InitializeComponent();
             this.rc = s;
+            pnlNav.Height = btnRequest.Height;
+            pnlNav.Top = btnRequest.Top;
+            pnlNav.Left = btnRequest.Left;
+            Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
         }
 
         
@@ -94,6 +108,54 @@ namespace Foodie_Point_Management_System.ReservationCoordinator
                 txtName.Text = rows.Cells[0].Value.ToString();
                 txtresID.Text = rows.Cells[1].Value.ToString();
             }
+        }
+        private void btnDash_Click(object sender, EventArgs e)
+        {
+            ReservationCoordinatorDashboard dashboard = new ReservationCoordinatorDashboard(rc);
+            dashboard.Show();
+            this.Hide();
+        }
+
+        private void btnSearchReser_Click(object sender, EventArgs e)
+        {
+            SearchReservations searchReservations = new SearchReservations();
+            searchReservations.Show();
+            this.Hide();
+        }
+
+        private void btnRequest_Click(object sender, EventArgs e)
+        {
+            CustomerRequest customerRequest = new CustomerRequest(rc);
+            customerRequest.Show();
+            this.Hide();
+        }
+
+        private void btnProfile_Click(object sender, EventArgs e)
+        {
+            //frmEmployeeProfileSettings rcProfile = new frmEmployeeProfileSettings();
+            //rcProfile.Show();
+            //this.Hide();
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show($"Log out?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
+        private void lblExit_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show($"Close the application?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
+        private void btnReserManage_Click(object sender, EventArgs e)
+        {
+            ManageReservations manageReservation = new ManageReservations(rc);
+            manageReservation.Show();
+            this.Hide();
         }
     }
 }
