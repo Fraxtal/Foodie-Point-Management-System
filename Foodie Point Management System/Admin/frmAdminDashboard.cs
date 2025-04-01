@@ -21,8 +21,8 @@ namespace Foodie_Point_Management_System.Admin
         int nRightRect,
         int nBottomRect,
         int nWidthEllipse,
-        int nHeightEllipse
-                );
+        int nHeightEllipse );
+
         emAdmin session;
 
         public frmAdminDashboard(emAdmin s)
