@@ -44,7 +44,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Modern No. 20", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.label1.Location = new System.Drawing.Point(434, 113);
+            this.label1.Location = new System.Drawing.Point(438, 88);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(241, 34);
@@ -58,10 +58,10 @@
             this.btnCCard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCCard.Font = new System.Drawing.Font("Modern No. 20", 32F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCCard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnCCard.Location = new System.Drawing.Point(607, 260);
+            this.btnCCard.Location = new System.Drawing.Point(611, 195);
             this.btnCCard.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCCard.Name = "btnCCard";
-            this.btnCCard.Size = new System.Drawing.Size(220, 125);
+            this.btnCCard.Size = new System.Drawing.Size(266, 179);
             this.btnCCard.TabIndex = 1;
             this.btnCCard.Text = "💳";
             this.btnCCard.UseVisualStyleBackColor = false;
@@ -73,10 +73,10 @@
             this.btnCash.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCash.Font = new System.Drawing.Font("Modern No. 20", 32F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCash.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btnCash.Location = new System.Drawing.Point(291, 260);
+            this.btnCash.Location = new System.Drawing.Point(249, 195);
             this.btnCash.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCash.Name = "btnCash";
-            this.btnCash.Size = new System.Drawing.Size(220, 125);
+            this.btnCash.Size = new System.Drawing.Size(266, 179);
             this.btnCash.TabIndex = 2;
             this.btnCash.Text = "💵";
             this.btnCash.UseVisualStyleBackColor = false;
@@ -86,7 +86,7 @@
             // 
             this.txtTotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(212)))), ((int)(((byte)(194)))));
             this.txtTotal.Font = new System.Drawing.Font("Modern No. 20", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotal.Location = new System.Drawing.Point(488, 605);
+            this.txtTotal.Location = new System.Drawing.Point(560, 590);
             this.txtTotal.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.ReadOnly = true;
@@ -98,7 +98,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Modern No. 20", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.label2.Location = new System.Drawing.Point(243, 613);
+            this.label2.Location = new System.Drawing.Point(323, 590);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(218, 34);
@@ -145,7 +145,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Modern No. 20", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label5.Location = new System.Drawing.Point(534, 315);
+            this.label5.Location = new System.Drawing.Point(539, 277);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(49, 34);

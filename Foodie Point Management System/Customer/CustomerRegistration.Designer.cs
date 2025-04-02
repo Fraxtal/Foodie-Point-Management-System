@@ -138,6 +138,7 @@
             // 
             // btnRegister_Login
             // 
+            this.btnRegister_Login.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(133)))), ((int)(((byte)(99)))));
             this.btnRegister_Login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegister_Login.Font = new System.Drawing.Font("Baskerville Old Face", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegister_Login.Location = new System.Drawing.Point(59, 491);
@@ -146,7 +147,7 @@
             this.btnRegister_Login.Size = new System.Drawing.Size(228, 35);
             this.btnRegister_Login.TabIndex = 8;
             this.btnRegister_Login.Text = "Login Now";
-            this.btnRegister_Login.UseVisualStyleBackColor = true;
+            this.btnRegister_Login.UseVisualStyleBackColor = false;
             this.btnRegister_Login.Click += new System.EventHandler(this.btnRegister_Login_Click);
             // 
             // cbSPassword

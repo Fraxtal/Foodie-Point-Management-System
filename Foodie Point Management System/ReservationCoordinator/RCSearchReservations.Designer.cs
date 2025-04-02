@@ -53,10 +53,10 @@
             this.btnReserManage = new System.Windows.Forms.Button();
             this.btnDash = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.lblExit = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.lblExit = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DGVResult)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -69,7 +69,7 @@
             this.lbltitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.lbltitle.Location = new System.Drawing.Point(288, 56);
             this.lbltitle.Name = "lbltitle";
-            this.lbltitle.Size = new System.Drawing.Size(282, 34);
+            this.lbltitle.Size = new System.Drawing.Size(342, 41);
             this.lbltitle.TabIndex = 0;
             this.lbltitle.Text = "Search Reservations";
             this.lbltitle.Click += new System.EventHandler(this.lbltitle_Click);
@@ -136,15 +136,17 @@
             // 
             // btnSearch
             // 
+            this.btnSearch.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(87)))), ((int)(((byte)(46)))));
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnSearch.ForeColor = System.Drawing.Color.White;
             this.btnSearch.Location = new System.Drawing.Point(840, 196);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(98, 45);
             this.btnSearch.TabIndex = 28;
             this.btnSearch.Text = "Search";
-            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click_1);
             // 
             // txtName
@@ -152,7 +154,7 @@
             this.txtName.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtName.Location = new System.Drawing.Point(405, 113);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(205, 29);
+            this.txtName.Size = new System.Drawing.Size(205, 33);
             this.txtName.TabIndex = 27;
             this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             // 
@@ -163,7 +165,7 @@
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.label4.Location = new System.Drawing.Point(292, 114);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(76, 25);
+            this.label4.Size = new System.Drawing.Size(90, 30);
             this.label4.TabIndex = 26;
             this.label4.Text = "Name :";
             // 
@@ -173,7 +175,7 @@
             this.dtpDate.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpDate.Location = new System.Drawing.Point(733, 113);
             this.dtpDate.Name = "dtpDate";
-            this.dtpDate.Size = new System.Drawing.Size(205, 32);
+            this.dtpDate.Size = new System.Drawing.Size(205, 37);
             this.dtpDate.TabIndex = 25;
             // 
             // cmbStatus
@@ -186,7 +188,7 @@
             "Cancelled"});
             this.cmbStatus.Location = new System.Drawing.Point(405, 161);
             this.cmbStatus.Name = "cmbStatus";
-            this.cmbStatus.Size = new System.Drawing.Size(205, 33);
+            this.cmbStatus.Size = new System.Drawing.Size(205, 38);
             this.cmbStatus.TabIndex = 24;
             // 
             // label3
@@ -196,7 +198,7 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.label3.Location = new System.Drawing.Point(292, 162);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(80, 25);
+            this.label3.Size = new System.Drawing.Size(97, 30);
             this.label3.TabIndex = 22;
             this.label3.Text = "Status :";
             // 
@@ -207,7 +209,7 @@
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.label2.Location = new System.Drawing.Point(631, 162);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 25);
+            this.label2.Size = new System.Drawing.Size(80, 30);
             this.label2.TabIndex = 21;
             this.label2.Text = "Hall :";
             // 
@@ -218,7 +220,7 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.label1.Location = new System.Drawing.Point(631, 114);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 25);
+            this.label1.Size = new System.Drawing.Size(79, 30);
             this.label1.TabIndex = 20;
             this.label1.Text = "Date :";
             // 
@@ -227,7 +229,7 @@
             this.txtHall.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtHall.Location = new System.Drawing.Point(733, 161);
             this.txtHall.Name = "txtHall";
-            this.txtHall.Size = new System.Drawing.Size(205, 29);
+            this.txtHall.Size = new System.Drawing.Size(205, 33);
             this.txtHall.TabIndex = 29;
             // 
             // panel1
@@ -351,17 +353,6 @@
             this.panel2.Size = new System.Drawing.Size(255, 172);
             this.panel2.TabIndex = 1;
             // 
-            // lblExit
-            // 
-            this.lblExit.AutoSize = true;
-            this.lblExit.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblExit.Location = new System.Drawing.Point(969, 9);
-            this.lblExit.Name = "lblExit";
-            this.lblExit.Size = new System.Drawing.Size(19, 20);
-            this.lblExit.TabIndex = 57;
-            this.lblExit.Text = "X";
-            this.lblExit.Click += new System.EventHandler(this.lblExit_Click);
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -370,7 +361,7 @@
             this.label10.Location = new System.Drawing.Point(29, 126);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(202, 26);
+            this.label10.Size = new System.Drawing.Size(223, 29);
             this.label10.TabIndex = 36;
             this.label10.Text = "Management System";
             // 
@@ -382,7 +373,7 @@
             this.label11.Location = new System.Drawing.Point(66, 99);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(125, 27);
+            this.label11.Size = new System.Drawing.Size(148, 32);
             this.label11.TabIndex = 35;
             this.label11.Text = "Foodie Point";
             // 
@@ -393,13 +384,24 @@
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.label12.Location = new System.Drawing.Point(67, 8);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(131, 91);
+            this.label12.Size = new System.Drawing.Size(155, 108);
             this.label12.TabIndex = 34;
             this.label12.Text = "🍵";
             // 
+            // lblExit
+            // 
+            this.lblExit.AutoSize = true;
+            this.lblExit.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblExit.Location = new System.Drawing.Point(969, 9);
+            this.lblExit.Name = "lblExit";
+            this.lblExit.Size = new System.Drawing.Size(23, 24);
+            this.lblExit.TabIndex = 57;
+            this.lblExit.Text = "X";
+            this.lblExit.Click += new System.EventHandler(this.lblExit_Click);
+            // 
             // SearchReservations
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 29F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(18F, 34F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(235)))), ((int)(((byte)(226)))));
             this.ClientSize = new System.Drawing.Size(1000, 600);

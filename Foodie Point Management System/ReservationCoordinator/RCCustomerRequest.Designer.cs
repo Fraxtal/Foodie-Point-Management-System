@@ -60,10 +60,10 @@
             this.lbltitle.AutoSize = true;
             this.lbltitle.Font = new System.Drawing.Font("Modern No. 20", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbltitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.lbltitle.Location = new System.Drawing.Point(291, 23);
+            this.lbltitle.Location = new System.Drawing.Point(441, 27);
             this.lbltitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbltitle.Name = "lbltitle";
-            this.lbltitle.Size = new System.Drawing.Size(263, 34);
+            this.lbltitle.Size = new System.Drawing.Size(317, 41);
             this.lbltitle.TabIndex = 0;
             this.lbltitle.Text = "Customer Requests";
             // 
@@ -73,7 +73,7 @@
             this.txtName.Location = new System.Drawing.Point(462, 340);
             this.txtName.Name = "txtName";
             this.txtName.ReadOnly = true;
-            this.txtName.Size = new System.Drawing.Size(205, 29);
+            this.txtName.Size = new System.Drawing.Size(205, 33);
             this.txtName.TabIndex = 36;
             // 
             // label4
@@ -83,7 +83,7 @@
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.label4.Location = new System.Drawing.Point(292, 344);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(131, 25);
+            this.label4.Size = new System.Drawing.Size(156, 30);
             this.label4.TabIndex = 35;
             this.label4.Text = "Message ID :";
             // 
@@ -92,7 +92,7 @@
             this.txtResponse.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtResponse.Location = new System.Drawing.Point(297, 515);
             this.txtResponse.Name = "txtResponse";
-            this.txtResponse.Size = new System.Drawing.Size(515, 29);
+            this.txtResponse.Size = new System.Drawing.Size(515, 33);
             this.txtResponse.TabIndex = 39;
             this.txtResponse.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -103,23 +103,24 @@
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.label5.Location = new System.Drawing.Point(292, 471);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(95, 25);
+            this.label5.Size = new System.Drawing.Size(116, 30);
             this.label5.TabIndex = 40;
             this.label5.Text = "Response";
             this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // btnReply
             // 
+            this.btnReply.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(87)))), ((int)(((byte)(46)))));
             this.btnReply.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReply.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReply.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnReply.ForeColor = System.Drawing.Color.White;
             this.btnReply.Location = new System.Drawing.Point(847, 507);
             this.btnReply.Margin = new System.Windows.Forms.Padding(2);
             this.btnReply.Name = "btnReply";
             this.btnReply.Size = new System.Drawing.Size(112, 37);
             this.btnReply.TabIndex = 41;
             this.btnReply.Text = "Reply";
-            this.btnReply.UseVisualStyleBackColor = true;
+            this.btnReply.UseVisualStyleBackColor = false;
             this.btnReply.Click += new System.EventHandler(this.btnReply_Click);
             // 
             // txtresID
@@ -128,7 +129,7 @@
             this.txtresID.Location = new System.Drawing.Point(462, 388);
             this.txtresID.Name = "txtresID";
             this.txtresID.ReadOnly = true;
-            this.txtresID.Size = new System.Drawing.Size(205, 29);
+            this.txtresID.Size = new System.Drawing.Size(205, 33);
             this.txtresID.TabIndex = 43;
             // 
             // label9
@@ -138,7 +139,7 @@
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.label9.Location = new System.Drawing.Point(292, 388);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(164, 25);
+            this.label9.Size = new System.Drawing.Size(198, 30);
             this.label9.TabIndex = 42;
             this.label9.Text = "Reservation ID :";
             // 
@@ -163,7 +164,7 @@
             this.lblExit.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblExit.Location = new System.Drawing.Point(969, 9);
             this.lblExit.Name = "lblExit";
-            this.lblExit.Size = new System.Drawing.Size(19, 20);
+            this.lblExit.Size = new System.Drawing.Size(23, 24);
             this.lblExit.TabIndex = 58;
             this.lblExit.Text = "X";
             this.lblExit.Click += new System.EventHandler(this.lblExit_Click);
@@ -297,7 +298,7 @@
             this.label3.Location = new System.Drawing.Point(29, 126);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(202, 26);
+            this.label3.Size = new System.Drawing.Size(223, 29);
             this.label3.TabIndex = 30;
             this.label3.Text = "Management System";
             // 
@@ -309,7 +310,7 @@
             this.label2.Location = new System.Drawing.Point(66, 99);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(125, 27);
+            this.label2.Size = new System.Drawing.Size(148, 32);
             this.label2.TabIndex = 29;
             this.label2.Text = "Foodie Point";
             // 
@@ -320,13 +321,13 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.label1.Location = new System.Drawing.Point(67, 8);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(131, 91);
+            this.label1.Size = new System.Drawing.Size(155, 108);
             this.label1.TabIndex = 28;
             this.label1.Text = "🍵";
             // 
             // CustomerRequest
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(235)))), ((int)(((byte)(226)))));
             this.ClientSize = new System.Drawing.Size(1000, 600);
@@ -342,6 +343,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.lbltitle);
             this.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CustomerRequest";

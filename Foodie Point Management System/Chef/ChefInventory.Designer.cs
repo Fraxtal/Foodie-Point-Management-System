@@ -94,7 +94,7 @@
             this.txtbxSearchBar.ForeColor = System.Drawing.Color.Silver;
             this.txtbxSearchBar.Location = new System.Drawing.Point(701, 40);
             this.txtbxSearchBar.Name = "txtbxSearchBar";
-            this.txtbxSearchBar.Size = new System.Drawing.Size(226, 26);
+            this.txtbxSearchBar.Size = new System.Drawing.Size(226, 29);
             this.txtbxSearchBar.TabIndex = 29;
             this.txtbxSearchBar.Text = "Search by ID or Name...";
             this.txtbxSearchBar.Enter += new System.EventHandler(this.txtbxSearchBar_Enter);
@@ -113,6 +113,7 @@
             // 
             // btnDelete
             // 
+            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(133)))), ((int)(((byte)(99)))));
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -122,21 +123,22 @@
             this.btnDelete.Size = new System.Drawing.Size(128, 46);
             this.btnDelete.TabIndex = 27;
             this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUpdate
             // 
+            this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(212)))), ((int)(((byte)(194)))));
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnUpdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.btnUpdate.Location = new System.Drawing.Point(820, 453);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(4);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(128, 46);
             this.btnUpdate.TabIndex = 26;
             this.btnUpdate.Text = "Update";
-            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // txtbxQuantity
@@ -144,7 +146,7 @@
             this.txtbxQuantity.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbxQuantity.Location = new System.Drawing.Point(434, 511);
             this.txtbxQuantity.Name = "txtbxQuantity";
-            this.txtbxQuantity.Size = new System.Drawing.Size(245, 29);
+            this.txtbxQuantity.Size = new System.Drawing.Size(245, 33);
             this.txtbxQuantity.TabIndex = 24;
             // 
             // lblQuantity
@@ -154,7 +156,7 @@
             this.lblQuantity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblQuantity.Location = new System.Drawing.Point(314, 512);
             this.lblQuantity.Name = "lblQuantity";
-            this.lblQuantity.Size = new System.Drawing.Size(85, 22);
+            this.lblQuantity.Size = new System.Drawing.Size(103, 25);
             this.lblQuantity.TabIndex = 23;
             this.lblQuantity.Text = "Quantity:";
             // 
@@ -163,7 +165,7 @@
             this.txtbxItemName.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbxItemName.Location = new System.Drawing.Point(434, 452);
             this.txtbxItemName.Name = "txtbxItemName";
-            this.txtbxItemName.Size = new System.Drawing.Size(245, 29);
+            this.txtbxItemName.Size = new System.Drawing.Size(245, 33);
             this.txtbxItemName.TabIndex = 22;
             // 
             // lblItemName
@@ -173,7 +175,7 @@
             this.lblItemName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblItemName.Location = new System.Drawing.Point(303, 455);
             this.lblItemName.Name = "lblItemName";
-            this.lblItemName.Size = new System.Drawing.Size(103, 22);
+            this.lblItemName.Size = new System.Drawing.Size(125, 25);
             this.lblItemName.TabIndex = 21;
             this.lblItemName.Text = "Item Name:";
             // 
@@ -183,7 +185,7 @@
             this.txtbxItemID.Location = new System.Drawing.Point(434, 396);
             this.txtbxItemID.Name = "txtbxItemID";
             this.txtbxItemID.ReadOnly = true;
-            this.txtbxItemID.Size = new System.Drawing.Size(245, 29);
+            this.txtbxItemID.Size = new System.Drawing.Size(245, 33);
             this.txtbxItemID.TabIndex = 20;
             // 
             // lblItemID
@@ -193,7 +195,7 @@
             this.lblItemID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblItemID.Location = new System.Drawing.Point(314, 397);
             this.lblItemID.Name = "lblItemID";
-            this.lblItemID.Size = new System.Drawing.Size(80, 22);
+            this.lblItemID.Size = new System.Drawing.Size(96, 25);
             this.lblItemID.TabIndex = 19;
             this.lblItemID.Text = "Item ID:";
             // 
@@ -201,7 +203,7 @@
             // 
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.btnAdd.Location = new System.Drawing.Point(820, 387);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
             this.btnAdd.Name = "btnAdd";
@@ -217,7 +219,7 @@
             this.lblExit.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblExit.Location = new System.Drawing.Point(969, 9);
             this.lblExit.Name = "lblExit";
-            this.lblExit.Size = new System.Drawing.Size(19, 20);
+            this.lblExit.Size = new System.Drawing.Size(23, 24);
             this.lblExit.TabIndex = 33;
             this.lblExit.Text = "X";
             this.lblExit.Click += new System.EventHandler(this.lblExit_Click);
@@ -331,7 +333,7 @@
             this.label3.Location = new System.Drawing.Point(35, 125);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(202, 26);
+            this.label3.Size = new System.Drawing.Size(223, 29);
             this.label3.TabIndex = 24;
             this.label3.Text = "Management System";
             // 
@@ -343,7 +345,7 @@
             this.label2.Location = new System.Drawing.Point(67, 90);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(125, 27);
+            this.label2.Size = new System.Drawing.Size(148, 32);
             this.label2.TabIndex = 23;
             this.label2.Text = "Foodie Point";
             // 
@@ -354,7 +356,7 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.label1.Location = new System.Drawing.Point(62, 3);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(131, 91);
+            this.label1.Size = new System.Drawing.Size(155, 108);
             this.label1.TabIndex = 0;
             this.label1.Text = "🍵";
             // 
@@ -376,7 +378,7 @@
             // 
             // frmChefInventory
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(235)))), ((int)(((byte)(226)))));
             this.ClientSize = new System.Drawing.Size(1000, 600);

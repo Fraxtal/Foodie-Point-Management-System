@@ -57,10 +57,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Modern No. 20", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.label1.Location = new System.Drawing.Point(284, 66);
+            this.label1.Location = new System.Drawing.Point(537, 38);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 34);
+            this.label1.Size = new System.Drawing.Size(115, 41);
             this.label1.TabIndex = 0;
             this.label1.Text = "Home";
             // 
@@ -82,11 +82,11 @@
             // lblpending
             // 
             this.lblpending.AutoSize = true;
-            this.lblpending.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.lblpending.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblpending.Location = new System.Drawing.Point(286, 137);
             this.lblpending.Name = "lblpending";
             this.lblpending.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblpending.Size = new System.Drawing.Size(112, 22);
+            this.lblpending.Size = new System.Drawing.Size(134, 25);
             this.lblpending.TabIndex = 12;
             this.lblpending.Text = "Reservations";
             this.lblpending.Click += new System.EventHandler(this.lblpending_Click);
@@ -94,10 +94,10 @@
             // radconfirm
             // 
             this.radconfirm.AutoSize = true;
-            this.radconfirm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.radconfirm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.radconfirm.Location = new System.Drawing.Point(745, 135);
             this.radconfirm.Name = "radconfirm";
-            this.radconfirm.Size = new System.Drawing.Size(116, 26);
+            this.radconfirm.Size = new System.Drawing.Size(139, 29);
             this.radconfirm.TabIndex = 13;
             this.radconfirm.TabStop = true;
             this.radconfirm.Text = "Confirmed";
@@ -107,10 +107,10 @@
             // radpending
             // 
             this.radpending.AutoSize = true;
-            this.radpending.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.radpending.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.radpending.Location = new System.Drawing.Point(867, 135);
             this.radpending.Name = "radpending";
-            this.radpending.Size = new System.Drawing.Size(99, 26);
+            this.radpending.Size = new System.Drawing.Size(119, 29);
             this.radpending.TabIndex = 14;
             this.radpending.TabStop = true;
             this.radpending.Text = "Pending";
@@ -120,10 +120,10 @@
             // radAll
             // 
             this.radAll.AutoSize = true;
-            this.radAll.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.radAll.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.radAll.Location = new System.Drawing.Point(668, 135);
             this.radAll.Name = "radAll";
-            this.radAll.Size = new System.Drawing.Size(57, 26);
+            this.radAll.Size = new System.Drawing.Size(70, 29);
             this.radAll.TabIndex = 15;
             this.radAll.TabStop = true;
             this.radAll.Text = "All";
@@ -136,7 +136,7 @@
             this.lblExit.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblExit.Location = new System.Drawing.Point(969, 9);
             this.lblExit.Name = "lblExit";
-            this.lblExit.Size = new System.Drawing.Size(19, 20);
+            this.lblExit.Size = new System.Drawing.Size(23, 24);
             this.lblExit.TabIndex = 29;
             this.lblExit.Text = "X";
             this.lblExit.Click += new System.EventHandler(this.lblExit_Click);
@@ -270,7 +270,7 @@
             this.label10.Location = new System.Drawing.Point(29, 126);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(202, 26);
+            this.label10.Size = new System.Drawing.Size(223, 29);
             this.label10.TabIndex = 39;
             this.label10.Text = "Management System";
             // 
@@ -282,7 +282,7 @@
             this.label11.Location = new System.Drawing.Point(66, 99);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(125, 27);
+            this.label11.Size = new System.Drawing.Size(148, 32);
             this.label11.TabIndex = 38;
             this.label11.Text = "Foodie Point";
             // 
@@ -293,13 +293,13 @@
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.label12.Location = new System.Drawing.Point(67, 8);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(131, 91);
+            this.label12.Size = new System.Drawing.Size(155, 108);
             this.label12.TabIndex = 37;
             this.label12.Text = "🍵";
             // 
             // ReservationCoordinatorDashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(235)))), ((int)(((byte)(226)))));
             this.ClientSize = new System.Drawing.Size(1000, 600);
@@ -312,6 +312,7 @@
             this.Controls.Add(this.upcoming);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ReservationCoordinatorDashboard";
