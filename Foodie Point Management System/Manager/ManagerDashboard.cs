@@ -166,5 +166,10 @@ namespace Foodie_Point_Management_System.Manager
         {
 
         }
+
+        private void ManagerDashboard_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
