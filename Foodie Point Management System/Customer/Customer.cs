@@ -21,12 +21,12 @@ namespace Foodie_Point_Management_System.Customer
     {
         private int id;
         private string username;
-        private int? currentorderid;
+        private int? coid;
 
 
         public int Id { get => id; set => id = value; }
         public string Username { get => username; set => username = value; }
-        public int? CurrentOrderId { get => currentorderid; set => currentorderid = value; }
+        public int? CurrentOrderId { get => coid; set => coid = value; }
 
         static SqlConnection connect = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString());
     
@@ -578,9 +578,10 @@ namespace Foodie_Point_Management_System.Customer
                         cmd.ExecuteNonQuery();
                     }
 
-                    query = "INSERT INTO Invoice(CustomerID, Total, PaymentMethod) VALUES(@CustomerID, @total, @pMethod)";
+                    query = "INSERT INTO Invoice(OrderID, CustomerID, Total, PaymentMethod) VALUES (@OrderID, @CustomerID, @total, @pMethod)";
                     using (SqlCommand cmd = new SqlCommand(query, connect))
                     {
+                        cmd.Parameters.AddWithValue("@OrderID", CurrentOrderId);
                         cmd.Parameters.AddWithValue("@CustomerID", Id);
                         cmd.Parameters.AddWithValue("@total", total);
                         cmd.Parameters.AddWithValue("@pMethod", method);
