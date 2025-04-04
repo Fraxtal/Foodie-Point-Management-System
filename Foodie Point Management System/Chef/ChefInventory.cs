@@ -17,7 +17,7 @@ namespace Foodie_Point_Management_System.Chef
 {
     public partial class frmChefInventory : Form
     {
-        EmChef sessionCI;
+        
         [DllImport("gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn(
         int nLeftRect,
@@ -28,6 +28,7 @@ namespace Foodie_Point_Management_System.Chef
         int nHeightEllipse
                 );
 
+        EmChef sessionCI;
         public frmChefInventory(EmChef sc)
         {
             InitializeComponent();

@@ -15,7 +15,6 @@ namespace Foodie_Point_Management_System.Chef
 {
     public partial class frmChefDashboard : Form
     {
-        EmChef sessionCD;
         [DllImport("gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn(
         int nLeftRect,
@@ -24,7 +23,10 @@ namespace Foodie_Point_Management_System.Chef
         int nBottomRect,
         int nWidthEllipse,
         int nHeightEllipse
-                );
+            );
+
+        EmChef sessionCD;
+        
         public frmChefDashboard(EmChef sc)
         {
             InitializeComponent();
@@ -34,6 +36,7 @@ namespace Foodie_Point_Management_System.Chef
             pnlNav.Left = btnDash.Left;
             Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
         }
+
         private void lblUnfulfilled_Click(object sender, EventArgs e)
         {
             frmChefViewOrders pageVO = new frmChefViewOrders(sessionCD);

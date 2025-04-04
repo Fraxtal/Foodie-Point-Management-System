@@ -16,7 +16,6 @@ namespace Foodie_Point_Management_System.Chef
 {
     public partial class frmChefViewOrders : Form
     {
-        EmChef sessionCV;
         string currentsort;
         string sort = "SELECT OrderTable.OrderID AS 'Order ID', FoodMenu.Name AS 'Food Name', OrderDetail.Quantity AS 'Quantity', " +
                     "OrderTable.CustomerID AS 'Customer ID', OrderTable.OrderStatus AS 'Status', Employee.FullName AS 'Chef Name' " +
@@ -38,6 +37,7 @@ namespace Foodie_Point_Management_System.Chef
         int nHeightEllipse
                 );
 
+        EmChef sessionCV;
         public frmChefViewOrders(EmChef sc)
         {
             InitializeComponent();
