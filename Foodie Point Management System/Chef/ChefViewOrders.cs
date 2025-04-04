@@ -260,5 +260,10 @@ namespace Foodie_Point_Management_System.Chef
         {
 
         }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

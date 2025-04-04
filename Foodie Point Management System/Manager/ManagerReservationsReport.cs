@@ -250,5 +250,10 @@ namespace Foodie_Point_Management_System.Manager
                 Application.Exit();
             }
         }
+
+        private void gbSortBy_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

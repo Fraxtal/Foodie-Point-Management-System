@@ -22,8 +22,8 @@ namespace Foodie_Point_Management_System
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new ReservationCoordinatorDashboard(new ReservationCoord(1, "e", "e", "e")));
-            Application.Run(new CustomerLogin());
+            Application.Run(new frmChefDashboard(new EmChef(1, "e", "e", "e")));
+            //Application.Run(new CustomerLogin());
         }
     }
 }

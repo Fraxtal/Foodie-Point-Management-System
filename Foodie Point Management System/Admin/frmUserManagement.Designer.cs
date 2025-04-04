@@ -73,10 +73,10 @@
             // 
             lblEmail.AutoSize = true;
             lblEmail.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            lblEmail.Location = new System.Drawing.Point(296, 549);
+            lblEmail.Location = new System.Drawing.Point(322, 618);
             lblEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lblEmail.Name = "lblEmail";
-            lblEmail.Size = new System.Drawing.Size(65, 22);
+            lblEmail.Size = new System.Drawing.Size(79, 25);
             lblEmail.TabIndex = 9;
             lblEmail.Text = "Email:";
             // 
@@ -85,10 +85,11 @@
             this.radiobtnCustomer.AutoSize = true;
             this.radiobtnCustomer.Checked = true;
             this.radiobtnCustomer.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radiobtnCustomer.Location = new System.Drawing.Point(871, 114);
+            this.radiobtnCustomer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.radiobtnCustomer.Location = new System.Drawing.Point(309, 159);
             this.radiobtnCustomer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radiobtnCustomer.Name = "radiobtnCustomer";
-            this.radiobtnCustomer.Size = new System.Drawing.Size(105, 26);
+            this.radiobtnCustomer.Size = new System.Drawing.Size(126, 29);
             this.radiobtnCustomer.TabIndex = 0;
             this.radiobtnCustomer.TabStop = true;
             this.radiobtnCustomer.Text = "Customer";
@@ -99,10 +100,10 @@
             // 
             this.radiobtnEmployee.AutoSize = true;
             this.radiobtnEmployee.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radiobtnEmployee.Location = new System.Drawing.Point(871, 152);
+            this.radiobtnEmployee.Location = new System.Drawing.Point(309, 232);
             this.radiobtnEmployee.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radiobtnEmployee.Name = "radiobtnEmployee";
-            this.radiobtnEmployee.Size = new System.Drawing.Size(110, 26);
+            this.radiobtnEmployee.Size = new System.Drawing.Size(134, 29);
             this.radiobtnEmployee.TabIndex = 1;
             this.radiobtnEmployee.Text = "Employee";
             this.radiobtnEmployee.UseVisualStyleBackColor = true;
@@ -111,13 +112,13 @@
             // umdw
             // 
             this.umdw.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.umdw.Location = new System.Drawing.Point(301, 84);
+            this.umdw.Location = new System.Drawing.Point(464, 88);
             this.umdw.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.umdw.MultiSelect = false;
             this.umdw.Name = "umdw";
             this.umdw.RowHeadersWidth = 62;
             this.umdw.RowTemplate.Height = 28;
-            this.umdw.Size = new System.Drawing.Size(547, 239);
+            this.umdw.Size = new System.Drawing.Size(615, 304);
             this.umdw.TabIndex = 2;
             this.umdw.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.umdw_CellClick);
             // 
@@ -125,10 +126,11 @@
             // 
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(558, 347);
+            this.btnUpdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnUpdate.Location = new System.Drawing.Point(351, 682);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(152, 41);
+            this.btnUpdate.Size = new System.Drawing.Size(171, 51);
             this.btnUpdate.TabIndex = 3;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
@@ -136,61 +138,63 @@
             // 
             // btnDelete
             // 
+            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(133)))), ((int)(((byte)(99)))));
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(755, 347);
+            this.btnDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnDelete.Location = new System.Drawing.Point(889, 682);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(153, 41);
+            this.btnDelete.Size = new System.Drawing.Size(172, 51);
             this.btnDelete.TabIndex = 4;
             this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(418, 504);
+            this.label1.Location = new System.Drawing.Point(478, 551);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 22);
+            this.label1.Size = new System.Drawing.Size(0, 25);
             this.label1.TabIndex = 6;
             // 
             // txtEmail
             // 
             this.txtEmail.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(410, 549);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEmail.Location = new System.Drawing.Point(469, 618);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(186, 29);
+            this.txtEmail.Size = new System.Drawing.Size(209, 33);
             this.txtEmail.TabIndex = 12;
             // 
             // txtFullname
             // 
             this.txtFullname.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFullname.Location = new System.Drawing.Point(410, 499);
-            this.txtFullname.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtFullname.Location = new System.Drawing.Point(469, 545);
+            this.txtFullname.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtFullname.Name = "txtFullname";
-            this.txtFullname.Size = new System.Drawing.Size(186, 29);
+            this.txtFullname.Size = new System.Drawing.Size(209, 33);
             this.txtFullname.TabIndex = 11;
             // 
             // txtUsername
             // 
             this.txtUsername.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsername.Location = new System.Drawing.Point(407, 448);
-            this.txtUsername.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtUsername.Location = new System.Drawing.Point(466, 481);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(186, 29);
+            this.txtUsername.Size = new System.Drawing.Size(209, 33);
             this.txtUsername.TabIndex = 10;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(296, 499);
+            this.label3.Location = new System.Drawing.Point(322, 545);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(92, 22);
+            this.label3.Size = new System.Drawing.Size(113, 25);
             this.label3.TabIndex = 8;
             this.label3.Text = "Fullname:";
             // 
@@ -198,40 +202,40 @@
             // 
             this.lblUsername.AutoSize = true;
             this.lblUsername.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsername.Location = new System.Drawing.Point(293, 448);
+            this.lblUsername.Location = new System.Drawing.Point(322, 489);
             this.lblUsername.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(95, 22);
+            this.lblUsername.Size = new System.Drawing.Size(113, 25);
             this.lblUsername.TabIndex = 7;
             this.lblUsername.Text = "Username:";
             // 
             // txtDateCreated
             // 
             this.txtDateCreated.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDateCreated.Location = new System.Drawing.Point(766, 448);
-            this.txtDateCreated.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDateCreated.Location = new System.Drawing.Point(872, 481);
+            this.txtDateCreated.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtDateCreated.Name = "txtDateCreated";
             this.txtDateCreated.ReadOnly = true;
-            this.txtDateCreated.Size = new System.Drawing.Size(186, 29);
+            this.txtDateCreated.Size = new System.Drawing.Size(209, 33);
             this.txtDateCreated.TabIndex = 17;
             // 
             // txtPassword
             // 
             this.txtPassword.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(768, 401);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPassword.Location = new System.Drawing.Point(872, 422);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(186, 29);
+            this.txtPassword.Size = new System.Drawing.Size(209, 33);
             this.txtPassword.TabIndex = 16;
             // 
             // lblRole
             // 
             this.lblRole.AutoSize = true;
             this.lblRole.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRole.Location = new System.Drawing.Point(654, 502);
+            this.lblRole.Location = new System.Drawing.Point(728, 545);
             this.lblRole.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRole.Name = "lblRole";
-            this.lblRole.Size = new System.Drawing.Size(52, 22);
+            this.lblRole.Size = new System.Drawing.Size(63, 25);
             this.lblRole.TabIndex = 15;
             this.lblRole.Text = "Role:";
             // 
@@ -239,10 +243,10 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(654, 448);
+            this.label6.Location = new System.Drawing.Point(728, 484);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(113, 22);
+            this.label6.Size = new System.Drawing.Size(134, 25);
             this.label6.TabIndex = 14;
             this.label6.Text = "DateCreated:";
             // 
@@ -250,10 +254,10 @@
             // 
             this.lblPassword.AutoSize = true;
             this.lblPassword.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassword.Location = new System.Drawing.Point(654, 401);
+            this.lblPassword.Location = new System.Drawing.Point(728, 425);
             this.lblPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(91, 22);
+            this.lblPassword.Size = new System.Drawing.Size(108, 25);
             this.lblPassword.TabIndex = 13;
             this.lblPassword.Text = "Password:";
             // 
@@ -267,44 +271,46 @@
             "",
             "Manager",
             "Admin"});
-            this.cbRole.Location = new System.Drawing.Point(766, 505);
+            this.cbRole.Location = new System.Drawing.Point(872, 548);
             this.cbRole.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbRole.Name = "cbRole";
-            this.cbRole.Size = new System.Drawing.Size(186, 30);
+            this.cbRole.Size = new System.Drawing.Size(209, 33);
             this.cbRole.TabIndex = 19;
             // 
             // btnAdd
             // 
+            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(212)))), ((int)(((byte)(194)))));
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(359, 347);
+            this.btnAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnAdd.Location = new System.Drawing.Point(628, 682);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(152, 41);
+            this.btnAdd.Size = new System.Drawing.Size(171, 51);
             this.btnAdd.TabIndex = 20;
             this.btnAdd.Text = "Add";
-            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(293, 401);
+            this.label2.Location = new System.Drawing.Point(322, 425);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(80, 22);
+            this.label2.Size = new System.Drawing.Size(97, 25);
             this.label2.TabIndex = 21;
             this.label2.Text = "User Id: ";
             // 
             // txtID
             // 
             this.txtID.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtID.Location = new System.Drawing.Point(407, 401);
-            this.txtID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtID.Location = new System.Drawing.Point(466, 422);
+            this.txtID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtID.Name = "txtID";
             this.txtID.ReadOnly = true;
-            this.txtID.Size = new System.Drawing.Size(186, 29);
+            this.txtID.Size = new System.Drawing.Size(209, 33);
             this.txtID.TabIndex = 22;
             // 
             // panel1
@@ -320,29 +326,34 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(255, 600);
+            this.panel1.Size = new System.Drawing.Size(287, 750);
             this.panel1.TabIndex = 23;
             // 
             // pnlNav
             // 
             this.pnlNav.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(235)))), ((int)(((byte)(226)))));
-            this.pnlNav.Location = new System.Drawing.Point(0, 172);
+            this.pnlNav.Location = new System.Drawing.Point(0, 215);
+            this.pnlNav.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pnlNav.Name = "pnlNav";
-            this.pnlNav.Size = new System.Drawing.Size(5, 100);
+            this.pnlNav.Size = new System.Drawing.Size(6, 125);
             this.pnlNav.TabIndex = 34;
             // 
             // btnLogOut
             // 
+            this.btnLogOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(133)))), ((int)(((byte)(99)))));
             this.btnLogOut.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogOut.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogOut.Location = new System.Drawing.Point(0, 546);
+            this.btnLogOut.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnLogOut.Location = new System.Drawing.Point(0, 682);
+            this.btnLogOut.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.Size = new System.Drawing.Size(255, 54);
+            this.btnLogOut.Size = new System.Drawing.Size(287, 68);
             this.btnLogOut.TabIndex = 38;
             this.btnLogOut.Text = "Log Out";
-            this.btnLogOut.UseVisualStyleBackColor = true;
+            this.btnLogOut.UseVisualStyleBackColor = false;
             this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // btnProfile
@@ -350,9 +361,11 @@
             this.btnProfile.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProfile.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProfile.Location = new System.Drawing.Point(0, 388);
+            this.btnProfile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnProfile.Location = new System.Drawing.Point(0, 487);
+            this.btnProfile.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnProfile.Name = "btnProfile";
-            this.btnProfile.Size = new System.Drawing.Size(255, 54);
+            this.btnProfile.Size = new System.Drawing.Size(287, 68);
             this.btnProfile.TabIndex = 37;
             this.btnProfile.Text = "Profile";
             this.btnProfile.UseVisualStyleBackColor = true;
@@ -362,9 +375,11 @@
             this.btnFeedbackD.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnFeedbackD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFeedbackD.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFeedbackD.Location = new System.Drawing.Point(0, 334);
+            this.btnFeedbackD.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnFeedbackD.Location = new System.Drawing.Point(0, 419);
+            this.btnFeedbackD.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnFeedbackD.Name = "btnFeedbackD";
-            this.btnFeedbackD.Size = new System.Drawing.Size(255, 54);
+            this.btnFeedbackD.Size = new System.Drawing.Size(287, 68);
             this.btnFeedbackD.TabIndex = 36;
             this.btnFeedbackD.Text = "Feedback";
             this.btnFeedbackD.UseVisualStyleBackColor = true;
@@ -375,9 +390,11 @@
             this.btnSales.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnSales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSales.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSales.Location = new System.Drawing.Point(0, 280);
+            this.btnSales.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnSales.Location = new System.Drawing.Point(0, 351);
+            this.btnSales.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSales.Name = "btnSales";
-            this.btnSales.Size = new System.Drawing.Size(255, 54);
+            this.btnSales.Size = new System.Drawing.Size(287, 68);
             this.btnSales.TabIndex = 35;
             this.btnSales.Text = "Sales Report";
             this.btnSales.UseVisualStyleBackColor = true;
@@ -388,9 +405,11 @@
             this.btnUser.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUser.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUser.Location = new System.Drawing.Point(0, 226);
+            this.btnUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnUser.Location = new System.Drawing.Point(0, 283);
+            this.btnUser.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnUser.Name = "btnUser";
-            this.btnUser.Size = new System.Drawing.Size(255, 54);
+            this.btnUser.Size = new System.Drawing.Size(287, 68);
             this.btnUser.TabIndex = 34;
             this.btnUser.Text = "User Management";
             this.btnUser.UseVisualStyleBackColor = true;
@@ -401,9 +420,11 @@
             this.btnDash.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnDash.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDash.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDash.Location = new System.Drawing.Point(0, 172);
+            this.btnDash.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnDash.Location = new System.Drawing.Point(0, 215);
+            this.btnDash.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnDash.Name = "btnDash";
-            this.btnDash.Size = new System.Drawing.Size(255, 54);
+            this.btnDash.Size = new System.Drawing.Size(287, 68);
             this.btnDash.TabIndex = 33;
             this.btnDash.Text = "Dashboard";
             this.btnDash.UseVisualStyleBackColor = true;
@@ -416,29 +437,32 @@
             this.panel2.Controls.Add(this.label7);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(255, 172);
+            this.panel2.Size = new System.Drawing.Size(287, 215);
             this.panel2.TabIndex = 1;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Palatino Linotype", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(39, 137);
+            this.label4.Font = new System.Drawing.Font("Palatino Linotype", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label4.Location = new System.Drawing.Point(37, 159);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(167, 23);
+            this.label4.Size = new System.Drawing.Size(223, 29);
             this.label4.TabIndex = 24;
             this.label4.Text = "Management System";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Palatino Linotype", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(72, 114);
+            this.label5.Font = new System.Drawing.Font("Palatino Linotype", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.label5.Location = new System.Drawing.Point(73, 119);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(106, 23);
+            this.label5.Size = new System.Drawing.Size(148, 32);
             this.label5.TabIndex = 23;
             this.label5.Text = "Foodie Point";
             // 
@@ -446,9 +470,10 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(60, 9);
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.label7.Location = new System.Drawing.Point(74, 9);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(131, 91);
+            this.label7.Size = new System.Drawing.Size(155, 108);
             this.label7.TabIndex = 0;
             this.label7.Text = "🍵";
             // 
@@ -456,9 +481,9 @@
             // 
             this.lblExit.AutoSize = true;
             this.lblExit.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblExit.Location = new System.Drawing.Point(969, 9);
+            this.lblExit.Location = new System.Drawing.Point(1090, 11);
             this.lblExit.Name = "lblExit";
-            this.lblExit.Size = new System.Drawing.Size(19, 20);
+            this.lblExit.Size = new System.Drawing.Size(23, 24);
             this.lblExit.TabIndex = 30;
             this.lblExit.Text = "X";
             this.lblExit.Click += new System.EventHandler(this.lblExit_Click);
@@ -467,18 +492,19 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(299, 46);
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.label8.Location = new System.Drawing.Point(583, 31);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(178, 25);
+            this.label8.Size = new System.Drawing.Size(216, 30);
             this.label8.TabIndex = 75;
             this.label8.Text = "User Management";
             // 
             // frmAdminUserManagement
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(235)))), ((int)(((byte)(226)))));
-            this.ClientSize = new System.Drawing.Size(1000, 600);
+            this.ClientSize = new System.Drawing.Size(1125, 750);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.lblExit);
             this.Controls.Add(this.panel1);
@@ -503,6 +529,7 @@
             this.Controls.Add(this.umdw);
             this.Controls.Add(this.radiobtnEmployee);
             this.Controls.Add(this.radiobtnCustomer);
+            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmAdminUserManagement";

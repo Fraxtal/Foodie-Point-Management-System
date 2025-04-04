@@ -22,8 +22,8 @@ namespace Foodie_Point_Management_System.Admin
         int nRightRect,
         int nBottomRect,
         int nWidthEllipse,
-        int nHeightEllipse
-                );
+        int nHeightEllipse );
+
         emAdmin session;
 
         public frmAdminDashboard(emAdmin s)
@@ -114,6 +114,21 @@ namespace Foodie_Point_Management_System.Admin
             {
                 Application.Exit();
             }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

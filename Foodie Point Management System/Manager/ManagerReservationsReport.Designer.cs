@@ -38,8 +38,8 @@
             this.cbYear = new System.Windows.Forms.ComboBox();
             this.btnPrint = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnReserD = new System.Windows.Forms.Button();
             this.pnlNav = new System.Windows.Forms.Panel();
+            this.btnReserD = new System.Windows.Forms.Button();
             this.btnDash = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnSettings = new System.Windows.Forms.Button();
@@ -60,10 +60,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(278, 47);
+            this.label1.Font = new System.Drawing.Font("Modern No. 20", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.label1.Location = new System.Drawing.Point(510, 34);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(188, 25);
+            this.label1.Size = new System.Drawing.Size(230, 30);
             this.label1.TabIndex = 0;
             this.label1.Text = "Reservation Report";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -77,7 +78,7 @@
             this.dataGridViewReservations.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
             this.dataGridViewReservations.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewReservations.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dataGridViewReservations.Location = new System.Drawing.Point(503, 47);
+            this.dataGridViewReservations.Location = new System.Drawing.Point(503, 88);
             this.dataGridViewReservations.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridViewReservations.MultiSelect = false;
             this.dataGridViewReservations.Name = "dataGridViewReservations";
@@ -88,7 +89,7 @@
             this.dataGridViewReservations.ShowCellToolTips = false;
             this.dataGridViewReservations.ShowEditingIcon = false;
             this.dataGridViewReservations.ShowRowErrors = false;
-            this.dataGridViewReservations.Size = new System.Drawing.Size(462, 511);
+            this.dataGridViewReservations.Size = new System.Drawing.Size(462, 470);
             this.dataGridViewReservations.TabIndex = 1;
             // 
             // gbSortBy
@@ -99,20 +100,22 @@
             this.gbSortBy.Controls.Add(this.label2);
             this.gbSortBy.Controls.Add(this.cbYear);
             this.gbSortBy.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbSortBy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.gbSortBy.Location = new System.Drawing.Point(283, 88);
             this.gbSortBy.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gbSortBy.Name = "gbSortBy";
             this.gbSortBy.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gbSortBy.Size = new System.Drawing.Size(214, 236);
+            this.gbSortBy.Size = new System.Drawing.Size(214, 277);
             this.gbSortBy.TabIndex = 7;
             this.gbSortBy.TabStop = false;
             this.gbSortBy.Text = "Sort By :";
+            this.gbSortBy.Enter += new System.EventHandler(this.gbSortBy_Enter);
             // 
             // cbPType
             // 
             this.cbPType.FormattingEnabled = true;
             this.cbPType.Location = new System.Drawing.Point(24, 155);
-            this.cbPType.Margin = new System.Windows.Forms.Padding(4);
+            this.cbPType.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbPType.Name = "cbPType";
             this.cbPType.Size = new System.Drawing.Size(159, 30);
             this.cbPType.TabIndex = 4;
@@ -131,13 +134,15 @@
             // 
             // btnReset
             // 
-            this.btnReset.Location = new System.Drawing.Point(52, 202);
-            this.btnReset.Margin = new System.Windows.Forms.Padding(4);
+            this.btnReset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(212)))), ((int)(((byte)(194)))));
+            this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReset.Location = new System.Drawing.Point(56, 215);
+            this.btnReset.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(100, 28);
+            this.btnReset.Size = new System.Drawing.Size(100, 37);
             this.btnReset.TabIndex = 2;
             this.btnReset.Text = "Reset Filter";
-            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.UseVisualStyleBackColor = false;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // label2
@@ -154,7 +159,7 @@
             // 
             this.cbYear.FormattingEnabled = true;
             this.cbYear.Location = new System.Drawing.Point(24, 71);
-            this.cbYear.Margin = new System.Windows.Forms.Padding(4);
+            this.cbYear.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbYear.Name = "cbYear";
             this.cbYear.Size = new System.Drawing.Size(159, 30);
             this.cbYear.TabIndex = 0;
@@ -162,15 +167,17 @@
             // 
             // btnPrint
             // 
+            this.btnPrint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(87)))), ((int)(((byte)(46)))));
             this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrint.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrint.Location = new System.Drawing.Point(307, 412);
-            this.btnPrint.Margin = new System.Windows.Forms.Padding(4);
+            this.btnPrint.ForeColor = System.Drawing.Color.White;
+            this.btnPrint.Location = new System.Drawing.Point(307, 511);
+            this.btnPrint.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(159, 47);
             this.btnPrint.TabIndex = 10;
             this.btnPrint.Text = "Print Report";
-            this.btnPrint.UseVisualStyleBackColor = true;
+            this.btnPrint.UseVisualStyleBackColor = false;
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // panel1
@@ -191,18 +198,6 @@
             this.panel1.Size = new System.Drawing.Size(255, 600);
             this.panel1.TabIndex = 28;
             // 
-            // btnReserD
-            // 
-            this.btnReserD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReserD.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReserD.Location = new System.Drawing.Point(0, 388);
-            this.btnReserD.Name = "btnReserD";
-            this.btnReserD.Size = new System.Drawing.Size(255, 54);
-            this.btnReserD.TabIndex = 34;
-            this.btnReserD.Text = "Reservation Report";
-            this.btnReserD.UseVisualStyleBackColor = true;
-            this.btnReserD.Click += new System.EventHandler(this.btnReserD_Click);
-            // 
             // pnlNav
             // 
             this.pnlNav.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(235)))), ((int)(((byte)(226)))));
@@ -211,11 +206,25 @@
             this.pnlNav.Size = new System.Drawing.Size(5, 100);
             this.pnlNav.TabIndex = 33;
             // 
+            // btnReserD
+            // 
+            this.btnReserD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReserD.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReserD.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnReserD.Location = new System.Drawing.Point(0, 388);
+            this.btnReserD.Name = "btnReserD";
+            this.btnReserD.Size = new System.Drawing.Size(255, 54);
+            this.btnReserD.TabIndex = 34;
+            this.btnReserD.Text = "Reservation Report";
+            this.btnReserD.UseVisualStyleBackColor = true;
+            this.btnReserD.Click += new System.EventHandler(this.btnReserD_Click);
+            // 
             // btnDash
             // 
             this.btnDash.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnDash.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDash.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDash.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnDash.Location = new System.Drawing.Point(0, 172);
             this.btnDash.Name = "btnDash";
             this.btnDash.Size = new System.Drawing.Size(255, 54);
@@ -226,21 +235,24 @@
             // 
             // btnExit
             // 
+            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(133)))), ((int)(((byte)(99)))));
             this.btnExit.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnExit.Location = new System.Drawing.Point(0, 546);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(255, 54);
             this.btnExit.TabIndex = 28;
             this.btnExit.Text = "Log Out";
-            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnSettings
             // 
             this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSettings.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSettings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnSettings.Location = new System.Drawing.Point(0, 440);
             this.btnSettings.Name = "btnSettings";
             this.btnSettings.Size = new System.Drawing.Size(255, 54);
@@ -253,6 +265,7 @@
             // 
             this.btnSalesReportD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalesReportD.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalesReportD.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnSalesReportD.Location = new System.Drawing.Point(0, 334);
             this.btnSalesReportD.Name = "btnSalesReportD";
             this.btnSalesReportD.Size = new System.Drawing.Size(255, 54);
@@ -265,6 +278,7 @@
             // 
             this.btnHallsD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHallsD.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHallsD.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnHallsD.Location = new System.Drawing.Point(0, 280);
             this.btnHallsD.Name = "btnHallsD";
             this.btnHallsD.Size = new System.Drawing.Size(255, 54);
@@ -277,6 +291,7 @@
             // 
             this.btnMenuD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMenuD.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenuD.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnMenuD.Location = new System.Drawing.Point(0, 226);
             this.btnMenuD.Name = "btnMenuD";
             this.btnMenuD.Size = new System.Drawing.Size(255, 54);
@@ -299,33 +314,36 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Palatino Linotype", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(39, 137);
+            this.label4.Font = new System.Drawing.Font("Palatino Linotype", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label4.Location = new System.Drawing.Point(26, 133);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(167, 23);
-            this.label4.TabIndex = 24;
+            this.label4.Size = new System.Drawing.Size(202, 26);
+            this.label4.TabIndex = 36;
             this.label4.Text = "Management System";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Palatino Linotype", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(72, 114);
+            this.label5.Font = new System.Drawing.Font("Palatino Linotype", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.label5.Location = new System.Drawing.Point(64, 101);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(106, 23);
-            this.label5.TabIndex = 23;
+            this.label5.Size = new System.Drawing.Size(125, 27);
+            this.label5.TabIndex = 35;
             this.label5.Text = "Foodie Point";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(60, 9);
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.label6.Location = new System.Drawing.Point(63, 13);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(131, 91);
-            this.label6.TabIndex = 0;
+            this.label6.TabIndex = 34;
             this.label6.Text = "🍵";
             // 
             // lblExit
@@ -351,6 +369,7 @@
             this.Controls.Add(this.gbSortBy);
             this.Controls.Add(this.dataGridViewReservations);
             this.Controls.Add(this.label1);
+            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ManagerReservationsReport";
@@ -389,9 +408,9 @@
         private System.Windows.Forms.Button btnHallsD;
         private System.Windows.Forms.Button btnMenuD;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label lblExit;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label lblExit;
     }
 }

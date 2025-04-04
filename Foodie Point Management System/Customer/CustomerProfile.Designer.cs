@@ -59,7 +59,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(387, 112);
+            this.label1.Location = new System.Drawing.Point(374, 95);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(114, 25);
@@ -70,7 +70,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(387, 172);
+            this.label2.Location = new System.Drawing.Point(374, 165);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(122, 25);
@@ -81,7 +81,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(387, 229);
+            this.label3.Location = new System.Drawing.Point(374, 228);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(81, 25);
@@ -93,7 +93,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(387, 294);
+            this.label4.Location = new System.Drawing.Point(374, 294);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(110, 25);
@@ -104,7 +104,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(387, 363);
+            this.label5.Location = new System.Drawing.Point(374, 369);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(199, 25);
@@ -114,7 +114,7 @@
             // txtUsername
             // 
             this.txtUsername.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsername.Location = new System.Drawing.Point(614, 105);
+            this.txtUsername.Location = new System.Drawing.Point(587, 97);
             this.txtUsername.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(225, 32);
@@ -123,7 +123,7 @@
             // txtFName
             // 
             this.txtFName.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFName.Location = new System.Drawing.Point(614, 165);
+            this.txtFName.Location = new System.Drawing.Point(587, 165);
             this.txtFName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtFName.Name = "txtFName";
             this.txtFName.Size = new System.Drawing.Size(225, 32);
@@ -132,7 +132,7 @@
             // txtEmail
             // 
             this.txtEmail.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(614, 226);
+            this.txtEmail.Location = new System.Drawing.Point(587, 228);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(225, 32);
@@ -141,7 +141,7 @@
             // txtPassword
             // 
             this.txtPassword.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(614, 294);
+            this.txtPassword.Location = new System.Drawing.Point(587, 294);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(225, 32);
@@ -150,23 +150,26 @@
             // 
             // btnUProfile
             // 
+            this.btnUProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(87)))), ((int)(((byte)(46)))));
             this.btnUProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUProfile.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUProfile.Location = new System.Drawing.Point(509, 471);
+            this.btnUProfile.ForeColor = System.Drawing.Color.White;
+            this.btnUProfile.Location = new System.Drawing.Point(499, 481);
             this.btnUProfile.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnUProfile.Name = "btnUProfile";
             this.btnUProfile.Size = new System.Drawing.Size(214, 59);
             this.btnUProfile.TabIndex = 10;
             this.btnUProfile.Text = "Update Profile";
-            this.btnUProfile.UseVisualStyleBackColor = true;
+            this.btnUProfile.UseVisualStyleBackColor = false;
             this.btnUProfile.Click += new System.EventHandler(this.btnUProfile_Click);
             // 
             // lblDateReg
             // 
             this.lblDateReg.AutoSize = true;
+            this.lblDateReg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(212)))), ((int)(((byte)(194)))));
             this.lblDateReg.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblDateReg.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDateReg.Location = new System.Drawing.Point(614, 361);
+            this.lblDateReg.Location = new System.Drawing.Point(635, 367);
             this.lblDateReg.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDateReg.Name = "lblDateReg";
             this.lblDateReg.Size = new System.Drawing.Size(152, 27);
@@ -196,7 +199,7 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(255, 600);
             this.panel1.TabIndex = 30;
@@ -211,16 +214,18 @@
             // 
             // btnLogOut
             // 
+            this.btnLogOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(133)))), ((int)(((byte)(99)))));
             this.btnLogOut.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogOut.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogOut.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnLogOut.Location = new System.Drawing.Point(0, 546);
-            this.btnLogOut.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLogOut.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.Size = new System.Drawing.Size(255, 54);
             this.btnLogOut.TabIndex = 12;
             this.btnLogOut.Text = "Log Out";
-            this.btnLogOut.UseVisualStyleBackColor = true;
+            this.btnLogOut.UseVisualStyleBackColor = false;
             this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // btnProfile
@@ -228,8 +233,9 @@
             this.btnProfile.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProfile.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProfile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnProfile.Location = new System.Drawing.Point(0, 334);
-            this.btnProfile.Margin = new System.Windows.Forms.Padding(4);
+            this.btnProfile.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnProfile.Name = "btnProfile";
             this.btnProfile.Size = new System.Drawing.Size(255, 54);
             this.btnProfile.TabIndex = 11;
@@ -242,8 +248,9 @@
             this.btnReserD.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnReserD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReserD.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReserD.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnReserD.Location = new System.Drawing.Point(0, 280);
-            this.btnReserD.Margin = new System.Windows.Forms.Padding(4);
+            this.btnReserD.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnReserD.Name = "btnReserD";
             this.btnReserD.Size = new System.Drawing.Size(255, 54);
             this.btnReserD.TabIndex = 10;
@@ -256,8 +263,9 @@
             this.btnOrderD.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnOrderD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOrderD.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOrderD.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnOrderD.Location = new System.Drawing.Point(0, 226);
-            this.btnOrderD.Margin = new System.Windows.Forms.Padding(4);
+            this.btnOrderD.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnOrderD.Name = "btnOrderD";
             this.btnOrderD.Size = new System.Drawing.Size(255, 54);
             this.btnOrderD.TabIndex = 9;
@@ -270,8 +278,9 @@
             this.btnDash.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnDash.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDash.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDash.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnDash.Location = new System.Drawing.Point(0, 172);
-            this.btnDash.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDash.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnDash.Name = "btnDash";
             this.btnDash.Size = new System.Drawing.Size(255, 54);
             this.btnDash.TabIndex = 8;
@@ -293,22 +302,24 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Palatino Linotype", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(39, 137);
+            this.label6.Font = new System.Drawing.Font("Palatino Linotype", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label6.Location = new System.Drawing.Point(30, 128);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(167, 23);
+            this.label6.Size = new System.Drawing.Size(202, 26);
             this.label6.TabIndex = 24;
             this.label6.Text = "Management System";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Palatino Linotype", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(72, 114);
+            this.label7.Font = new System.Drawing.Font("Palatino Linotype", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.label7.Location = new System.Drawing.Point(66, 95);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(106, 23);
+            this.label7.Size = new System.Drawing.Size(125, 27);
             this.label7.TabIndex = 23;
             this.label7.Text = "Foodie Point";
             // 
@@ -316,6 +327,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.label8.Location = new System.Drawing.Point(60, 9);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(131, 91);
@@ -341,6 +353,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "CustomerProfile";

@@ -52,7 +52,8 @@
             // 
             this.lblfeedbacks.AutoSize = true;
             this.lblfeedbacks.Font = new System.Drawing.Font("Modern No. 20", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblfeedbacks.Location = new System.Drawing.Point(307, 44);
+            this.lblfeedbacks.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.lblfeedbacks.Location = new System.Drawing.Point(562, 39);
             this.lblfeedbacks.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblfeedbacks.Name = "lblfeedbacks";
             this.lblfeedbacks.Size = new System.Drawing.Size(138, 31);
@@ -97,15 +98,17 @@
             // 
             // btnLogOut
             // 
+            this.btnLogOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(133)))), ((int)(((byte)(99)))));
             this.btnLogOut.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogOut.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogOut.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnLogOut.Location = new System.Drawing.Point(0, 546);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.Size = new System.Drawing.Size(255, 54);
             this.btnLogOut.TabIndex = 38;
             this.btnLogOut.Text = "Log Out";
-            this.btnLogOut.UseVisualStyleBackColor = true;
+            this.btnLogOut.UseVisualStyleBackColor = false;
             this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // btnProfile
@@ -113,6 +116,7 @@
             this.btnProfile.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProfile.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProfile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnProfile.Location = new System.Drawing.Point(0, 388);
             this.btnProfile.Name = "btnProfile";
             this.btnProfile.Size = new System.Drawing.Size(255, 54);
@@ -126,6 +130,7 @@
             this.btnFeedbackD.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnFeedbackD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFeedbackD.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFeedbackD.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnFeedbackD.Location = new System.Drawing.Point(0, 334);
             this.btnFeedbackD.Name = "btnFeedbackD";
             this.btnFeedbackD.Size = new System.Drawing.Size(255, 54);
@@ -139,6 +144,7 @@
             this.btnSales.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnSales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSales.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSales.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnSales.Location = new System.Drawing.Point(0, 280);
             this.btnSales.Name = "btnSales";
             this.btnSales.Size = new System.Drawing.Size(255, 54);
@@ -152,6 +158,7 @@
             this.btnUser.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUser.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnUser.Location = new System.Drawing.Point(0, 226);
             this.btnUser.Name = "btnUser";
             this.btnUser.Size = new System.Drawing.Size(255, 54);
@@ -165,6 +172,7 @@
             this.btnDash.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnDash.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDash.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDash.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnDash.Location = new System.Drawing.Point(0, 172);
             this.btnDash.Name = "btnDash";
             this.btnDash.Size = new System.Drawing.Size(255, 54);
@@ -187,22 +195,24 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Palatino Linotype", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(39, 137);
+            this.label3.Font = new System.Drawing.Font("Palatino Linotype", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label3.Location = new System.Drawing.Point(33, 127);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(167, 23);
+            this.label3.Size = new System.Drawing.Size(202, 26);
             this.label3.TabIndex = 24;
             this.label3.Text = "Management System";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Palatino Linotype", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(72, 114);
+            this.label2.Font = new System.Drawing.Font("Palatino Linotype", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.label2.Location = new System.Drawing.Point(65, 95);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(106, 23);
+            this.label2.Size = new System.Drawing.Size(125, 27);
             this.label2.TabIndex = 23;
             this.label2.Text = "Foodie Point";
             // 
@@ -210,7 +220,8 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(60, 9);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.label1.Location = new System.Drawing.Point(66, 7);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(131, 91);
             this.label1.TabIndex = 0;
