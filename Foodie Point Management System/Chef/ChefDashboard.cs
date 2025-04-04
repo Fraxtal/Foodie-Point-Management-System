@@ -67,7 +67,6 @@ namespace Foodie_Point_Management_System.Chef
         {
             if (MessageBox.Show($"Logout and return to login page?", "Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                sessionCD = null;
                 EmployeeLogin pageL = new EmployeeLogin();
                 pageL.Show();
                 this.Hide();

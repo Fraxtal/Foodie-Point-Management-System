@@ -90,8 +90,8 @@ namespace Foodie_Point_Management_System.Admin
 
         private void btnProfile_Click(object sender, EventArgs e)
         {
-            frmEmployeeProfileSettings ProfileSettings = new frmEmployeeProfileSettings(session);
-            ProfileSettings.Show();
+            frmEmployeeProfileSettings settings = new frmEmployeeProfileSettings(session);
+            settings.Show();
             this.Hide();
         }
 
@@ -104,7 +104,9 @@ namespace Foodie_Point_Management_System.Admin
         {
             if (MessageBox.Show($"Log out?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                Application.Exit();
+                EmployeeLogin pageL = new EmployeeLogin();
+                pageL.Show();
+                this.Hide();
             }
         }
 

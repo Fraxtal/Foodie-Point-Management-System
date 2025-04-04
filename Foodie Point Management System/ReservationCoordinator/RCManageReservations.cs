@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Foodie_Point_Management_System.Employee_Login;
 
 namespace Foodie_Point_Management_System.ReservationCoordinator
 {
@@ -256,16 +257,18 @@ namespace Foodie_Point_Management_System.ReservationCoordinator
 
         private void btnProfile_Click(object sender, EventArgs e)
         {
-            //frmEmployeeProfileSettings rcProfile = new frmEmployeeProfileSettings();
-            //rcProfile.Show();
-            //this.Hide();
+            frmEmployeeProfileSettings rcProfile = new frmEmployeeProfileSettings(rc);
+            rcProfile.Show();
+            this.Hide();
         }
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show($"Log out?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                Application.Exit();
+                EmployeeLogin pageL = new EmployeeLogin();
+                pageL.Show();
+                this.Hide();
             }
         }
         private void lblExit_Click(object sender, EventArgs e)

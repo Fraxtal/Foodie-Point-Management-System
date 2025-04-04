@@ -137,7 +137,9 @@ namespace Foodie_Point_Management_System.Manager
         {
             if (MessageBox.Show($"Log out?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                Application.Exit();
+                EmployeeLogin pageL = new EmployeeLogin();
+                pageL.Show();
+                this.Hide();
             }
         }
 

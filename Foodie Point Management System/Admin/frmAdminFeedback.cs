@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using Foodie_Point_Management_System.Employee_Login;
 
 namespace Foodie_Point_Management_System.Admin
 {
@@ -117,7 +118,9 @@ namespace Foodie_Point_Management_System.Admin
         {
             if (MessageBox.Show($"Log out?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                Application.Exit();
+                EmployeeLogin pageL = new EmployeeLogin();
+                pageL.Show();
+                this.Hide();
             }
         }
 
@@ -131,7 +134,9 @@ namespace Foodie_Point_Management_System.Admin
 
         private void btnProfile_Click(object sender, EventArgs e)
         {
-
+            frmEmployeeProfileSettings settings = new frmEmployeeProfileSettings(session);
+            settings.Show();
+            this.Hide();
         }
     }
 }

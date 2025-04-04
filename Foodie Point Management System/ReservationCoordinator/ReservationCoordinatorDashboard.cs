@@ -119,7 +119,9 @@ namespace Foodie_Point_Management_System.ReservationCoordinator
         {
             if (MessageBox.Show($"Log out?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                Application.Exit();
+                EmployeeLogin pageL = new EmployeeLogin();
+                pageL.Show();
+                this.Hide();
             }
         }
         private void lblExit_Click(object sender, EventArgs e)

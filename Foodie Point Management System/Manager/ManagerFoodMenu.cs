@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Collections.Specialized.BitVector32;
 using System.Runtime.InteropServices;
+using Foodie_Point_Management_System.Employee_Login;
 
 namespace Foodie_Point_Management_System.Manager
 {
@@ -197,16 +198,18 @@ namespace Foodie_Point_Management_System.Manager
 
         private void btnSettings_Click(object sender, EventArgs e)
         {
-            //frmEmployeeProfileSettings settings = new frmEmployeeProfileSettings();
-            //settings.Show();
-            //this.Hide();
+            frmEmployeeProfileSettings settings = new frmEmployeeProfileSettings(session);
+            settings.Show();
+            this.Hide();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show($"Log out?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                Application.Exit();
+                EmployeeLogin pageL = new EmployeeLogin();
+                pageL.Show();
+                this.Hide();
             }
         }
 
