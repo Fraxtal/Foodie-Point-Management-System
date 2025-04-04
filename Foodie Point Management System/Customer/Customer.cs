@@ -366,7 +366,7 @@ namespace Foodie_Point_Management_System.Customer
         public string AddFood_OrderList(string Fid, int q)
         {
             string query;
-            int quant = 0;
+            int quant = 1;
             try
             {
                 connect.Open();
@@ -413,7 +413,7 @@ namespace Foodie_Point_Management_System.Customer
                     }
                 }
 
-                if (quant > q)
+                if (quant == 1)
                 {
                     query = "INSERT INTO OrderDetail (OrderID, FoodID, Quantity) VALUES (@OrderID, @FoodID, @quantity)";
                     using (SqlCommand cmd = new SqlCommand(query, connect))
