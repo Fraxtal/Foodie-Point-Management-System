@@ -40,8 +40,8 @@ namespace Foodie_Point_Management_System.Customer
 
         private void CustomerOrderList_Load(object sender, EventArgs e)
         {
-            OrderListGrid.DataSource = session.LoadDatatable($"SELECT od.OrderDetailID AS \"Order Id\", od.FoodID AS \"Food ID\", fm.Name AS \"Name\", fm.CuisineType AS \"Cuisine Type\", od.Quantity AS \"Quantity\", od.Remarks AS \"Remarks\" FROM OrderDetail od JOIN FoodMenu fm ON od.FoodID = fm.FoodID JOIN OrderTable ot ON od.OrderID = ot.OrderID WHERE ot.CustomerID = '{session.Id}' AND ot.OrderStatus IS NULL;");
-            OrderListGrid.CurrentCell = null;
+            olistgrid.DataSource = session.LoadDatatable($"SELECT od.OrderDetailID AS \"Order Id\", od.FoodID AS \"Food ID\", fm.Name AS \"Name\", fm.CuisineType AS \"Cuisine Type\", od.Quantity AS \"Quantity\", od.Remarks AS \"Remarks\" FROM OrderDetail od JOIN FoodMenu fm ON od.FoodID = fm.FoodID JOIN OrderTable ot ON od.OrderID = ot.OrderID WHERE ot.CustomerID = '{session.Id}' AND ot.OrderStatus IS NULL;");
+            olistgrid.CurrentCell = null;
 
         }
 
@@ -56,7 +56,7 @@ namespace Foodie_Point_Management_System.Customer
         {
             if (e.RowIndex != -1)
             {
-                DataGridViewRow rows = OrderListGrid.Rows[e.RowIndex];
+                DataGridViewRow rows = olistgrid.Rows[e.RowIndex];
                 txtOID.Text = rows.Cells[0].Value.ToString();
                 txtFood.Text = rows.Cells[2].Value.ToString();
                 txtQuantity.Text = rows.Cells[4].Value.ToString();
@@ -79,7 +79,7 @@ namespace Foodie_Point_Management_System.Customer
                     MessageBox.Show(msg, "Informative Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
-                    OrderListGrid.DataSource = session.LoadDatatable($"SELECT od.OrderDetailID AS \"Order Id\", od.FoodID AS \"Food ID\", fm.Name AS \"Name\", fm.CuisineType AS \"Cuisine Type\", od.Quantity AS \"Quantity\", od.Remarks AS \"Remarks\" FROM OrderDetail od JOIN FoodMenu fm ON od.FoodID = fm.FoodID JOIN OrderTable ot ON od.OrderID = ot.OrderID WHERE ot.CustomerID = '{session.Id}' AND ot.OrderStatus IS NULL;");
+                    olistgrid.DataSource = session.LoadDatatable($"SELECT od.OrderDetailID AS \"Order Id\", od.FoodID AS \"Food ID\", fm.Name AS \"Name\", fm.CuisineType AS \"Cuisine Type\", od.Quantity AS \"Quantity\", od.Remarks AS \"Remarks\" FROM OrderDetail od JOIN FoodMenu fm ON od.FoodID = fm.FoodID JOIN OrderTable ot ON od.OrderID = ot.OrderID WHERE ot.CustomerID = '{session.Id}' AND ot.OrderStatus IS NULL;");
                 }
                 else
                 {
