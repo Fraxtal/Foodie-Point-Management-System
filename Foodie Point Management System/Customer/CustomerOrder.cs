@@ -83,7 +83,7 @@ namespace Foodie_Point_Management_System.Customer
             {
                 MessageBox.Show("Please Select a cell to add into your order list!!", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if(!int.TryParse(txtQuant.Text, out int quantity))
+            else if(!int.TryParse(txtQuantity.Text, out int quantity))
             {
                 MessageBox.Show("Please enter a valid positive numeric value into the quantity box!", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

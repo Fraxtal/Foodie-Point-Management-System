@@ -69,7 +69,9 @@ namespace Foodie_Point_Management_System.Customer
         {
             if (MessageBox.Show($"Log out?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                Application.Exit();
+                CustomerLogin pageL = new CustomerLogin();
+                pageL.Show();
+                this.Hide();
             }
         }
 
