@@ -277,10 +277,13 @@ namespace Foodie_Point_Management_System.Chef
         public List<string> DashboardOrderNumbers()
         {
             List<string> ordernum = new List<string>();
-            string qUnfulfilled = "SELECT COUNT(OrderDetailID) FROM OrderDetail LEFT JOIN OrderTable ON OrderDetail.OrderID = OrderTable.OrderID WHERE OrderTable.OrderStatus = 'In Queue' OR OrderTable.OrderStatus = 'In Progress'";
-            string qFulfilled = "SELECT COUNT(OrderDetailID) FROM OrderDetail LEFT JOIN OrderTable ON OrderDetail.OrderID = OrderTable.OrderID WHERE OrderStatus = 'Completed'";
+            string qUnfulfilled = "SELECT COUNT(OrderDetailID) FROM OrderDetail " +
+                "LEFT JOIN OrderTable ON OrderDetail.OrderID = OrderTable.OrderID " +
+                "WHERE OrderTable.OrderStatus = 'In Queue' OR OrderTable.OrderStatus = 'In Progress'";
+            string qFulfilled = "SELECT COUNT(OrderDetailID) FROM OrderDetail " +
+                "LEFT JOIN OrderTable ON OrderDetail.OrderID = OrderTable.OrderID " +
+                "WHERE OrderStatus = 'Completed'";
 ;
-
             try
             {
                 connect.Open();
