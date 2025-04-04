@@ -50,7 +50,7 @@ namespace Foodie_Point_Management_System.Customer
 
         private void btnCCard_Click(object sender, EventArgs e)
         {
-            string msg = session.PaymentProcess(session.PaymentTotal(), "Cash");
+            string msg = session.PaymentProcess(session.PaymentTotal(), "Credit Card");
             if (msg == "Payment Successful!" || msg == "Due to having none in your total, thus you are immediately transfered to your main dashboard!")
             {
                 MessageBox.Show(msg, "Informative Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
