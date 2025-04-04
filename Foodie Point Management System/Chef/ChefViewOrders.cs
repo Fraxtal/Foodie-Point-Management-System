@@ -50,11 +50,13 @@ namespace Foodie_Point_Management_System.Chef
 
         private void frmChefViewOrders_Load(object sender, EventArgs e)
         {
+            //order display table default sorting
             rbtnAll.Checked = true;
         }
 
         private void dgvOrderList_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            //Cell click event that checks if the user is selecting a valid cell, then transfer the values to the corresponding text boxes
             if (e.RowIndex != -1)
             {
                 DataGridViewRow rows = dgvOrderList.Rows[e.RowIndex];
@@ -65,12 +67,14 @@ namespace Foodie_Point_Management_System.Chef
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            //Check if relevant fields are filled
             if (!int.TryParse(txtbxOrderID.Text, out int orderid) || string.IsNullOrEmpty(txtbxOrderID.Text) || cmbboxStatus.SelectedIndex == -1)
             {
                 MessageBox.Show("Please select an order or enter a valid Order ID, then select the corresponding status to be updated.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             
+            //Ask user if they want to modify the status of a completed order
             if (dgvOrderList.CurrentRow.Cells[4].Value.ToString() == "Completed")
             {
                 if (MessageBox.Show($"Order has already been marked as 'Completed'. \nDo you still want to update its status?", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
@@ -79,6 +83,7 @@ namespace Foodie_Point_Management_System.Chef
                 }
             }
 
+            //Check if order exists and display error message if not
             if (!sessionCV.ViewOrderCheck(txtbxOrderID.Text))
             {
                 MessageBox.Show("Invalid Order ID.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

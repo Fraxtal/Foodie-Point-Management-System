@@ -9,12 +9,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Foodie_Point_Management_System.Chef;
 using System.Runtime.InteropServices;
+using Foodie_Point_Management_System.Admin;
+using Foodie_Point_Management_System.Manager;
+using Foodie_Point_Management_System.ReservationCoordinator;
 
 namespace Foodie_Point_Management_System.Employee_Login
 {
     public partial class frmEmployeeProfileSettings : Form
     {
-        EmChef sessionPV;
+        Employee sessionPV;
         [DllImport("gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn(
         int nLeftRect,
@@ -25,10 +28,10 @@ namespace Foodie_Point_Management_System.Employee_Login
         int nHeightEllipse
             );
 
-        public frmEmployeeProfileSettings(EmChef sc)
+        public frmEmployeeProfileSettings(Employee se)
         {
             InitializeComponent();
-            this.sessionPV = sc;
+            this.sessionPV = se;
             Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
         }
 
@@ -63,9 +66,42 @@ namespace Foodie_Point_Management_System.Employee_Login
 
         private void btnReturn_Click(object sender, EventArgs e)
         {
-            frmChefDashboard pageD = new frmChefDashboard(sessionPV);
-            pageD.Show();
-            this.Close();
+            string role = sessionPV.Role;
+
+            switch (role)
+            {
+                case "Admin":
+                    {
+                        frmAdminDashboard aDash = new frmAdminDashboard((emAdmin)sessionPV);
+                        aDash.Show();
+                        this.Hide();
+                        break;
+                    }
+
+                case "Chef":
+                    {
+                        frmChefDashboard cfDash = new frmChefDashboard((EmChef)sessionPV);
+                        cfDash.Show();
+                        this.Hide();
+                        break;
+                    }
+
+                case "Manager":
+                    {
+                        ManagerDashboard mDash = new ManagerDashboard((EmManager)sessionPV);
+                        mDash.Show();
+                        this.Hide();
+                        break;
+                    }
+
+                case "Reservation Coordinator":
+                    {
+                        ReservationCoordinatorDashboard rDash = new ReservationCoordinatorDashboard((ReservationCoord)sessionPV);
+                        rDash.Show();
+                        this.Hide();
+                        break;
+                    }
+            }
         }
 
         

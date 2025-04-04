@@ -222,8 +222,8 @@ namespace Foodie_Point_Management_System.Chef
                     }
                     else
                     {
-                        return "No record deleted. Please enter a valid ID.";             }
-
+                        return "No record deleted. Please enter a valid ID.";             
+                    }
                 }
             }
             catch (Exception ex)
@@ -254,8 +254,8 @@ namespace Foodie_Point_Management_System.Chef
 
                 using (SqlCommand cmdS = new SqlCommand(qSearch, connect))
                 {
-                    cmdS.Parameters.Add(new SqlParameter("@ingredientID", SqlDbType.VarChar) { Value = $"%{input.Trim()}%" });
-                    cmdS.Parameters.Add(new SqlParameter("@name", SqlDbType.VarChar) { Value = $"%{input.Trim()}%" });
+                    cmdS.Parameters.AddWithValue("@ingredientID", $"%{input.Trim()}%");
+                    cmdS.Parameters.AddWithValue("@name", $"%{input.Trim()}%");
 
                     inventorylist.Clear();
                     SqlDataAdapter adapterS = new SqlDataAdapter(cmdS);
@@ -291,7 +291,7 @@ namespace Foodie_Point_Management_System.Chef
                     {
                         if (readUF.Read())
                         {
-                            ordernum.Add(readUF.ToString());
+                            ordernum.Add(readUF[0].ToString());
                         }
                     }
                         
@@ -303,7 +303,7 @@ namespace Foodie_Point_Management_System.Chef
                     {
                         if (readFF.Read())
                         {
-                            ordernum.Add(readFF.ToString());
+                            ordernum.Add(readFF[0].ToString());
                         }
                     }
                 }
@@ -336,7 +336,7 @@ namespace Foodie_Point_Management_System.Chef
                 connect.Open();
                 using (SqlCommand cmdOC = new SqlCommand(qOrderCheck, connect))
                 {
-                    cmdOC.Parameters.AddWithValue("@orderid", orID);
+                    cmdOC.Parameters.AddWithValue("@orderid", orID.Trim());
 
                     using (SqlDataReader readOC = cmdOC.ExecuteReader())
                     {
@@ -346,7 +346,6 @@ namespace Foodie_Point_Management_System.Chef
                         }
                         else
                         {
-                            MessageBox.Show("Invalid Order ID.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             return false;
                         }
                     }
@@ -374,21 +373,20 @@ namespace Foodie_Point_Management_System.Chef
                 
                 using (SqlCommand cmdOU = new SqlCommand(qOrderUpdate, connect))                                            
                 {                                
-                    cmdOU.Parameters.AddWithValue("@orderid", oID);
-                    cmdOU.Parameters.AddWithValue("@orderstatus", oStatus);                                
+                    cmdOU.Parameters.AddWithValue("@orderid", oID.Trim());
+                    cmdOU.Parameters.AddWithValue("@orderstatus", oStatus.Trim());                                
                     cmdOU.Parameters.AddWithValue("@employeeid", Id);
                     
-                    using (SqlDataReader readOU = cmdOU.ExecuteReader())
+                    int updated = cmdOU.ExecuteNonQuery();
+                    if (updated != 0)
                     {
-                        if (readOU.Read())
-                        {
                             return $"Order Status Updated: \nOrder ID: {oID} \nNew Status: {oStatus}";
-                        }
-                        else
-                        {
-                            return "Order Not Updated.";
-                        }
                     }
+                    else
+                    {
+                            return "Order Not Updated.";
+                    }
+                    
                 }
             }
             catch (Exception ex)

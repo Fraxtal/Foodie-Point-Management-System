@@ -128,9 +128,9 @@ namespace Foodie_Point_Management_System.Manager
 
         private void btnSettings_Click(object sender, EventArgs e)
         {
-            //frmEmployeeProfileSettings settings = new frmEmployeeProfileSettings();
-            //settings.Show();
-            //this.Hide();
+            frmEmployeeProfileSettings settings = new frmEmployeeProfileSettings(session);
+            settings.Show();
+            this.Hide();
         }
 
         private void btnExit_Click(object sender, EventArgs e)

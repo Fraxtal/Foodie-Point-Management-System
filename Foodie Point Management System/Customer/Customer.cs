@@ -21,12 +21,12 @@ namespace Foodie_Point_Management_System.Customer
     {
         private int id;
         private string username;
+        private int? currentorderid;
 
 
         public int Id { get => id; set => id = value; }
         public string Username { get => username; set => username = value; }
-        public int? CurrentOrderId { get; set; }
-
+        public int? CurrentOrderId { get => currentorderid; set => currentorderid = value; }
 
         static SqlConnection connect = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString());
     
@@ -177,7 +177,7 @@ namespace Foodie_Point_Management_System.Customer
             return result;
         }
 
-        public bool CheckCustomerInfo(string username, string email)
+        private bool CheckCustomerInfo(string username, string email)
         {
             try
             {
@@ -235,6 +235,7 @@ namespace Foodie_Point_Management_System.Customer
                         if (rowsAffected > 0)
                         {
                             output = "Your account information has been updated successfully!";
+                            Username = updated_userinfo[0];
                         }
                         else
                         {
@@ -304,13 +305,18 @@ namespace Foodie_Point_Management_System.Customer
 
         public string SubmitFeedback(int rating, string content)
         {
+            if (string.IsNullOrEmpty(content))
+            {
+                content = "No Feedback Message Found.";
+            }
+
             try
             {
                 connect.Open();
 
                 string query = "INSERT INTO Feedback " +
-                    "(Rating, Content, CustomerID) " +
-                    "VALUES (@rating, @content, @CustomerID)";
+                    "(Rating, Content, ReadStatus, CustomerID) " +
+                    "VALUES (@rating, @content, 'Unread', @CustomerID)";
 
                 using (SqlCommand cmd = new SqlCommand(query, connect))
                 {

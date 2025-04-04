@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using Foodie_Point_Management_System.Employee_Login;
 
 namespace Foodie_Point_Management_System.Admin
 {
@@ -89,7 +90,9 @@ namespace Foodie_Point_Management_System.Admin
 
         private void btnProfile_Click(object sender, EventArgs e)
         {
-
+            frmEmployeeProfileSettings ProfileSettings = new frmEmployeeProfileSettings(session);
+            ProfileSettings.Show();
+            this.Hide();
         }
 
         private void frmAdminDashboard_Load(object sender, EventArgs e)
