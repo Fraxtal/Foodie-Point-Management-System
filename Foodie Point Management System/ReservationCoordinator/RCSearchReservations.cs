@@ -47,16 +47,25 @@ namespace Foodie_Point_Management_System.ReservationCoordinator
 
         private void SearchReservations_Load(object sender, EventArgs e)
         {
-
+            DGVResult.DataSource = rc.ReservationTable("SELECT * FROM Reservations");
         }
 
         private void btnSearch_Click_1(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtName.Text) || string.IsNullOrEmpty(cmbStatus.Text) || string.IsNullOrEmpty(txtHall.Text))
+            if (string.IsNullOrEmpty(txtName.Text) || string.IsNullOrEmpty(cmbStatus.Text) || string.IsNullOrEmpty(txtPax.Text))
             {
-                MessageBox.Show("Please fill in all blanks.");
+                MessageBox.Show("Please fill in all blanks.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                DGVResult.DataSource = rc.ReservationTable("SELECT * FROM Reservations");
                 return;
             }
+            if (DGVResult.Rows.Count == 0)
+            {
+                MessageBox.Show("No reservations found for the selected date and time.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                DGVResult.DataSource = rc.ReservationTable("SELECT * FROM Reservations");
+                return;
+            }
+            var search = rc.ReservationSearch(txtName.Text, cmbStatus.Text, dtpDate.Value, Convert.ToInt32(txtPax.Text));
+            DGVResult.DataSource = search;
         }
 
         private void txtName_TextChanged(object sender, EventArgs e)

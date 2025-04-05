@@ -29,12 +29,6 @@
         private void InitializeComponent()
         {
             this.lbltitle = new System.Windows.Forms.Label();
-            this.DGVResult = new System.Windows.Forms.DataGridView();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.time = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hall = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtName = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -43,7 +37,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtHall = new System.Windows.Forms.TextBox();
+            this.txtPax = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnlNav = new System.Windows.Forms.Panel();
             this.btnLogOut = new System.Windows.Forms.Button();
@@ -57,9 +51,10 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.lblExit = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.DGVResult)).BeginInit();
+            this.DGVResult = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVResult)).BeginInit();
             this.SuspendLayout();
             // 
             // lbltitle
@@ -69,70 +64,10 @@
             this.lbltitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.lbltitle.Location = new System.Drawing.Point(288, 56);
             this.lbltitle.Name = "lbltitle";
-            this.lbltitle.Size = new System.Drawing.Size(342, 41);
+            this.lbltitle.Size = new System.Drawing.Size(235, 29);
             this.lbltitle.TabIndex = 0;
             this.lbltitle.Text = "Search Reservations";
             this.lbltitle.Click += new System.EventHandler(this.lbltitle_Click);
-            // 
-            // DGVResult
-            // 
-            this.DGVResult.AllowUserToAddRows = false;
-            this.DGVResult.AllowUserToDeleteRows = false;
-            this.DGVResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGVResult.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.name,
-            this.time,
-            this.date,
-            this.hall,
-            this.status});
-            this.DGVResult.Location = new System.Drawing.Point(294, 247);
-            this.DGVResult.Name = "DGVResult";
-            this.DGVResult.ReadOnly = true;
-            this.DGVResult.RowHeadersWidth = 51;
-            this.DGVResult.RowTemplate.Height = 24;
-            this.DGVResult.Size = new System.Drawing.Size(679, 316);
-            this.DGVResult.TabIndex = 10;
-            this.DGVResult.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVResult_CellContentClick);
-            // 
-            // name
-            // 
-            this.name.HeaderText = "Customer Name";
-            this.name.MinimumWidth = 6;
-            this.name.Name = "name";
-            this.name.ReadOnly = true;
-            this.name.Width = 125;
-            // 
-            // time
-            // 
-            this.time.HeaderText = "Pax";
-            this.time.MinimumWidth = 6;
-            this.time.Name = "time";
-            this.time.ReadOnly = true;
-            this.time.Width = 125;
-            // 
-            // date
-            // 
-            this.date.HeaderText = "Date and Time";
-            this.date.MinimumWidth = 6;
-            this.date.Name = "date";
-            this.date.ReadOnly = true;
-            this.date.Width = 125;
-            // 
-            // hall
-            // 
-            this.hall.HeaderText = "Hall";
-            this.hall.MinimumWidth = 6;
-            this.hall.Name = "hall";
-            this.hall.ReadOnly = true;
-            this.hall.Width = 125;
-            // 
-            // status
-            // 
-            this.status.HeaderText = "Status";
-            this.status.MinimumWidth = 6;
-            this.status.Name = "status";
-            this.status.ReadOnly = true;
-            this.status.Width = 125;
             // 
             // btnSearch
             // 
@@ -154,7 +89,7 @@
             this.txtName.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtName.Location = new System.Drawing.Point(405, 113);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(205, 33);
+            this.txtName.Size = new System.Drawing.Size(205, 25);
             this.txtName.TabIndex = 27;
             this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             // 
@@ -165,7 +100,7 @@
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.label4.Location = new System.Drawing.Point(292, 114);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(90, 30);
+            this.label4.Size = new System.Drawing.Size(63, 21);
             this.label4.TabIndex = 26;
             this.label4.Text = "Name :";
             // 
@@ -175,7 +110,7 @@
             this.dtpDate.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpDate.Location = new System.Drawing.Point(733, 113);
             this.dtpDate.Name = "dtpDate";
-            this.dtpDate.Size = new System.Drawing.Size(205, 37);
+            this.dtpDate.Size = new System.Drawing.Size(205, 27);
             this.dtpDate.TabIndex = 25;
             // 
             // cmbStatus
@@ -188,7 +123,7 @@
             "Cancelled"});
             this.cmbStatus.Location = new System.Drawing.Point(405, 161);
             this.cmbStatus.Name = "cmbStatus";
-            this.cmbStatus.Size = new System.Drawing.Size(205, 38);
+            this.cmbStatus.Size = new System.Drawing.Size(205, 29);
             this.cmbStatus.TabIndex = 24;
             // 
             // label3
@@ -198,7 +133,7 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.label3.Location = new System.Drawing.Point(292, 162);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(97, 30);
+            this.label3.Size = new System.Drawing.Size(67, 21);
             this.label3.TabIndex = 22;
             this.label3.Text = "Status :";
             // 
@@ -209,9 +144,9 @@
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.label2.Location = new System.Drawing.Point(631, 162);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(80, 30);
+            this.label2.Size = new System.Drawing.Size(49, 21);
             this.label2.TabIndex = 21;
-            this.label2.Text = "Hall :";
+            this.label2.Text = "Pax :";
             // 
             // label1
             // 
@@ -220,17 +155,17 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.label1.Location = new System.Drawing.Point(631, 114);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 30);
+            this.label1.Size = new System.Drawing.Size(56, 21);
             this.label1.TabIndex = 20;
             this.label1.Text = "Date :";
             // 
-            // txtHall
+            // txtPax
             // 
-            this.txtHall.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHall.Location = new System.Drawing.Point(733, 161);
-            this.txtHall.Name = "txtHall";
-            this.txtHall.Size = new System.Drawing.Size(205, 33);
-            this.txtHall.TabIndex = 29;
+            this.txtPax.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPax.Location = new System.Drawing.Point(733, 161);
+            this.txtPax.Name = "txtPax";
+            this.txtPax.Size = new System.Drawing.Size(205, 25);
+            this.txtPax.TabIndex = 29;
             // 
             // panel1
             // 
@@ -361,7 +296,7 @@
             this.label10.Location = new System.Drawing.Point(29, 126);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(223, 29);
+            this.label10.Size = new System.Drawing.Size(155, 21);
             this.label10.TabIndex = 36;
             this.label10.Text = "Management System";
             // 
@@ -373,7 +308,7 @@
             this.label11.Location = new System.Drawing.Point(66, 99);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(148, 32);
+            this.label11.Size = new System.Drawing.Size(102, 21);
             this.label11.TabIndex = 35;
             this.label11.Text = "Foodie Point";
             // 
@@ -384,7 +319,7 @@
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.label12.Location = new System.Drawing.Point(67, 8);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(155, 108);
+            this.label12.Size = new System.Drawing.Size(103, 73);
             this.label12.TabIndex = 34;
             this.label12.Text = "🍵";
             // 
@@ -394,20 +329,37 @@
             this.lblExit.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblExit.Location = new System.Drawing.Point(969, 9);
             this.lblExit.Name = "lblExit";
-            this.lblExit.Size = new System.Drawing.Size(23, 24);
+            this.lblExit.Size = new System.Drawing.Size(15, 16);
             this.lblExit.TabIndex = 57;
             this.lblExit.Text = "X";
             this.lblExit.Click += new System.EventHandler(this.lblExit_Click);
             // 
+            // DGVResult
+            // 
+            this.DGVResult.AllowUserToAddRows = false;
+            this.DGVResult.AllowUserToDeleteRows = false;
+            this.DGVResult.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DGVResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGVResult.Location = new System.Drawing.Point(293, 247);
+            this.DGVResult.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.DGVResult.Name = "DGVResult";
+            this.DGVResult.ReadOnly = true;
+            this.DGVResult.RowHeadersWidth = 51;
+            this.DGVResult.RowTemplate.Height = 24;
+            this.DGVResult.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DGVResult.Size = new System.Drawing.Size(680, 316);
+            this.DGVResult.TabIndex = 58;
+            // 
             // SearchReservations
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(18F, 34F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(235)))), ((int)(((byte)(226)))));
             this.ClientSize = new System.Drawing.Size(1000, 600);
+            this.Controls.Add(this.DGVResult);
             this.Controls.Add(this.lblExit);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.txtHall);
+            this.Controls.Add(this.txtPax);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.label4);
@@ -416,7 +368,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.DGVResult);
             this.Controls.Add(this.lbltitle);
             this.Font = new System.Drawing.Font("Modern No. 20", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
@@ -426,10 +377,10 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Search_Reservations";
             this.Load += new System.EventHandler(this.SearchReservations_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.DGVResult)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVResult)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -438,7 +389,6 @@
         #endregion
 
         private System.Windows.Forms.Label lbltitle;
-        private System.Windows.Forms.DataGridView DGVResult;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label label4;
@@ -447,12 +397,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtHall;
-        private System.Windows.Forms.DataGridViewTextBoxColumn name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn time;
-        private System.Windows.Forms.DataGridViewTextBoxColumn date;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hall;
-        private System.Windows.Forms.DataGridViewTextBoxColumn status;
+        private System.Windows.Forms.TextBox txtPax;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel pnlNav;
         private System.Windows.Forms.Button btnLogOut;
@@ -466,5 +411,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.DataGridView DGVResult;
     }
 }

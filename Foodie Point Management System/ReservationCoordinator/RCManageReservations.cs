@@ -62,7 +62,7 @@ namespace Foodie_Point_Management_System.ReservationCoordinator
         private void btnSearch_Click(object sender, EventArgs e)
         {
 
-            if (string.IsNullOrEmpty(txtName.Text) || string.IsNullOrEmpty(cmbStatus.Text) || string.IsNullOrEmpty(txtPax.Text))
+            if (string.IsNullOrEmpty(txtHall.Text) || string.IsNullOrEmpty(cmbStatus.Text) || string.IsNullOrEmpty(txtPax.Text))
             {
                 MessageBox.Show("Please fill in all blanks.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 DGVReservations.DataSource = rc.ReservationTable("SELECT * FROM Reservations");
@@ -75,7 +75,7 @@ namespace Foodie_Point_Management_System.ReservationCoordinator
                 return;
             }
 
-            var search = rc.ReservationSearch(txtName.Text, cmbStatus.Text, dtpDate.Value, int.Parse(txtPax.Text));
+            var search = rc.ReservationSearch(txtName.Text, cmbStatus.Text, dtpDate.Value, Convert.ToInt32(txtPax.Text));
             
             DGVReservations.DataSource = search;
         }
@@ -87,7 +87,7 @@ namespace Foodie_Point_Management_System.ReservationCoordinator
                 return;
             }
 
-            if (string.IsNullOrEmpty(txtName.Text) || string.IsNullOrEmpty(cmbStatus.Text))
+            if (string.IsNullOrEmpty(txtHall.Text) || string.IsNullOrEmpty(cmbStatus.Text))
             {
                 MessageBox.Show("Please fill in all blanks.");
                 return;
@@ -127,10 +127,10 @@ namespace Foodie_Point_Management_System.ReservationCoordinator
             {
                 MessageBox.Show(rc.ReservationDelete(Convert.ToInt32(delete)));
                 DGVReservations.Rows.RemoveAt(DGVReservations.CurrentRow.Index);
-                txtName.Clear();
+                txtHall.Clear();
                 txtresID.Clear();
                 dtpDate.Value=DateTime.Today;
-                txtHall.Clear();
+                txtName.Clear();
                 txtPax.Clear();
                 cmbStatus.SelectedIndex=-1;
                 DGVReservations.CurrentCell = null;
@@ -164,10 +164,10 @@ namespace Foodie_Point_Management_System.ReservationCoordinator
             if (e.RowIndex != -1)
             {
                 DataGridViewRow rows = DGVReservations.Rows[e.RowIndex];
-                txtName.Text = rows.Cells[1].Value.ToString();
+                txtHall.Text = rows.Cells[4].Value.ToString();
                 txtresID.Text = rows.Cells[0].Value.ToString();
                 dtpDate.Text = rows.Cells[2].Value.ToString();
-                txtHall.Text = rows.Cells[4].Value.ToString();
+                txtName.Text = rows.Cells[1].Value.ToString();
                 txtPax.Text = rows.Cells[3].Value.ToString();
                 cmbStatus.Text = rows.Cells[5].Value.ToString();
             }
@@ -181,7 +181,7 @@ namespace Foodie_Point_Management_System.ReservationCoordinator
             }
 
 
-            if (string.IsNullOrEmpty(txtName.Text) || string.IsNullOrEmpty(cmbStatus.Text))
+            if (string.IsNullOrEmpty(txtHall.Text) || string.IsNullOrEmpty(cmbStatus.Text))
             {
                 MessageBox.Show("Please fill in all blanks.");
                 return;
@@ -223,10 +223,10 @@ namespace Foodie_Point_Management_System.ReservationCoordinator
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            txtName.Clear();
+            txtHall.Clear();
             txtresID.Clear();
             dtpDate.Value = DateTime.Today;
-            txtHall.Clear();
+            txtName.Clear();
             txtPax.Clear();
             cmbStatus.SelectedIndex = -1;
             DGVReservations.CurrentCell = null;

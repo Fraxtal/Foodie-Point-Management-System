@@ -64,7 +64,7 @@ namespace Foodie_Point_Management_System.ReservationCoordinator
                 {
                     cmd4.Parameters.AddWithValue("@id", customerid);
                     cmd4.Parameters.AddWithValue("@rstatus", status);
-                    cmd4.Parameters.AddWithValue("@datetime", datetime);
+                    cmd4.Parameters.AddWithValue("@datetime", datetime.Date);
                     cmd4.Parameters.AddWithValue("@numguest", pax);
 
                     SqlDataAdapter resSearch = new SqlDataAdapter(cmd4);
