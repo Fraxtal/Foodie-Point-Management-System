@@ -287,7 +287,7 @@ namespace Foodie_Point_Management_System.Manager
 
             string yearFilter = "";
             if (year != "All Years")
-                yearFilter = " WHERE YEAR(ot.DateOrdered) = @Year ";
+                yearFilter = " AND YEAR(ot.DateOrdered) = @Year";
 
             if (category == "Month")
             {
@@ -298,6 +298,7 @@ namespace Foodie_Point_Management_System.Manager
                 SUM(i.Total) AS TotalSales
                 FROM Invoice i
                 LEFT JOIN OrderTable ot ON i.OrderID = ot.OrderID
+                WHERE ot.Orderstatus = 'Completed'
                 " + yearFilter + @"
                 GROUP BY YEAR(ot.DateOrdered), MONTH(ot.DateOrdered), DATENAME(MONTH, ot.DateOrdered)
                 ORDER BY YEAR(ot.DateOrdered) ASC, MONTH(ot.DateOrdered) ASC;
@@ -312,6 +313,7 @@ namespace Foodie_Point_Management_System.Manager
                     FROM Invoice i
                     LEFT JOIN OrderTable ot ON i.OrderID = ot.OrderID
                     LEFT JOIN Employee e ON ot.EmployeeID = e.EmployeeID
+                    WHERE ot.Orderstatus = 'Completed'
                     " + yearFilter + @"
                     GROUP BY e.FullName
                     ORDER BY e.FullName ASC;";
@@ -326,6 +328,7 @@ namespace Foodie_Point_Management_System.Manager
                         SUM(i.Total) as 'TotalSales'
                     FROM Invoice i
                     LEFT JOIN OrderTable ot ON i.OrderID = ot.OrderID
+                    WHERE ot.Orderstatus = 'Completed'
                     " + yearFilter + @"
                     GROUP BY i.PaymentMethod
                     ORDER BY i.PaymentMethod ASC;";
