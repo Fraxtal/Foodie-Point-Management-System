@@ -148,7 +148,7 @@ namespace Foodie_Point_Management_System.Chef
 
                     if (updaterows != 0)
                     {
-                        return $"New Item Added: \nID: {id} \nName: {na} \nQuantity: {qn}";
+                        return $"New Item Added: \nName: {na} \nQuantity: {qn}";
                     }
                     else
                     {
