@@ -238,7 +238,7 @@ namespace Foodie_Point_Management_System.ReservationCoordinator
                 connect.Open();
                 using (SqlCommand cmd9 = new SqlCommand(query, connect))
                 {
-                    cmd9.Parameters.AddWithValue("pax", pax);
+                    cmd9.Parameters.AddWithValue("@pax", pax);
                     cmd9.Parameters.AddWithValue("@reservationdate", reservationdate);
 
                     object result = cmd9.ExecuteScalar();
