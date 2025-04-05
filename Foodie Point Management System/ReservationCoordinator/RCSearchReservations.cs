@@ -25,8 +25,9 @@ namespace Foodie_Point_Management_System.ReservationCoordinator
         int nWidthEllipse,
         int nHeightEllipse
                 );
-        public SearchReservations()
+        public SearchReservations(ReservationCoord s)
         {
+            this.rc = s;
             InitializeComponent();
             pnlNav.Height = btnSearchReser.Height;
             pnlNav.Top = btnSearchReser.Top;
@@ -71,7 +72,7 @@ namespace Foodie_Point_Management_System.ReservationCoordinator
 
         private void btnSearchReser_Click(object sender, EventArgs e)
         {
-            SearchReservations searchReservations = new SearchReservations();
+            SearchReservations searchReservations = new SearchReservations(rc);
             searchReservations.Show();
             this.Hide();
         }

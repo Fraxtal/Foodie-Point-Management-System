@@ -45,7 +45,7 @@ namespace Foodie_Point_Management_System.ReservationCoordinator
 
         private void CustomerRequest_Load(object sender, EventArgs e)
         {
-            DGVcusMSG.DataSource = rc.ReservationTable("SELECT * FROM ReservationMessage");
+            DGVcusMSG.DataSource = rc.ReservationTable("SELECT * FROM ReservationMessage;");
         }
 
         private void btnApprove_Click(object sender, EventArgs e)
@@ -119,7 +119,7 @@ namespace Foodie_Point_Management_System.ReservationCoordinator
 
         private void btnSearchReser_Click(object sender, EventArgs e)
         {
-            SearchReservations searchReservations = new SearchReservations();
+            SearchReservations searchReservations = new SearchReservations(rc);
             searchReservations.Show();
             this.Hide();
         }
