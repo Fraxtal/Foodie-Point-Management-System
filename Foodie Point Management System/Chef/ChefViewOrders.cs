@@ -9,12 +9,13 @@ using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Foodie_Point_Management_System.Employee_Login;
+using System.Runtime.InteropServices;
 
 namespace Foodie_Point_Management_System.Chef
 {
     public partial class frmChefViewOrders : Form
     {
-        EmChef sessionCV;
         string currentsort;
         string sort = "SELECT OrderTable.OrderID AS 'Order ID', FoodMenu.Name AS 'Food Name', OrderDetail.Quantity AS 'Quantity', " +
                     "OrderTable.CustomerID AS 'Customer ID', OrderTable.OrderStatus AS 'Status', Employee.FullName AS 'Chef Name' " +
@@ -26,20 +27,36 @@ namespace Foodie_Point_Management_System.Chef
         string progress = "WHERE OrderTable.OrderStatus = 'In Progress' ";
         string queue = "WHERE OrderTable.OrderStatus = 'In Queue' ";
         string completed = "WHERE OrderTable.OrderStatus = 'Completed' ";
+        [DllImport("gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn(
+        int nLeftRect,
+        int nTopRect,
+        int nRightRect,
+        int nBottomRect,
+        int nWidthEllipse,
+        int nHeightEllipse
+                );
 
+        EmChef sessionCV;
         public frmChefViewOrders(EmChef sc)
         {
             InitializeComponent();
             this.sessionCV = sc;
+            pnlNav.Height = btnViewOrder.Height;
+            pnlNav.Top = btnViewOrder.Top;
+            pnlNav.Left = btnViewOrder.Left;
+            Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
         }
 
         private void frmChefViewOrders_Load(object sender, EventArgs e)
         {
+            //order display table default sorting
             rbtnAll.Checked = true;
         }
 
         private void dgvOrderList_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            //Cell click event that checks if the user is selecting a valid cell, then transfer the values to the corresponding text boxes
             if (e.RowIndex != -1)
             {
                 DataGridViewRow rows = dgvOrderList.Rows[e.RowIndex];
@@ -50,12 +67,14 @@ namespace Foodie_Point_Management_System.Chef
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            //Check if relevant fields are filled
             if (!int.TryParse(txtbxOrderID.Text, out int orderid) || string.IsNullOrEmpty(txtbxOrderID.Text) || cmbboxStatus.SelectedIndex == -1)
             {
                 MessageBox.Show("Please select an order or enter a valid Order ID, then select the corresponding status to be updated.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             
+            //Ask user if they want to modify the status of a completed order
             if (dgvOrderList.CurrentRow.Cells[4].Value.ToString() == "Completed")
             {
                 if (MessageBox.Show($"Order has already been marked as 'Completed'. \nDo you still want to update its status?", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
@@ -64,6 +83,7 @@ namespace Foodie_Point_Management_System.Chef
                 }
             }
 
+            //Check if order exists and display error message if not
             if (!sessionCV.ViewOrderCheck(txtbxOrderID.Text))
             {
                 MessageBox.Show("Invalid Order ID.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -72,13 +92,6 @@ namespace Foodie_Point_Management_System.Chef
 
             MessageBox.Show(sessionCV.ViewOrderUpdate(txtbxOrderID.Text, cmbboxStatus.Text));
             dgvOrderList.DataSource = sessionCV.ViewOrdersDisplay(currentsort);
-        }
-
-        private void btnReturn_Click(object sender, EventArgs e)
-        {
-            frmChefDashboard pageD = new frmChefDashboard(sessionCV);
-            pageD.Show();
-            this.Close();
         }
 
         private void rbtnAll_CheckedChanged(object sender, EventArgs e)
@@ -195,6 +208,62 @@ namespace Foodie_Point_Management_System.Chef
             }
 
             dgvOrderList.DataSource = sessionCV.ViewOrdersDisplay(currentsort);
+        }
+        private void btnDash_Click(object sender, EventArgs e)
+        {
+            frmChefDashboard dashboard = new frmChefDashboard(sessionCV);
+            dashboard.Show();
+            this.Hide();
+        }
+
+        private void btnViewOrder_Click(object sender, EventArgs e)
+        {
+            frmChefViewOrders pageVO = new frmChefViewOrders(sessionCV);
+            pageVO.Show();
+            this.Hide();
+        }
+
+        private void btnInventory_Click(object sender, EventArgs e)
+        {
+            frmChefInventory pageI = new frmChefInventory(sessionCV);
+            pageI.Show();
+            this.Hide();
+        }
+
+        private void btnProfile_Click(object sender, EventArgs e)
+        {
+            frmEmployeeProfileSettings pagePS = new frmEmployeeProfileSettings(sessionCV);
+            pagePS.Show();
+            this.Hide();
+        }
+
+        private void lblExit_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show($"Close the application?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show($"Logout and return to login page?", "Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                sessionCV = null;
+                EmployeeLogin pageL = new EmployeeLogin();
+                pageL.Show();
+                this.Hide();
+            }
+        }
+
+        private void txtbxOrderID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

@@ -39,24 +39,42 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.lbl = new System.Windows.Forms.Label();
+            this.lblParty = new System.Windows.Forms.Label();
             this.dataGridViewHalls = new System.Windows.Forms.DataGridView();
             this.lblHall = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.lblExit = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnReserD = new System.Windows.Forms.Button();
+            this.pnlNav = new System.Windows.Forms.Panel();
+            this.btnDash = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.btnSettings = new System.Windows.Forms.Button();
+            this.btnSalesReportD = new System.Windows.Forms.Button();
+            this.btnHallsD = new System.Windows.Forms.Button();
+            this.btnMenuD = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHalls)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnReturn
             // 
-            this.btnReturn.Location = new System.Drawing.Point(-29, -28);
+            this.btnReturn.Location = new System.Drawing.Point(-22, -23);
+            this.btnReturn.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnReturn.Name = "btnReturn";
-            this.btnReturn.Size = new System.Drawing.Size(75, 23);
+            this.btnReturn.Size = new System.Drawing.Size(56, 19);
             this.btnReturn.TabIndex = 84;
             this.btnReturn.Text = "Return";
             this.btnReturn.UseVisualStyleBackColor = true;
             // 
             // cmbPartyType
             // 
+            this.cmbPartyType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbPartyType.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbPartyType.FormattingEnabled = true;
             this.cmbPartyType.Items.AddRange(new object[] {
             "Small Table",
@@ -64,83 +82,102 @@
             "Large Table",
             "Joined Table",
             "Entire Hall"});
-            this.cmbPartyType.Location = new System.Drawing.Point(229, 192);
+            this.cmbPartyType.Location = new System.Drawing.Point(370, 425);
+            this.cmbPartyType.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.cmbPartyType.Name = "cmbPartyType";
-            this.cmbPartyType.Size = new System.Drawing.Size(205, 24);
+            this.cmbPartyType.Size = new System.Drawing.Size(155, 30);
             this.cmbPartyType.TabIndex = 83;
             // 
             // txtHallID
             // 
-            this.txtHallID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHallID.Location = new System.Drawing.Point(229, 74);
+            this.txtHallID.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHallID.Location = new System.Drawing.Point(370, 315);
+            this.txtHallID.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtHallID.Name = "txtHallID";
-            this.txtHallID.Size = new System.Drawing.Size(205, 30);
+            this.txtHallID.Size = new System.Drawing.Size(155, 28);
             this.txtHallID.TabIndex = 82;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(59, 74);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label1.Location = new System.Drawing.Point(223, 318);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 25);
+            this.label1.Size = new System.Drawing.Size(82, 21);
             this.label1.TabIndex = 81;
             this.label1.Text = "Hall ID :";
             // 
             // txtSearch
             // 
             this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.Location = new System.Drawing.Point(540, 56);
+            this.txtSearch.Location = new System.Drawing.Point(507, 21);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(205, 30);
+            this.txtSearch.Size = new System.Drawing.Size(155, 26);
             this.txtSearch.TabIndex = 79;
             // 
             // txtPax
             // 
-            this.txtPax.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPax.Location = new System.Drawing.Point(229, 127);
+            this.txtPax.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPax.Location = new System.Drawing.Point(370, 370);
+            this.txtPax.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtPax.Name = "txtPax";
-            this.txtPax.Size = new System.Drawing.Size(205, 30);
+            this.txtPax.Size = new System.Drawing.Size(155, 28);
             this.txtPax.TabIndex = 76;
             // 
             // lblPax
             // 
             this.lblPax.AutoSize = true;
             this.lblPax.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPax.Location = new System.Drawing.Point(99, 127);
+            this.lblPax.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblPax.Location = new System.Drawing.Point(223, 373);
+            this.lblPax.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPax.Name = "lblPax";
-            this.lblPax.Size = new System.Drawing.Size(60, 25);
+            this.lblPax.Size = new System.Drawing.Size(49, 21);
             this.lblPax.TabIndex = 77;
             this.lblPax.Text = "Pax :";
             // 
             // btnEdit
             // 
+            this.btnEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(212)))), ((int)(((byte)(194)))));
+            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEdit.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.Location = new System.Drawing.Point(699, 275);
+            this.btnEdit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnEdit.Location = new System.Drawing.Point(640, 373);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(99, 37);
+            this.btnEdit.Size = new System.Drawing.Size(74, 30);
             this.btnEdit.TabIndex = 75;
             this.btnEdit.Text = "Edit";
-            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.UseVisualStyleBackColor = false;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnDelete
             // 
+            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(133)))), ((int)(((byte)(99)))));
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(540, 275);
+            this.btnDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnDelete.Location = new System.Drawing.Point(640, 429);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(99, 37);
+            this.btnDelete.Size = new System.Drawing.Size(74, 30);
             this.btnDelete.TabIndex = 74;
             this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnAdd
             // 
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(390, 275);
+            this.btnAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnAdd.Location = new System.Drawing.Point(640, 315);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(99, 37);
+            this.btnAdd.Size = new System.Drawing.Size(74, 30);
             this.btnAdd.TabIndex = 73;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -148,65 +185,252 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.Location = new System.Drawing.Point(769, 49);
+            this.btnSearch.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.Location = new System.Drawing.Point(672, 18);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(93, 37);
+            this.btnSearch.Size = new System.Drawing.Size(30, 30);
             this.btnSearch.TabIndex = 72;
-            this.btnSearch.Text = "Search";
+            this.btnSearch.Text = "🔍";
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // lbl
+            // lblParty
             // 
-            this.lbl.AutoSize = true;
-            this.lbl.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl.Location = new System.Drawing.Point(34, 188);
-            this.lbl.Name = "lbl";
-            this.lbl.Size = new System.Drawing.Size(125, 25);
-            this.lbl.TabIndex = 71;
-            this.lbl.Text = "Party Type :";
+            this.lblParty.AutoSize = true;
+            this.lblParty.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblParty.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblParty.Location = new System.Drawing.Point(223, 429);
+            this.lblParty.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblParty.Name = "lblParty";
+            this.lblParty.Size = new System.Drawing.Size(105, 21);
+            this.lblParty.TabIndex = 71;
+            this.lblParty.Text = "Party Type :";
+            this.lblParty.Click += new System.EventHandler(this.lbl_Click);
             // 
             // dataGridViewHalls
             // 
             this.dataGridViewHalls.AllowUserToAddRows = false;
             this.dataGridViewHalls.AllowUserToDeleteRows = false;
             this.dataGridViewHalls.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewHalls.Location = new System.Drawing.Point(33, 352);
+            this.dataGridViewHalls.Location = new System.Drawing.Point(227, 61);
+            this.dataGridViewHalls.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dataGridViewHalls.Name = "dataGridViewHalls";
             this.dataGridViewHalls.ReadOnly = true;
             this.dataGridViewHalls.RowHeadersWidth = 51;
             this.dataGridViewHalls.RowTemplate.Height = 24;
             this.dataGridViewHalls.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewHalls.Size = new System.Drawing.Size(808, 182);
+            this.dataGridViewHalls.Size = new System.Drawing.Size(475, 231);
             this.dataGridViewHalls.TabIndex = 70;
             // 
             // lblHall
             // 
             this.lblHall.AutoSize = true;
             this.lblHall.Font = new System.Drawing.Font("Modern No. 20", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHall.Location = new System.Drawing.Point(28, 319);
+            this.lblHall.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.lblHall.Location = new System.Drawing.Point(429, 18);
+            this.lblHall.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblHall.Name = "lblHall";
-            this.lblHall.Size = new System.Drawing.Size(67, 30);
+            this.lblHall.Size = new System.Drawing.Size(52, 24);
             this.lblHall.TabIndex = 69;
             this.lblHall.Text = "Hall";
+            this.lblHall.Click += new System.EventHandler(this.lblHall_Click);
             // 
-            // button1
+            // lblExit
             // 
-            this.button1.Location = new System.Drawing.Point(20, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 85;
-            this.button1.Text = "Return";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.lblExit.AutoSize = true;
+            this.lblExit.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblExit.Location = new System.Drawing.Point(727, 7);
+            this.lblExit.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblExit.Name = "lblExit";
+            this.lblExit.Size = new System.Drawing.Size(15, 16);
+            this.lblExit.TabIndex = 87;
+            this.lblExit.Text = "X";
+            this.lblExit.Click += new System.EventHandler(this.lblExit_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(177)))), ((int)(((byte)(151)))));
+            this.panel1.Controls.Add(this.btnReserD);
+            this.panel1.Controls.Add(this.pnlNav);
+            this.panel1.Controls.Add(this.btnDash);
+            this.panel1.Controls.Add(this.btnExit);
+            this.panel1.Controls.Add(this.btnSettings);
+            this.panel1.Controls.Add(this.btnSalesReportD);
+            this.panel1.Controls.Add(this.btnHallsD);
+            this.panel1.Controls.Add(this.btnMenuD);
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(191, 487);
+            this.panel1.TabIndex = 88;
+            // 
+            // btnReserD
+            // 
+            this.btnReserD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReserD.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReserD.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnReserD.Location = new System.Drawing.Point(0, 315);
+            this.btnReserD.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnReserD.Name = "btnReserD";
+            this.btnReserD.Size = new System.Drawing.Size(191, 44);
+            this.btnReserD.TabIndex = 34;
+            this.btnReserD.Text = "Reservation Report";
+            this.btnReserD.UseVisualStyleBackColor = true;
+            this.btnReserD.Click += new System.EventHandler(this.btnReserD_Click);
+            // 
+            // pnlNav
+            // 
+            this.pnlNav.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(235)))), ((int)(((byte)(226)))));
+            this.pnlNav.Location = new System.Drawing.Point(1, 142);
+            this.pnlNav.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.pnlNav.Name = "pnlNav";
+            this.pnlNav.Size = new System.Drawing.Size(4, 81);
+            this.pnlNav.TabIndex = 33;
+            // 
+            // btnDash
+            // 
+            this.btnDash.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnDash.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDash.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDash.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnDash.Location = new System.Drawing.Point(0, 140);
+            this.btnDash.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnDash.Name = "btnDash";
+            this.btnDash.Size = new System.Drawing.Size(191, 44);
+            this.btnDash.TabIndex = 32;
+            this.btnDash.Text = "Dashboard";
+            this.btnDash.UseVisualStyleBackColor = true;
+            this.btnDash.Click += new System.EventHandler(this.btnDash_Click);
+            // 
+            // btnExit
+            // 
+            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(133)))), ((int)(((byte)(99)))));
+            this.btnExit.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnExit.Location = new System.Drawing.Point(0, 443);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(191, 44);
+            this.btnExit.TabIndex = 28;
+            this.btnExit.Text = "Log Out";
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // btnSettings
+            // 
+            this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSettings.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSettings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnSettings.Location = new System.Drawing.Point(0, 359);
+            this.btnSettings.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnSettings.Name = "btnSettings";
+            this.btnSettings.Size = new System.Drawing.Size(191, 44);
+            this.btnSettings.TabIndex = 31;
+            this.btnSettings.Text = "Settings";
+            this.btnSettings.UseVisualStyleBackColor = true;
+            this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
+            // 
+            // btnSalesReportD
+            // 
+            this.btnSalesReportD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalesReportD.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalesReportD.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnSalesReportD.Location = new System.Drawing.Point(0, 272);
+            this.btnSalesReportD.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnSalesReportD.Name = "btnSalesReportD";
+            this.btnSalesReportD.Size = new System.Drawing.Size(191, 44);
+            this.btnSalesReportD.TabIndex = 30;
+            this.btnSalesReportD.Text = "Sales Report";
+            this.btnSalesReportD.UseVisualStyleBackColor = true;
+            this.btnSalesReportD.Click += new System.EventHandler(this.btnSalesReportD_Click);
+            // 
+            // btnHallsD
+            // 
+            this.btnHallsD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHallsD.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHallsD.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnHallsD.Location = new System.Drawing.Point(0, 227);
+            this.btnHallsD.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnHallsD.Name = "btnHallsD";
+            this.btnHallsD.Size = new System.Drawing.Size(191, 44);
+            this.btnHallsD.TabIndex = 29;
+            this.btnHallsD.Text = "Halls";
+            this.btnHallsD.UseVisualStyleBackColor = true;
+            this.btnHallsD.Click += new System.EventHandler(this.btnHallsD_Click);
+            // 
+            // btnMenuD
+            // 
+            this.btnMenuD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMenuD.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenuD.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnMenuD.Location = new System.Drawing.Point(0, 183);
+            this.btnMenuD.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnMenuD.Name = "btnMenuD";
+            this.btnMenuD.Size = new System.Drawing.Size(191, 44);
+            this.btnMenuD.TabIndex = 28;
+            this.btnMenuD.Text = "Menu";
+            this.btnMenuD.UseVisualStyleBackColor = true;
+            this.btnMenuD.Click += new System.EventHandler(this.btnMenuD_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(191, 140);
+            this.panel2.TabIndex = 0;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Palatino Linotype", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label3.Location = new System.Drawing.Point(19, 108);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(155, 21);
+            this.label3.TabIndex = 33;
+            this.label3.Text = "Management System";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Palatino Linotype", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.label2.Location = new System.Drawing.Point(48, 82);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(102, 21);
+            this.label2.TabIndex = 32;
+            this.label2.Text = "Foodie Point";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.label4.Location = new System.Drawing.Point(47, 10);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(103, 73);
+            this.label4.TabIndex = 31;
+            this.label4.Text = "🍵";
             // 
             // ManagerHall
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(890, 593);
-            this.Controls.Add(this.button1);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(235)))), ((int)(((byte)(226)))));
+            this.ClientSize = new System.Drawing.Size(750, 487);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.lblExit);
             this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.cmbPartyType);
             this.Controls.Add(this.txtHallID);
@@ -218,13 +442,20 @@
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnSearch);
-            this.Controls.Add(this.lbl);
+            this.Controls.Add(this.lblParty);
             this.Controls.Add(this.dataGridViewHalls);
             this.Controls.Add(this.lblHall);
+            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Name = "ManagerHall";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ManagerHall";
             this.Load += new System.EventHandler(this.ManagerHall_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHalls)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -243,9 +474,22 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.Label lbl;
+        private System.Windows.Forms.Label lblParty;
         private System.Windows.Forms.DataGridView dataGridViewHalls;
         private System.Windows.Forms.Label lblHall;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lblExit;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnReserD;
+        private System.Windows.Forms.Panel pnlNav;
+        private System.Windows.Forms.Button btnDash;
+        private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.Button btnSettings;
+        private System.Windows.Forms.Button btnSalesReportD;
+        private System.Windows.Forms.Button btnHallsD;
+        private System.Windows.Forms.Button btnMenuD;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label4;
     }
 }

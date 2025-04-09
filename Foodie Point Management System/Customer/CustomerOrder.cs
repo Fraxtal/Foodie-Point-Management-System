@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,11 +14,24 @@ namespace Foodie_Point_Management_System.Customer
     public partial class CustomerOrder: Form
     {
         Customer session;
+        [DllImport("gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn(
+        int nLeftRect,
+        int nTopRect,
+        int nRightRect,
+        int nBottomRect,
+        int nWidthEllipse,
+        int nHeightEllipse
+            );
 
         public CustomerOrder(Customer s)
         {
             this.session = s;
             InitializeComponent();
+            Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
+            pnlNav.Height = btnOrderD.Height;
+            pnlNav.Top = btnOrderD.Top;
+            pnlNav.Left = btnOrderD.Left;
         }
 
         private void CustomerOrder_Load(object sender, EventArgs e)
@@ -52,6 +66,7 @@ namespace Foodie_Point_Management_System.Customer
             rbChi.Checked = false;
             rbMalay.Checked = false;
             rbIn.Checked = false;
+            rbBeverage.Checked = false;
             OrderMenuGrid.DataSource = session.LoadDatatable("SELECT FoodID, Name as \"Name\", CuisineType as \"Cuisine Type\", Price as \"Price (RM)\" FROM FoodMenu");
         }
 
@@ -68,7 +83,7 @@ namespace Foodie_Point_Management_System.Customer
             {
                 MessageBox.Show("Please Select a cell to add into your order list!!", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if(!int.TryParse(txtQuant.Text, out int quantity))
+            else if(!int.TryParse(txtQuantity.Text, out int quantity))
             {
                 MessageBox.Show("Please enter a valid positive numeric value into the quantity box!", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -87,6 +102,57 @@ namespace Foodie_Point_Management_System.Customer
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             OrderMenuGrid.DataSource = session.LoadDatatable($"Select FoodID, Name as \"Name\", CuisineType as \"Cuisine Type\", Price as \"Price (RM)\" from FoodMenu where name like '%{txtSearch.Text.Trim()}%'");
+        }
+
+        private void rbBeverage_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbBeverage.Checked)
+                OrderMenuGrid.DataSource = session.LoadDatatable("Select FoodID, Name as \"Name\", CuisineType as \"Cuisine Type\", price as \"Price (RM)\" from FoodMenu where CuisineType = 'Beverages'");
+
+        }
+        private void btnDash_Click(object sender, EventArgs e)
+        {
+            CustomerDashboard dashboard = new CustomerDashboard(session);
+            dashboard.Show();
+            this.Hide();
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show($"Log out?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                CustomerLogin pageL = new CustomerLogin();
+                pageL.Show();
+                this.Hide();
+            }
+        }
+
+        private void btnOrderD_Click(object sender, EventArgs e)
+        {
+            CustomerOrder ordermenu = new CustomerOrder(session);
+            ordermenu.Show();
+            this.Hide();
+        }
+
+        private void btnReserD_Click(object sender, EventArgs e)
+        {
+            CustomerReservation reservation = new CustomerReservation(session);
+            reservation.Show();
+        }
+
+        private void btnProfile_Click(object sender, EventArgs e)
+        {
+            CustomerProfile cProfile = new CustomerProfile(session);
+            cProfile.Show();
+            this.Hide();
+        }
+
+        private void lblExit_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show($"Close the application?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
     }
 }

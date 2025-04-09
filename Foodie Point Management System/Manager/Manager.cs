@@ -8,14 +8,18 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Foodie_Point_Management_System.Employee_Login;
+using static System.Collections.Specialized.BitVector32;
 
 namespace Foodie_Point_Management_System.Manager
 {
-    public class EmManager
+    public class EmManager : Employee
     {
         static SqlConnection connect = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString());
 
-        public object HallTable(string query)
+        public EmManager(int ei, string eu, string ef, string er) : base(ei, eu, ef, er) { }
+
+        public DataTable LoadTable(string query)
         {
             SqlDataAdapter adapter = new SqlDataAdapter(query, connect);
             DataTable table = new DataTable();
@@ -275,68 +279,6 @@ namespace Foodie_Point_Management_System.Manager
             return result;
         }
 
-        public DataTable LoadReservationReport()
-        {
-
-            DataTable dt = new DataTable();
-            try
-            {
-                connect.Open();
-                string query = @"
-                    SELECT 
-                        r.ReservationID,
-                        r.DateTime AS ReservationDateTime,
-                        r.Pax,
-                        r.ReservationStatus,
-                        c.CustomerID,
-                        c.FullName AS CustomerName,
-                        c.Email AS CustomerEmail,
-                        h.HallID,
-                        h.PartyType,
-                        h.Pax AS HallCapacity,
-                        rm.CustomerMsg AS CustomerMessage,
-                        rm.RCReply AS CoordinatorReply,
-                        o.OrderID,
-                        o.TotalAmount AS OrderTotal,
-                        o.OrderStatus,
-                        i.InvoiceID,
-                        i.Total AS InvoiceTotal,
-                        i.PaymentMethod,
-                        e.EmployeeID AS AssignedEmployeeID,
-                        e.FullName AS AssignedEmployeeName,
-                        e.Role AS EmployeeRole
-                    FROM 
-                        Reservations r
-                    JOIN 
-                        Customer c ON r.CustomerID = c.CustomerID
-                    JOIN 
-                        Hall h ON r.HallID = h.HallID
-                    LEFT JOIN 
-                        ReservationMessage rm ON r.ReservationID = rm.ReservationID
-                    LEFT JOIN 
-                        OrderTable o ON r.CustomerID = o.CustomerID 
-                        AND CAST(o.DateOrdered AS DATE) = CAST(r.DateTime AS DATE)
-                    LEFT JOIN 
-                        Invoice i ON o.OrderID = i.OrderID
-                    LEFT JOIN 
-                        Employee e ON o.EmployeeID = e.EmployeeID
-                    ORDER BY 
-                        r.DateTime DESC";
-
-                SqlDataAdapter adapter = new SqlDataAdapter(query, connect);
-                DataTable dataTable = new DataTable();
-                adapter.Fill(dt);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error loading reservation report: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                connect.Close( );
-            }
-            return dt;
-        }
 
         public DataTable LoadSalesReport(string year, string category)
         {
@@ -345,7 +287,7 @@ namespace Foodie_Point_Management_System.Manager
 
             string yearFilter = "";
             if (year != "All Years")
-                yearFilter = " WHERE YEAR(ot.DateOrdered) = @Year ";
+                yearFilter = " AND YEAR(ot.DateOrdered) = @Year";
 
             if (category == "Month")
             {
@@ -356,6 +298,7 @@ namespace Foodie_Point_Management_System.Manager
                 SUM(i.Total) AS TotalSales
                 FROM Invoice i
                 LEFT JOIN OrderTable ot ON i.OrderID = ot.OrderID
+                WHERE ot.Orderstatus = 'Completed'
                 " + yearFilter + @"
                 GROUP BY YEAR(ot.DateOrdered), MONTH(ot.DateOrdered), DATENAME(MONTH, ot.DateOrdered)
                 ORDER BY YEAR(ot.DateOrdered) ASC, MONTH(ot.DateOrdered) ASC;
@@ -370,6 +313,7 @@ namespace Foodie_Point_Management_System.Manager
                     FROM Invoice i
                     LEFT JOIN OrderTable ot ON i.OrderID = ot.OrderID
                     LEFT JOIN Employee e ON ot.EmployeeID = e.EmployeeID
+                    WHERE ot.Orderstatus = 'Completed'
                     " + yearFilter + @"
                     GROUP BY e.FullName
                     ORDER BY e.FullName ASC;";
@@ -384,6 +328,7 @@ namespace Foodie_Point_Management_System.Manager
                         SUM(i.Total) as 'TotalSales'
                     FROM Invoice i
                     LEFT JOIN OrderTable ot ON i.OrderID = ot.OrderID
+                    WHERE ot.Orderstatus = 'Completed'
                     " + yearFilter + @"
                     GROUP BY i.PaymentMethod
                     ORDER BY i.PaymentMethod ASC;";
@@ -412,6 +357,58 @@ namespace Foodie_Point_Management_System.Manager
                 }
             }
             return dt;
+        }
+
+        public DataTable ReservationFilterBox(ComboBox p, ComboBox y)
+        {
+            string selectedPartyType = p.SelectedItem?.ToString();
+            string selectedYear = y.SelectedItem?.ToString();
+
+            // Start the base query
+            string query = @"
+                            SELECT 
+                                YEAR(r.DateTime) AS Year, 
+                                MONTH(r.DateTime) AS Month, 
+                                h.PartyType, 
+                                COUNT(r.ReservationID) AS ReservationCount, 
+                                SUM(r.Pax) AS TotalPax
+                            FROM Reservations r
+                            JOIN Hall h ON r.HallID = h.HallID
+                            WHERE 1=1"; // Base condition (used for appending AND conditions)
+
+            // Add filter for PartyType if selected
+            if (!string.IsNullOrEmpty(selectedPartyType))
+            {
+                query += $" AND h.PartyType = '{selectedPartyType}'";
+            }
+
+            // Add filter for Year if selected
+            if (!string.IsNullOrEmpty(selectedYear))
+            {
+                if (int.TryParse(selectedYear, out int year))
+                {
+                    query += $" AND YEAR(r.DateTime) = {year}";  // Append the YEAR condition
+                }
+                else
+                {
+                    // Handle invalid year input (e.g., if it's not a valid integer)
+                    throw new ArgumentException("The year entered is not valid.");
+                }
+            }
+
+            // Add GROUP BY and ORDER BY clauses
+            query += @"
+                        GROUP BY YEAR(r.DateTime), MONTH(r.DateTime), h.PartyType
+                        ORDER BY Year, Month, h.PartyType";
+
+
+            // Set up the parameters for the query
+            using (SqlCommand command = new SqlCommand(query))
+            {
+
+                // Get the filtered data
+                return LoadTable(command.CommandText);
+            }
         }
     }
 }

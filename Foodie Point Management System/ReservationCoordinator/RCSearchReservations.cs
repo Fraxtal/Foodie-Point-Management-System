@@ -4,15 +4,16 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Runtime.InteropServices;
 using Foodie_Point_Management_System.Employee_Login;
 
 namespace Foodie_Point_Management_System.ReservationCoordinator
 {
-    public partial class ReservationCoordinatorDashboard : Form
+    public partial class SearchReservations : Form
     {
         ReservationCoord rc;
         [DllImport("gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
@@ -24,91 +25,53 @@ namespace Foodie_Point_Management_System.ReservationCoordinator
         int nWidthEllipse,
         int nHeightEllipse
                 );
-
-        public ReservationCoordinatorDashboard(ReservationCoord s)
+        public SearchReservations(ReservationCoord s)
         {
-            InitializeComponent();
             this.rc = s;
-            pnlNav.Height = btnDash.Height;
-            pnlNav.Top = btnDash.Top;
-            pnlNav.Left = btnDash.Left;
+            InitializeComponent();
+            pnlNav.Height = btnSearchReser.Height;
+            pnlNav.Top = btnSearchReser.Top;
+            pnlNav.Left = btnSearchReser.Left;
             Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
         }
 
-        private void lblupcoming_Click(object sender, EventArgs e)
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void DGVResult_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
 
-        private void ReservationCoordinatorDashboard_Load(object sender, EventArgs e)
+        private void SearchReservations_Load(object sender, EventArgs e)
         {
-            radAll.Checked = true;
+            DGVResult.DataSource = rc.ReservationTable("SELECT * FROM Reservations");
         }
 
-        private Dictionary<DateTime, string> reservationStatus = new Dictionary<DateTime, string>();
-
-<<<<<<< HEAD
-        
-
-        private void lnkmanage_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void btnSearch_Click_1(object sender, EventArgs e)
         {
-            ManageReservations manageReservation = new ManageReservations();
-            manageReservation.Show();
-        }
-
-        private void lnkcustomer_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            CustomerRequest customerRequest = new CustomerRequest();
-            customerRequest.Show();
-        }
-
-        private void monthlyreservation_DateChanged(object sender, DateRangeEventArgs e)
-        {
-            
-        }
-
-=======
->>>>>>> master
-        private void upcoming_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void pending_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lnksettings_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            
-        }
-
-        private void radconfirm_CheckedChanged(object sender, EventArgs e)
-        {
-            if (radconfirm.Checked)
+            if (string.IsNullOrEmpty(txtName.Text) || string.IsNullOrEmpty(cmbStatus.Text) || string.IsNullOrEmpty(txtPax.Text))
             {
-                upcoming.DataSource = rc.ReservationTable("SELECT * FROM Reservations WHERE ReservationStatus = 'Confirmed'");
+                MessageBox.Show("Please fill in all blanks.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                DGVResult.DataSource = rc.ReservationTable("SELECT * FROM Reservations");
+                return;
             }
-            
-        }
-
-        private void radpending_CheckedChanged(object sender, EventArgs e)
-        {
-            if (radpending.Checked)
+            if (DGVResult.Rows.Count == 0)
             {
-                upcoming.DataSource = rc.ReservationTable("SELECT * FROM Reservations WHERE ReservationStatus = 'Pending'");
+                MessageBox.Show("No reservations found for the selected date and time.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                DGVResult.DataSource = rc.ReservationTable("SELECT * FROM Reservations");
+                return;
             }
+            var search = rc.ReservationSearch(txtName.Text, cmbStatus.Text, dtpDate.Value, Convert.ToInt32(txtPax.Text));
+            DGVResult.DataSource = search;
         }
 
-        private void radAll_CheckedChanged(object sender, EventArgs e)
+        private void txtName_TextChanged(object sender, EventArgs e)
         {
-            if (radAll.Checked)
-            {
-                upcoming.DataSource = rc.ReservationTable("SELECT * FROM Reservations");
-            }
-        }
 
+        }
         private void btnDash_Click(object sender, EventArgs e)
         {
             ReservationCoordinatorDashboard dashboard = new ReservationCoordinatorDashboard(rc);
@@ -160,7 +123,7 @@ namespace Foodie_Point_Management_System.ReservationCoordinator
             this.Hide();
         }
 
-        private void lblpending_Click(object sender, EventArgs e)
+        private void lbltitle_Click(object sender, EventArgs e)
         {
 
         }

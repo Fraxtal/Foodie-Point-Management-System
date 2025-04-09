@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using Foodie_Point_Management_System.Employee_Login;
+using System.Runtime.InteropServices;
 
 namespace Foodie_Point_Management_System.Customer
 {
@@ -18,10 +19,20 @@ namespace Foodie_Point_Management_System.Customer
     public partial class CustomerLogin: Form
     {
         Customer session;
+        [DllImport("gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn(
+        int nLeftRect,
+        int nTopRect,
+        int nRightRect,
+        int nBottomRect,
+        int nWidthEllipse,
+        int nHeightEllipse
+            );
         public CustomerLogin()
         {
             InitializeComponent();
             session = new Customer();
+            Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
         }
 
         private void rbUsername_CheckedChanged(object sender, EventArgs e)
@@ -102,6 +113,24 @@ namespace Foodie_Point_Management_System.Customer
             EmployeeLogin employeeLogin = new EmployeeLogin();
             employeeLogin.Show();
             this.Hide();
+        }
+
+        private void CustomerLogin_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblExit_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show($"Close the application?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
     }
 }
