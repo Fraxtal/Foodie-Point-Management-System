@@ -11,11 +11,6 @@ The goal of this assignment is to introduce the basics of Object Oriented Progra
 - [yiwenqqq](https://github.com/yiwenqqq)
 - [SeanEYD](https://github.com/SeanEYD)
 
-## Project Structure
-Here is an overview of the project directory structure:
-
----
-
 ## Prerequisites
 Before running the project, make sure you have the following installed on your local machine:
 - [Visual Studio 2022](https://visualstudio.microsoft.com/downloads/) (Community or higher edition)
@@ -35,9 +30,17 @@ Follow these steps to set up the project:
   
    Open the solution file (.sln) found in the root directory of the project.
   
-4. Restore the NuGet packages:
+3. Restore the NuGet packages:
 
    In Visual Studio, right-click the solution in the Solution Explorer and select Restore NuGet Packages.
+
+4. Setup Microsoft SQL Server Database:
+
+   Create an .mdf file in the solution folder.
+
+   Run the queries given from the queries.sql file in the .mdf file
+
+   Change the source of the connection string within the App.config for the application to run as intended
 
 5. Build the project:
 
